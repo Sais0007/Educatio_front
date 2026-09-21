@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Aura Sanctuary — Prepare with Intention. JEE &amp; NEET Academic Platform</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#dce9ff",
+            "on-background": "#0b1c30",
+            "on-secondary-fixed": "#001e2c",
+            "tertiary-fixed": "#dae2fd",
+            "surface-variant": "#d3e4fe",
+            "tertiary-container": "#5c647a",
+            "on-error": "#ffffff",
+            "primary-fixed": "#cde5ff",
+            "primary": "#0369a1",
+            "outline-variant": "#e2e8f0",
+            "primary-fixed-dim": "#94ccff",
+            "error": "#ba1a1a",
+            "secondary-container": "#40c2fd",
+            "tertiary-fixed-dim": "#bec6e0",
+            "on-primary-container": "#cbe4ff",
+            "secondary": "#0284c7",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#7bd0ff",
+            "primary-container": "#0369a1",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "secondary-fixed": "#c4e7ff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#004b74",
+            "outline": "#64748b",
+            "surface": "#f8f9ff",
+            "on-tertiary-fixed": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "on-secondary-container": "#004d6a",
+            "surface-container": "#e5eeff",
+            "on-surface": "#0f172a",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#94ccff",
+            "on-surface-variant": "#334155",
+            "tertiary": "#475569",
+            "on-primary-fixed": "#001d32",
+            "on-tertiary-container": "#dae1fc",
+            "surface-tint": "#0369a1",
+            "surface-dim": "#cbdbf5",
+            "background": "#f8f9ff",
+            "on-secondary-fixed-variant": "#004c69"
+          },
+          borderRadius: {
+            "DEFAULT": "0.375rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "display-lg": ["Newsreader", "serif"],
+            "headline-lg": ["Newsreader", "serif"],
+            "headline-md": ["Newsreader", "serif"],
+            "headline-sm": ["Newsreader", "serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-surface-variant selection:text-primary">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl border-b border-outline-variant shadow-[0_1px_8px_rgba(15,23,42,0.03)]">
+<div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-3 group" data-path="home" href="#">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-[22px]">spa</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Aura Sanctuary</span>
+<span class="font-label-sm text-[11px] text-outline tracking-wider uppercase leading-none mt-1">Glacial Learning</span>
+</div>
+</a>
+<nav class="hidden md:flex items-center gap-1">
+<a class="px-3.5 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150" data-path="courses" href="#courses-section">Courses</a>
+<a class="px-3.5 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150" data-path="tests" href="#test-series-section">Test Series</a>
+<a class="px-3.5 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150" data-path="practice" href="#practice-section">Practice Engine</a>
+<a class="px-3.5 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150" data-path="resources" href="#resources-section">Free Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">search</span>
+<input class="w-60 pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-surface-variant transition-all" placeholder="Search syllabus, PYQs..." type="text"/>
+</div>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-3 py-2 transition-colors duration-150" data-path="login" href="#">Log In</a>
+<a class="font-label-md text-label-md bg-primary hover:bg-primary/90 text-on-primary px-4 py-2 rounded-lg shadow-sm transition-all duration-150 inline-flex items-center gap-1.5" data-path="register" href="#">
+<span>Get Started</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-20 bg-background min-h-screen">
+<div class="flex flex-col w-full">
+<!-- SECTION 1: HERO & STUDENT PRODUCT DISCOVERY TRIAGE -->
+<section class="relative w-full px-6 lg:px-12 pt-14 pb-16 max-w-7xl mx-auto overflow-hidden">
+<!-- Subtle Ambient Glow -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[760px] h-[320px] bg-gradient-to-b from-primary-fixed/40 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Live Academic Cohort Pill -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-low border border-primary/20 text-primary text-label-sm font-label-sm tracking-wider uppercase mb-6 shadow-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            2026–2027 Academic Cohort Enrolment Active
+          </div>
+<!-- Concrete, Student-Facing Headline -->
+<h1 class="font-headline-lg text-4xl sm:text-5xl lg:text-[56px] text-on-surface tracking-tight leading-[1.12] mb-6 font-serif max-w-3xl">
+            Prepare with intention. Learn, practise, test, and improve in one connected platform.
+          </h1>
+<!-- Direct Subtitle -->
+<p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+            Structured masterclasses, official computer-based mock tests, step-by-step topic practice, and in-depth mistake analysis calibrated to your target examination year.
+          </p>
+<!-- FAST, LIGHTWEIGHT PRODUCT DISCOVERY TRIAGE CARD -->
+<div class="w-full bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 lg:p-8 text-left shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-outline-variant gap-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-wide uppercase">Target Examination Profiler</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Select your target to instantly preview relevant batches &amp; mock series</span>
+</div>
+<!-- Triage Grid: Exam Selector + Target Year -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 pb-6">
+<!-- Step 1: Examination -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-sm text-xs text-outline uppercase tracking-wider font-semibold">1. Select Target Examination</label>
+<div class="grid grid-cols-2 gap-2" id="exam-selector">
+<button class="exam-btn active px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-container text-primary font-semibold border border-primary/30 flex items-center justify-between transition-all" type="button">
+<span>JEE Advanced</span>
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</button>
+<button class="exam-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>JEE Main</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+<button class="exam-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>NEET-UG</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+<button class="exam-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>Foundation (9–10)</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Cohort Year -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-sm text-xs text-outline uppercase tracking-wider font-semibold">2. Target Examination Year</label>
+<div class="grid grid-cols-2 gap-2" id="year-selector">
+<button class="year-btn active px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-container text-primary font-semibold border border-primary/30 flex items-center justify-between transition-all" type="button">
+<span>2026 Cohort</span>
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</button>
+<button class="year-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>2027 Cohort</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+<button class="year-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>2028 Cohort</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+<button class="year-btn px-3.5 py-2.5 rounded-lg text-left font-label-md text-label-md bg-surface-bright text-on-surface-variant border border-outline-variant hover:border-primary/40 hover:bg-surface-container-low flex items-center justify-between transition-all" type="button">
+<span>Repeater / Dropper</span>
+<span class="material-symbols-outlined text-[16px] opacity-0">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Action Triggers -->
+<div class="pt-4 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md shadow-sm transition-all" data-path="courses" href="#courses-section">
+<span>Explore Courses &amp; Batches</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant font-label-md text-label-md transition-all" data-path="tests" href="#test-series-section">
+<span>View Test Series</span>
+<span class="material-symbols-outlined text-[18px]">sports_score</span>
+</a>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-2">
+<span class="text-outline">Or explore:</span>
+<a class="text-primary hover:underline font-medium" href="#practice-section">Practice Question Bank (12,500+ Qs)</a>
+<span class="text-outline-variant">·</span>
+<a class="text-primary hover:underline font-medium" href="#resources-section">Free Formula Vault</a>
+</div>
+</div>
+</div>
+<!-- Social Proof & Integrity Metrics -->
+<div class="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+<span>Trusted by <strong class="text-on-surface font-semibold">142,000+</strong> serious aspirants nationwide</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+<span>100% official 2026 syllabus compliance</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">psychology</span>
+<span>Zero-distraction cognitive architecture</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: 4 TANGIBLE PRODUCT PILLARS -->
+<section class="w-full bg-surface-container-low py-16 px-6 lg:px-12 border-y border-outline-variant">
+<div class="max-w-7xl mx-auto">
+<div class="max-w-3xl mb-12">
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Core Product Suite</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">
+              Four connected tools for complete academic mastery
+            </h2>
+<p class="font-body-md text-on-surface-variant mt-2">
+              A unified learning architecture where every lecture derivation connects directly to step-by-step problem sets and proctored mock tests.
+            </p>
+</div>
+<!-- 4 Tangible Product Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1: Courses -->
+<a class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-between group" href="#courses-section">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-5">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-2 font-serif group-hover:text-primary transition-colors">Courses &amp; Batches</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+                  Structured live &amp; recorded masterclasses with comprehensive derivation notebooks, faculty office hours, and graded Daily Practice Problems (DPPs).
+                </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs text-primary font-semibold">
+<span>View 2026/27 Batches</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</a>
+<!-- Pillar 2: Test Series -->
+<a class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-between group" href="#test-series-section">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-5">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-2 font-serif group-hover:text-primary transition-colors">National Test Series</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+                  Authentic proctored Computer-Based Test (CBT) mocks mirroring the official NTA/IIT-JEE screen down to keyboard shortcuts and second-by-second pacing.
+                </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs text-primary font-semibold">
+<span>14 Mocks + 28 Sectionals</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</a>
+<!-- Pillar 3: Practice Engine -->
+<a class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-between group" href="#practice-section">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-5">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-2 font-serif group-hover:text-primary transition-colors">Practice Engine</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+                  Topic-level drills, 2014–2025 verified past examination questions (PYQs), self-paced step derivations, and automated Mistake Notebook routing.
+                </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs text-primary font-semibold">
+<span>12,500+ Curated Problems</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</a>
+<!-- Pillar 4: Free Resources -->
+<a class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-between group" href="#resources-section">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-5">
+<span class="material-symbols-outlined text-[22px]">folder_open</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-2 font-serif group-hover:text-primary transition-colors">Free Open Vault</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+                  Verified high-yield formula sheets, chapter revision compendiums, invariant cheat sheets, and authenticated step-by-step previous year papers.
+                </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs text-primary font-semibold">
+<span>450+ Free Documents</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 3: THE CONNECTED PREPARATION LOOP (THE DIFFERENTIATOR) -->
+<section class="w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">The Closed-Loop Methodology</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">
+            Why isolated study fails — The Connected Preparation Loop
+          </h2>
+<p class="font-body-md text-on-surface-variant mt-3">
+            Traditional portals separate videos, practice, and test papers into disconnected silos. Aura turns every interaction into measurable, compounding progress.
+          </p>
+</div>
+<!-- Modern Horizontal Workflow Diagram -->
+<div class="w-full bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 lg:p-10 shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 relative">
+<!-- Step 1: Learn -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md font-bold text-sm flex items-center justify-center">1</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Learn</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                Derive principles from first concepts in clinical lectures without rote memorization shortcuts.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                Lecture problems automatically saved to Practice
+              </div>
+</div>
+<!-- Step 2: Practise -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md font-bold text-sm flex items-center justify-center">2</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Practise</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                Solve step-by-step in an untimed derivation workspace with graduated conceptual hints.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                Multi-tier hints preserve the struggle
+              </div>
+</div>
+<!-- Step 3: Test -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md font-bold text-sm flex items-center justify-center">3</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Test</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                Replicate official CBT conditions under full 3-hour exam pressure with live cohort percentiles.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                High-stakes CBT replication
+              </div>
+</div>
+<!-- Step 4: Analyse -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md font-bold text-sm flex items-center justify-center">4</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Analyse</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                Diagnostic autopsy isolates conceptual gaps vs. algebraic slips vs. time-sink traps.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                Second-by-second dwell telemetry
+              </div>
+</div>
+<!-- Step 5: Revise -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md font-bold text-sm flex items-center justify-center">5</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Revise</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                Missed questions automatically route into your private Mistake Notebook for spaced intervals.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                3, 7, and 21-day SM-2 recall intervals
+              </div>
+</div>
+<!-- Step 6: Improve -->
+<div class="flex flex-col gap-3 relative">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary font-label-md font-bold text-sm flex items-center justify-center">6</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Improve</span>
+</div>
+<p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">
+                4-step recovery roadmaps target identified root causes to systematically reclaim 15–30 lost marks.
+              </p>
+<div class="text-[11px] font-label-sm text-primary font-medium bg-surface-container-low p-2 rounded">
+                Permanent error extinction
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: FEATURED COURSES (EXAM & YEAR RELEVANT) -->
+<section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-t border-outline-variant" id="courses-section">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Curriculum Excellence</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">Featured Courses &amp; Batches (2026–2027)</h2>
+<p class="font-body-md text-on-surface-variant mt-2">
+                Unhurried, derivation-first curriculum taught by distinguished authors and former IIT academic fellows.
+              </p>
+</div>
+<!-- Interactive Tag Filters -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-xs font-semibold">All Batches</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface font-label-sm text-xs">Physics Mastery</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface font-label-sm text-xs">Chemistry Depth</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface font-label-sm text-xs">Calculus Masterclass</button>
+</div>
+</div>
+<!-- 3 Featured Course Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all flex flex-col justify-between">
+<div class="p-7">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-[11px] uppercase tracking-wider font-semibold">JEE Adv 2026</span>
+<span class="font-label-sm text-xs text-outline">Batch 01 · Starts May 2025</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-3 font-serif leading-snug">Physics Mastery: Mechanics to Modern Physics</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                  Comprehensive mathematical derivations covering rotating reference frames, electrodynamics invariants, and statistical mechanics without hand-waving shortcuts.
+                </p>
+<div class="flex items-center gap-3 py-3 border-y border-outline-variant/60 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-xs font-label-md">AV</div>
+<div>
+<div class="font-label-md text-sm text-on-surface font-semibold">Prof. Arvind Verma</div>
+<div class="font-body-sm text-xs text-outline">Former Academic Fellow, IIT Kanpur</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-2.5 bg-surface-container-low rounded-lg text-center text-xs">
+<div>
+<div class="font-semibold text-on-surface">70</div>
+<div class="text-outline text-[11px]">Lectures</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">65 Sets</div>
+<div class="text-outline text-[11px]">DPPs</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">12</div>
+<div class="text-outline text-[11px]">Milestones</div>
+</div>
+</div>
+</div>
+<div class="px-7 py-5 bg-surface-container-low/50 border-t border-outline-variant flex items-center justify-between">
+<div>
+<span class="font-body-sm text-xs text-outline block">Tuition Fee</span>
+<span class="font-headline-sm text-xl text-on-surface font-bold">₹14,999 <span class="font-body-sm text-xs text-outline font-normal">/ year</span></span>
+</div>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-xs font-semibold transition-colors" data-path="courses" href="#">
+<span>View Curriculum &amp; Enroll</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all flex flex-col justify-between">
+<div class="p-7">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-[11px] uppercase tracking-wider font-semibold">JEE Adv 2027</span>
+<span class="font-label-sm text-xs text-outline">Batch 02 · 2-Year Track</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-3 font-serif leading-snug">Comprehensive Physical &amp; Inorganic Chemistry</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                  Deep dive into molecular orbital theory, reaction kinetics, thermodynamic entropy manifolds, coordination geometries, and stereochemical isomerism matrices.
+                </p>
+<div class="flex items-center gap-3 py-3 border-y border-outline-variant/60 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-xs font-label-md">MR</div>
+<div>
+<div class="font-label-md text-sm text-on-surface font-semibold">Dr. Meenakshi Rao</div>
+<div class="font-body-sm text-xs text-outline">Doctorate in Chemical Physics, IISc</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-2.5 bg-surface-container-low rounded-lg text-center text-xs">
+<div>
+<div class="font-semibold text-on-surface">64</div>
+<div class="text-outline text-[11px]">Lectures</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">50 Sets</div>
+<div class="text-outline text-[11px]">DPPs</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">10</div>
+<div class="text-outline text-[11px]">Milestones</div>
+</div>
+</div>
+</div>
+<div class="px-7 py-5 bg-surface-container-low/50 border-t border-outline-variant flex items-center justify-between">
+<div>
+<span class="font-body-sm text-xs text-outline block">Tuition Fee</span>
+<span class="font-headline-sm text-xl text-on-surface font-bold">₹13,999 <span class="font-body-sm text-xs text-outline font-normal">/ year</span></span>
+</div>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-xs font-semibold transition-colors" data-path="courses" href="#">
+<span>View Curriculum &amp; Enroll</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all flex flex-col justify-between">
+<div class="p-7">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-[11px] uppercase tracking-wider font-semibold">JEE 2026/27</span>
+<span class="font-label-sm text-xs text-outline">Masterclass Special</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface mb-3 font-serif leading-snug">Advanced Mathematics: Differential &amp; Integral Calculus</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                  Master analytical transformations, King's rule symmetries, functional equations, and multi-variable curve curvature with deep problem dissection.
+                </p>
+<div class="flex items-center gap-3 py-3 border-y border-outline-variant/60 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-xs font-label-md">VG</div>
+<div>
+<div class="font-label-md text-sm text-on-surface font-semibold">Vikas Gupta</div>
+<div class="font-body-sm text-xs text-outline">Author, Advanced Problems in Mathematics</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-2.5 bg-surface-container-low rounded-lg text-center text-xs">
+<div>
+<div class="font-semibold text-on-surface">82</div>
+<div class="text-outline text-[11px]">Lectures</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">75 Sets</div>
+<div class="text-outline text-[11px]">DPPs</div>
+</div>
+<div>
+<div class="font-semibold text-on-surface">14</div>
+<div class="text-outline text-[11px]">Milestones</div>
+</div>
+</div>
+</div>
+<div class="px-7 py-5 bg-surface-container-low/50 border-t border-outline-variant flex items-center justify-between">
+<div>
+<span class="font-body-sm text-xs text-outline block">Tuition Fee</span>
+<span class="font-headline-sm text-xl text-on-surface font-bold">₹14,999 <span class="font-body-sm text-xs text-outline font-normal">/ year</span></span>
+</div>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-xs font-semibold transition-colors" data-path="courses" href="#">
+<span>View Curriculum &amp; Enroll</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-sm font-semibold transition-all" data-path="courses" href="#">
+<span>Browse All Academic Programs &amp; Batches (24 Courses)</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 5: NATIONAL PROCTORED TEST SERIES -->
+<section class="w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto" id="test-series-section">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-8 lg:p-12 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Narrative -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-primary font-label-sm text-xs uppercase tracking-wider font-semibold w-fit">
+<span class="material-symbols-outlined text-[16px]">shield_check</span>
+                National Proctored Mock Architecture
+              </div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight leading-tight font-serif">
+                National Proctored Mock Test Series (2026–2027)
+              </h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                Replicating the exact NTA and IIT-JEE Computer-Based Test (CBT) arena down to keyboard shortcut constraints, formula popups, and high-pressure pacing timers.
+              </p>
+<!-- Stats Band -->
+<div class="grid grid-cols-3 gap-4 my-2">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="font-headline-lg text-3xl text-primary font-serif font-bold">14</div>
+<div class="font-label-md text-xs font-semibold text-on-surface mt-1">Full Mocks</div>
+<div class="font-body-sm text-[11px] text-outline">Identical 3-hr blueprints</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="font-headline-lg text-3xl text-secondary font-serif font-bold">28</div>
+<div class="font-label-md text-xs font-semibold text-on-surface mt-1">Sectionals</div>
+<div class="font-body-sm text-[11px] text-outline">Chapter stress-tests</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="font-headline-lg text-3xl text-primary font-serif font-bold">142k</div>
+<div class="font-label-md text-xs font-semibold text-on-surface mt-1">Cohort Aspirants</div>
+<div class="font-body-sm text-[11px] text-outline">Gaussian percentiles</div>
+</div>
+</div>
+<!-- Feature Checkpoints -->
+<div class="space-y-3 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">desktop_windows</span>
+<div>
+<span class="font-label-md text-sm font-semibold text-on-surface">Exact CBT Screen Replica: </span>
+<span class="font-body-sm text-sm text-on-surface-variant">Question palette states (Marked for Review, Answered, Unvisited) and official font sizing.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">wifi_off</span>
+<div>
+<span class="font-label-md text-sm font-semibold text-on-surface">Offline Sync Resilience: </span>
+<span class="font-body-sm text-sm text-on-surface-variant">Local browser encryption prevents test session loss during internet drops.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">timer</span>
+<div>
+<span class="font-label-md text-sm font-semibold text-on-surface">Second-by-Second Pacing Analysis: </span>
+<span class="font-body-sm text-sm text-on-surface-variant">Tracks dwell time on each stem to flag time-sink conics or rushed careless errors.</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<a class="px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-sm font-semibold shadow-sm transition-all" data-path="tests" href="#">
+                  Explore Test Series Packages
+                </a>
+<a class="px-6 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container border border-outline-variant text-on-surface font-label-md text-sm font-semibold transition-all" data-path="tests" href="#">
+                  Try Free Sample Mock
+                </a>
+</div>
+</div>
+<!-- Right Interactive CBT Simulation Preview -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-6 shadow-md relative">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span class="font-label-sm text-xs text-on-surface uppercase font-bold tracking-wider">CBT Arena Preview</span>
+</div>
+<span class="font-label-sm text-xs text-outline font-mono">ADV-2026-NTA-04</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant/60 shadow-xs mb-4">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-xs text-primary font-bold">PAPER 01 · FULL SYLLABUS</span>
+<span class="font-label-sm text-xs text-secondary bg-surface-container px-2 py-0.5 rounded font-mono font-medium">178:42 REMAINING</span>
+</div>
+<h4 class="font-headline-sm text-lg text-on-surface font-serif mb-2">JEE Advanced Full Mock 04</h4>
+<div class="grid grid-cols-3 gap-2 text-center py-2 bg-surface-bright rounded text-outline font-label-sm text-[11px] mb-4 border border-outline-variant/40">
+<div>54 Questions</div>
+<div>360 Marks</div>
+<div>Negative Marking</div>
+</div>
+<!-- Live Dwell Telemetry Simulation -->
+<div class="p-3 bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-xs space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-medium text-on-surface">Physics Section Progress</span>
+<span class="font-semibold text-primary">14 / 18 Solved</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-outline pt-1">
+<span>Dwell: 2m 14s / stem</span>
+<span class="text-primary font-medium">Confidence: 94%</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-lg flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">analytics</span>
+<span class="text-on-surface font-label-md font-semibold">Diagnostic Error Autopsy</span>
+</div>
+<span class="text-label-sm text-primary uppercase font-bold tracking-wider">Instant On Submit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: ACTUAL PRODUCT GLIMPSES (REAL STUDENT PANEL UI) -->
+<section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-t border-outline-variant" id="practice-section">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Focus-Protected Environment</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">
+              What you see is what you get. An uncluttered student workspace.
+            </h2>
+<p class="font-body-md text-on-surface-variant mt-3">
+              Designed to protect student focus — no noisy leaderboards, no streak pressure, no gamified distractions.
+            </p>
+</div>
+<!-- Tabbed Showcase Container -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-lg overflow-hidden max-w-5xl mx-auto">
+<!-- Mock Browser Chrome -->
+<div class="bg-surface-bright px-6 py-4 border-b border-outline-variant flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<span class="ml-4 font-label-sm text-xs text-outline font-mono">app.aurasanctuary.internal/workspace</span>
+</div>
+<!-- 4 Interactive Product View Tabs -->
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg" id="showcase-tabs">
+<button class="tab-trigger active px-3 py-1 rounded text-label-sm text-xs font-semibold bg-surface-container-lowest text-primary shadow-xs transition-all" data-target="panel-practice" type="button">
+                  Practice Workspace
+                </button>
+<button class="tab-trigger px-3 py-1 rounded text-label-sm text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-target="panel-cbt" type="button">
+                  CBT Test Attempt
+                </button>
+<button class="tab-trigger px-3 py-1 rounded text-label-sm text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-target="panel-autopsy" type="button">
+                  Mistake &amp; Time Analysis
+                </button>
+<button class="tab-trigger px-3 py-1 rounded text-label-sm text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-target="panel-plan" type="button">
+                  4-Step Recovery Plan
+                </button>
+</div>
+</div>
+<!-- Tab Panels Content Area -->
+<div class="p-8 lg:p-12 min-h-[460px]">
+<!-- Tab 1: Practice Workspace -->
+<div class="tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="panel-practice">
+<div class="lg:col-span-7 space-y-5">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-xs font-bold">ROTATIONAL DYNAMICS · ADVANCED L3</span>
+<span class="font-label-sm text-xs text-outline font-mono">Q.ID #8492</span>
+</div>
+<h3 class="font-headline-sm text-xl text-on-surface font-serif">Instantaneous Center of Rotation (ICR) in Non-Uniform Pure Rolling</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed font-serif text-base">
+                    A rigid circular cylinder of radius $R$ rolls without slipping over a concave track of radius $3R$. Determine the instantaneous angular acceleration about the contact line when $\theta = \pi/6$ from vertical.
+                  </p>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60 font-mono text-xs text-on-surface-variant space-y-1">
+<div class="text-primary font-semibold">// Invariant Kinematic Condition</div>
+<div>v_{cm} = \omega \cdot R_{eff} = \omega \cdot (3R - R) = 2R\omega</div>
+<div class="text-outline text-[11px] pt-1">Evaluating Euler torque moment with respect to the instantaneous point of zero velocity...</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs font-semibold shadow-xs">
+                      Submit Derivation Step
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-outline-variant text-on-surface font-label-md text-xs font-medium hover:bg-surface-container-high">
+                      Request Conceptual Hint (1 of 3)
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container-low p-6 rounded-xl border border-outline-variant space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<span class="font-label-sm text-xs text-outline uppercase font-semibold">Active Derivation Canvas</span>
+<span class="material-symbols-outlined text-outline text-[18px]">gesture</span>
+</div>
+<div class="w-full h-40 rounded-lg bg-surface-container-lowest flex flex-col items-center justify-center p-4 border border-outline-variant">
+<svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 100">
+<circle class="text-outline-variant" cx="50" cy="50" r="38" stroke-dasharray="2 2"></circle>
+<circle class="text-primary" cx="50" cy="50" r="20"></circle>
+<line class="text-secondary" stroke-width="2" x1="50" x2="68" y1="50" y2="36"></line>
+<circle class="text-secondary" cx="68" cy="36" fill="currentColor" r="3"></circle>
+</svg>
+<span class="font-label-sm text-[11px] text-outline mt-2 font-mono">Coordinate Overlay [R, 3R, \theta]</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant flex items-center justify-between text-xs">
+<span class="text-on-surface font-medium">Mistake Notebook Sync</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-bold font-label-sm text-[10px]">Active</span>
+</div>
+</div>
+</div>
+<!-- Tab 2: CBT Test Attempt -->
+<div class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="panel-cbt">
+<div class="lg:col-span-8 space-y-4">
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg border border-outline-variant text-xs">
+<span class="font-semibold text-on-surface">Question 24 of 54 (Single Correct)</span>
+<span class="text-primary font-mono font-bold">+4 / -1 Mark</span>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed font-serif">
+                    Consider the function $f(x) = \int_{0}^{x^2} \frac{\sin(\sqrt{t})}{1+t^2} dt$. What is the value of $f'(\sqrt{\pi/2})$?
+                  </p>
+<div class="space-y-2 pt-2">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-bright cursor-pointer hover:bg-surface-container-low">
+<input class="text-primary focus:ring-primary" name="mock_cbt" type="radio"/>
+<span class="font-body-sm text-sm text-on-surface">(A) $\frac{2\sqrt{\pi}}{1 + \pi^2/4}$</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-primary/40 bg-surface-container text-primary cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary" name="mock_cbt" type="radio"/>
+<span class="font-body-sm text-sm font-semibold">(B) $\frac{\sqrt{2\pi}}{1 + \pi^2/4}$ (Marked)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-bright cursor-pointer hover:bg-surface-container-low">
+<input class="text-primary focus:ring-primary" name="mock_cbt" type="radio"/>
+<span class="font-body-sm text-sm text-on-surface">(C) $\frac{1}{1 + \pi/2}$</span>
+</label>
+</div>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-5 rounded-xl border border-outline-variant">
+<div class="font-label-sm text-xs font-semibold text-outline uppercase mb-3">Question Palette</div>
+<div class="grid grid-cols-5 gap-1.5 text-center text-xs font-mono font-semibold">
+<span class="p-2 rounded bg-surface-container text-primary border border-primary/30">21</span>
+<span class="p-2 rounded bg-surface-container text-primary border border-primary/30">22</span>
+<span class="p-2 rounded bg-surface-container text-primary border border-primary/30">23</span>
+<span class="p-2 rounded bg-primary text-on-primary">24</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">25</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">26</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">27</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">28</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">29</span>
+<span class="p-2 rounded bg-surface-container-lowest text-outline border border-outline-variant">30</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant text-[11px] text-outline flex items-center justify-between">
+<span>Solved: 19</span>
+<span>Review: 3</span>
+<span>Unvisited: 32</span>
+</div>
+</div>
+</div>
+<!-- Tab 3: Mistake & Time Analysis -->
+<div class="tab-panel hidden space-y-6" id="panel-autopsy">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline uppercase font-semibold">Root Cause Split</span>
+<div class="mt-2 space-y-1.5 text-xs">
+<div class="flex justify-between font-medium">
+<span class="text-error">Conceptual Gaps</span>
+<span>4 Questions (-16 M)</span>
+</div>
+<div class="flex justify-between font-medium">
+<span class="text-secondary">Careless Sign Slips</span>
+<span>3 Questions (-12 M)</span>
+</div>
+<div class="flex justify-between font-medium">
+<span class="text-outline">Pacing Timeout</span>
+<span>2 Questions (-8 M)</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline uppercase font-semibold">Time-Sink Threshold Warning</span>
+<div class="mt-2 text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-error font-semibold">4-Minute Threshold Warning:</strong> You spent 6m 22s on Q.32 (Conics) before choosing an incorrect option, sacrificing 2 straightforward Chemistry questions.
+                    </div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline uppercase font-semibold">Recoverable Potential</span>
+<div class="font-headline-lg text-2xl text-primary font-serif font-bold mt-1">+28 Marks</div>
+<p class="font-body-sm text-[11px] text-outline mt-1">Reclaimable through habit correction alone</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-primary/20 flex items-center justify-between text-xs">
+<span class="font-medium text-on-surface">Auto-logged 7 error stems directly into Spaced Repetition Mistake Notebook</span>
+<span class="font-label-sm text-primary font-bold uppercase">Synced</span>
+</div>
+</div>
+<!-- Tab 4: 4-Step Recovery Plan -->
+<div class="tab-panel hidden space-y-4" id="panel-plan">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div>
+<h4 class="font-headline-sm text-lg font-serif text-on-surface">Calculus &amp; Rotational Dynamics Recovery Roadmap</h4>
+<p class="font-body-sm text-xs text-outline">Targeting +24 marks recovery in next national mock window</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-xs font-bold uppercase">Stage 01 In Progress</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-2">
+<div class="p-4 rounded-lg bg-surface-container-low border border-primary/40">
+<span class="font-label-sm text-xs text-primary font-bold">Step 1</span>
+<div class="font-label-md text-sm text-on-surface font-semibold mt-1">Derivation Review</div>
+<p class="font-body-sm text-[11px] text-outline mt-1">Revisit King's property invariants without shortcuts (35 mins).</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline font-bold">Step 2</span>
+<div class="font-label-md text-sm text-on-surface font-semibold mt-1">Isolated Drill</div>
+<p class="font-body-sm text-[11px] text-outline mt-1">Solve 12 single-concept L2/L3 integral transformations.</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline font-bold">Step 3</span>
+<div class="font-label-md text-sm text-on-surface font-semibold mt-1">Timed Sectional</div>
+<p class="font-body-sm text-[11px] text-outline mt-1">45-minute timed test maintaining &lt; 2.5 min/stem rule.</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="font-label-sm text-xs text-outline font-bold">Step 4</span>
+<div class="font-label-md text-sm text-on-surface font-semibold mt-1">Error Extinction</div>
+<p class="font-body-sm text-[11px] text-outline mt-1">Zero mistakes on notebook stems at day 7 spaced recall.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: FREE OPEN STUDY VAULT -->
+<section class="w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto" id="resources-section">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<div>
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Open Academic Access</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">Companion Formula Sheets &amp; Compendiums</h2>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-xl">
+              High-yield conceptual summaries, formula cheat sheets, and authenticated question banks available freely to all students.
+            </p>
+</div>
+<!-- Quick Search Bar -->
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-all" placeholder="Search 450+ formula sheets..." type="text"/>
+</div>
+</div>
+<!-- 4 Downloadable Resource Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<span class="font-label-sm text-xs text-outline uppercase tracking-wider block mb-1">Physics · Kinematics</span>
+<h4 class="font-headline-sm text-lg text-on-surface mb-2 font-serif leading-snug">Rotational Dynamics &amp; ICR Invariant Sheet</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4 leading-relaxed">
+                Complete coordinate invariance relations, tensor moments, and rolling without slipping conditions.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs">
+<span class="text-outline">PDF · 1.4 MB · 18.2k dl</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Download</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[22px]">functions</span>
+</div>
+<span class="font-label-sm text-xs text-outline uppercase tracking-wider block mb-1">Mathematics · Calculus</span>
+<h4 class="font-headline-sm text-lg text-on-surface mb-2 font-serif leading-snug">Leibniz Rule &amp; Definite Integral Transformations</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4 leading-relaxed">
+                Step-by-step limits differentiation, King's property symmetries, and Frullani integrals compendium.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs">
+<span class="text-outline">PDF · 920 KB · 24.1k dl</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Download</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">science</span>
+</div>
+<span class="font-label-sm text-xs text-outline uppercase tracking-wider block mb-1">Inorganic Chemistry</span>
+<h4 class="font-headline-sm text-lg text-on-surface mb-2 font-serif leading-snug">Coordination Compounds Isomerism Cheat Sheet</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4 leading-relaxed">
+                3D geometric isomerism grids, optical activity flags, and CFT splitting energy reference charts.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs">
+<span class="text-outline">PDF · 2.1 MB · 15.6k dl</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Download</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+<span class="font-label-sm text-xs text-outline uppercase tracking-wider block mb-1">Past Examination</span>
+<h4 class="font-headline-sm text-lg text-on-surface mb-2 font-serif leading-snug">JEE Advanced 2024 Solved Papers 1 &amp; 2</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4 leading-relaxed">
+                Authenticated step-by-step proofs with marks distribution breakdowns and multiple solution pathways.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between font-label-sm text-xs">
+<span class="text-outline">PDF · 3.8 MB · 31.4k dl</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Download</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-sm font-semibold transition-all" data-path="resources" href="#">
+<span>Access Free Study Vault (450+ Documents) →</span>
+</a>
+</div>
+</section>
+<!-- SECTION 8: AUTHENTIC STUDENT OUTCOMES (NO STOCK PHOTOS) -->
+<section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-t border-outline-variant">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Authentic Experiences</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">Reflections from Verified Aspirants</h2>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-md">
+              Honest feedback on our focus-first interface, diagnostic pacing telemetry, and clinical mistake isolation.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<p class="font-body-md text-on-surface leading-relaxed mb-8 font-serif text-lg italic">
+                “The mistake analysis showed I wasn't lacking calculus theory — I was dropping negative signs in King's rule integrals. Fixing that single habit recovered 16 marks in the next mock.”
+              </p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/60">
+<div>
+<div class="font-label-md text-sm font-semibold text-on-surface">Rahul Sharma</div>
+<div class="font-body-sm text-xs text-outline">Class of 2025 · Delhi</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-xs font-bold">AIR 142 Mock</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<p class="font-body-md text-on-surface leading-relaxed mb-8 font-serif text-lg italic">
+                “The absence of gamified clutter and noisy streaks was a breath of fresh air. It feels like an academic laboratory where your time is genuinely respected.”
+              </p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/60">
+<div>
+<div class="font-label-md text-sm font-semibold text-on-surface">Ananya Deshmukh</div>
+<div class="font-body-sm text-xs text-outline">Class of 2025 · Pune</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-secondary font-label-sm text-xs font-bold">AIR 88 Cohort</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<p class="font-body-md text-on-surface leading-relaxed mb-8 font-serif text-lg italic">
+                “Pacing analysis showed I spent 6 minutes on conics stems that yielded zero marks. Learning when to bail changed my rank by over 20 percentile bands.”
+              </p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/60">
+<div>
+<div class="font-label-md text-sm font-semibold text-on-surface">Siddharth V.</div>
+<div class="font-body-sm text-xs text-outline">Class of 2025 · Bengaluru</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-xs font-bold">AIR 211 Mock</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: CLARITY FAQ & INSTITUTES -->
+<section class="w-full py-20 px-6 lg:px-12 max-w-4xl mx-auto">
+<div class="text-center mb-14">
+<div class="font-label-sm text-xs text-primary uppercase tracking-widest font-semibold mb-2">Clarity of Inquiry</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight font-serif">Frequently Addressed Questions</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-xs">
+<h3 class="font-headline-sm text-lg text-on-surface font-serif mb-2">Can I enroll in single subject modules or only full-year batches?</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Yes. While comprehensive year-long tracks cover the entire coordinated PCM / PCB syllabus, every student is free to enroll in modular masterclasses—such as Rotational Mechanics, Advanced Integral Calculus, or Molecular Orbital Theory—with full access to that topic's DPPs and milestone assessments.
+            </p>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-xs">
+<h3 class="font-headline-sm text-lg text-on-surface font-serif mb-2">How does the diagnostic error autopsy work?</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Upon submitting any sectional or full mock exam, our telemetry engine evaluates your response time, dwell speed, and mistake typology (Careless slips, Misread stem, or Conceptual gap). Missed stems are instantly queued into your personal Mistake Notebook with an automated 3, 7, and 21-day spaced repetition review calendar.
+            </p>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-xs">
+<h3 class="font-headline-sm text-lg text-on-surface font-serif mb-2">Are free resources truly free without a subscription?</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Absolutely. Our Open Study Vault hosts over 450 verified formula compendiums, authentic past papers (2014–2025), and chapter-level invariant summaries that are completely open-access with no payment information or credit card required.
+            </p>
+</div>
+</div>
+<!-- INSTITUTE CALLOUT -->
+<div class="mt-12 bg-surface-container-low rounded-2xl border border-primary/20 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="font-label-md text-xs text-primary font-bold uppercase tracking-wider">Aura for Schools &amp; Academies</div>
+<h4 class="font-headline-sm text-xl text-on-surface font-serif">Deploy Proctored Infrastructure for Your Classroom</h4>
+<p class="font-body-sm text-xs text-on-surface-variant">
+              Custom question authoring, institution-wide CBT mock windows, and cohort diagnostic analytics for high schools and coaching institutes.
+            </p>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-xs font-semibold whitespace-nowrap" href="#">
+            Institutional Inquiries →
+          </a>
+</div>
+</section>
+<!-- SECTION 10: FINAL CONVERSION BANNER (CALM & COMPELLING) -->
+<section class="w-full pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-10 lg:p-16 shadow-lg text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low via-transparent to-surface-variant/20 pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary mx-auto mb-6">
+<span class="material-symbols-outlined text-[26px]">spa</span>
+</div>
+<h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface tracking-tight mb-4 font-serif">
+              Begin your preparation with undivided focus.
+            </h2>
+<p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">
+              Choose your target examination and take a 10-minute diagnostic check today. Join over 142,000 aspirants studying with calm purpose.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-md text-sm font-semibold shadow-sm transition-all" data-path="register" href="#">
+                Create Free Student Account →
+              </a>
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container border border-outline-variant text-on-surface font-label-md text-sm font-semibold transition-all" data-path="courses" href="#">
+                Explore All Courses &amp; Tests
+              </a>
+</div>
+<div class="mt-6 text-outline font-body-sm text-xs">
+              Complimentary 10-day diagnostic access · No credit card required
+            </div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- COMPREHENSIVE GLACIAL SANCTUARY FOOTER -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-xs text-on-surface uppercase tracking-wider font-bold">Courses</h4>
+<ul class="flex flex-col gap-2.5">
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="courses" href="#">Foundational Curricula</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="courses" href="#">Advanced Seminars</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="courses" href="#">Guided Masterclasses</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="courses" href="#">Syllabus Matrix</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-xs text-on-surface uppercase tracking-wider font-bold">Tests &amp; Mocks</h4>
+<ul class="flex flex-col gap-2.5">
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="tests" href="#">Full-Length CBT Mocks</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="tests" href="#">Timed Sectionals</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="tests" href="#">Diagnostic Assessment</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="tests" href="#">Scoring Percentiles</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-xs text-on-surface uppercase tracking-wider font-bold">Practice &amp; Revision</h4>
+<ul class="flex flex-col gap-2.5">
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="practice" href="#">Question Repository (12,500+)</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="practice" href="#">Spaced Recall Decks</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="practice" href="#">Targeted Weakness Sets</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="practice" href="#">Mistake Notebook</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-xs text-on-surface uppercase tracking-wider font-bold">Free Resources</h4>
+<ul class="flex flex-col gap-2.5">
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="resources" href="#">Formula Handbooks</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="resources" href="#">Past Paper Archives (2014-25)</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="resources" href="#">Revision Compendiums</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="resources" href="#">Study Planners</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-xs text-on-surface uppercase tracking-wider font-bold">Platform &amp; Trust</h4>
+<ul class="flex flex-col gap-2.5">
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="methodology" href="#">Pedagogical Ethics</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="trust-security" href="#">Data Integrity</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="support" href="#">Support &amp; Concierge</a></li>
+<li class="font-body-sm text-xs text-on-surface-variant hover:text-primary"><a data-path="institutes" href="#">For Institutes &amp; Schools</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="font-body-sm text-xs text-outline">© 2026 Aura Sanctuary. Designed for intellectual clarity and focus.</span>
+<div class="flex items-center gap-6">
+<a class="font-body-sm text-xs text-on-surface-variant hover:text-primary" data-path="privacy-policy" href="#">Privacy Policy</a>
+<a class="font-body-sm text-xs text-on-surface-variant hover:text-primary" data-path="terms-of-service" href="#">Terms of Service</a>
+<a class="font-body-sm text-xs text-on-surface-variant hover:text-primary" data-path="support" href="#">Support Contact</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- LIGHTWEIGHT INTERACTIVITY SCRIPT -->
+<script>
+    (function() {
+      // 1. Exam and Year Button Selector
+      function bindButtonGroup(containerId, buttonClass) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const buttons = container.querySelectorAll('.' + buttonClass);
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            buttons.forEach(b => {
+              b.classList.remove('bg-surface-container', 'text-primary', 'font-semibold', 'border-primary/30');
+              b.classList.add('bg-surface-bright', 'text-on-surface-variant', 'border-outline-variant');
+              const icon = b.querySelector('.material-symbols-outlined');
+              if (icon) icon.classList.add('opacity-0');
+            });
+            btn.classList.add('bg-surface-container', 'text-primary', 'font-semibold', 'border-primary/30');
+            btn.classList.remove('bg-surface-bright', 'text-on-surface-variant', 'border-outline-variant');
+            const activeIcon = btn.querySelector('.material-symbols-outlined');
+            if (activeIcon) activeIcon.classList.remove('opacity-0');
+          });
+        });
+      }
+
+      bindButtonGroup('exam-selector', 'exam-btn');
+      bindButtonGroup('year-selector', 'year-btn');
+
+      // 2. Showcase Product Glimpse Tabs
+      const showcaseTabs = document.getElementById('showcase-tabs');
+      if (showcaseTabs) {
+        const triggers = showcaseTabs.querySelectorAll('.tab-trigger');
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            triggers.forEach(t => {
+              t.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+              t.classList.add('text-on-surface-variant');
+            });
+            trigger.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+            trigger.classList.remove('text-on-surface-variant');
+
+            const targetId = trigger.getAttribute('data-target');
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+              panel.classList.add('hidden');
+            });
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+              targetPanel.classList.remove('hidden');
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</body></html>

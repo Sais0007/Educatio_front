@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#5c647a","on-secondary":"#ffffff","on-primary-container":"#cbe4ff","surface":"#f8f9ff","primary-fixed-dim":"#94ccff","primary-fixed":"#cde5ff","on-error-container":"#93000a","error-container":"#ffdad6","tertiary":"#444c62","secondary-fixed":"#c4e7ff","primary-container":"#0369a1","on-secondary-fixed":"#001e2c","on-tertiary-fixed":"#131b2e","surface-tint":"#006399","secondary-fixed-dim":"#7bd0ff","on-primary":"#ffffff","surface-dim":"#cbdbf5","inverse-primary":"#94ccff","on-tertiary":"#ffffff","on-primary-fixed-variant":"#004b74","tertiary-fixed-dim":"#bec6e0","tertiary-fixed":"#dae2fd","error":"#ba1a1a","surface-container":"#e5eeff","inverse-surface":"#213145","surface-bright":"#f8f9ff","primary":"#00507d","on-tertiary-container":"#dae1fc","inverse-on-surface":"#eaf1ff","secondary-container":"#40c2fd","surface-variant":"#d3e4fe","on-surface":"#0b1c30","on-error":"#ffffff","surface-container-highest":"#d3e4fe","on-primary-fixed":"#001d32","surface-container-high":"#dce9ff","on-secondary-fixed-variant":"#004c69","background":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-container":"#004d6a","on-background":"#0b1c30","on-tertiary-fixed-variant":"#3f465c","secondary":"#00668a","outline-variant":"#c0c7d1","outline":"#707881","surface-container-low":"#eff4ff","on-surface-variant":"#40474f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-2xl":"4rem","space-xl":"2.5rem","space-sm":"0.5rem",margin:"1.25rem","space-xs":"0.25rem","margin-desktop":"4rem","space-md":"1rem","space-lg":"1.5rem",gutter:"1.5rem","gutter-desktop":"2.5rem"},fontFamily:{"headline-md":["Newsreader"],"label-md":["Manrope"],"body-md":["Manrope"],"headline-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"label-sm":["Manrope"],"display-lg":["Newsreader"],"body-sm":["Manrope"],"headline-lg":["Newsreader"],"body-lg":["Manrope"],"headline-lg-mobile":["Newsreader"]},fontSize:{"headline-md":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}],"label-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["1rem",{lineHeight:"1.625rem",fontWeight:"400"}],"headline-sm":["1.25rem",{lineHeight:"1.75rem",fontWeight:"500"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.015em",fontWeight:"400"}],"label-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.03em",fontWeight:"600"}],"display-lg":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-sm":["0.875rem",{lineHeight:"1.375rem",fontWeight:"400"}],"headline-lg":["2.5rem",{lineHeight:"3rem",letterSpacing:"-0.015em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.875rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 flex items-center gap-space-sm px-space-lg"><div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">eco</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-medium">Aura</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-medium tracking-wide">2026</span></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-surface-container-low text-primary font-semibold"><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Learn</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-courses" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span>My Courses</a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-surface-container-low text-primary font-semibold" data-path="learning" href="#"><span class="material-symbols-outlined text-[18px]">play_circle</span>Learning</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Practise</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="practice" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span>Practice</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="revision" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span>Revision</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Test</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span>Tests</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="results-and-analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span>Results &amp; Analytics</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Discover</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[18px]">folder_open</span>Resources</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="recommendations" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span>Recommendations</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Account</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-purchases" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span>My Purchases</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span>Notifications</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[18px]">person</span>Profile</a></div></nav></div></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-medium leading-tight">Aura Student Learning</span><span class="font-body-sm text-body-sm text-outline leading-tight">JEE Advanced 2027</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-on-surface">Rahul Sharma</span><span class="text-outline text-body-sm">·</span><span class="font-body-sm text-body-sm text-on-surface-variant">JEE Advanced 2027 Enrolled</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline border-0 focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Jump to concept, course, lecture, or formula... (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-space-md lg:px-gutter-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- Top Breadcrumb & Navigation Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant flex-wrap">
+<a class="font-body-sm text-body-sm hover:text-primary transition-colors" href="#">My Courses</a>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<a class="font-body-sm text-body-sm hover:text-primary transition-colors" href="#">Physics Mastery</a>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<span class="font-body-sm text-body-sm">03 Rotational Dynamics</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface bg-surface-container px-2 py-0.5 rounded">Lecture 08</span>
+</div>
+<button class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-primary-container px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all self-start md:self-auto shadow-sm">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        Back to Curriculum
+      </button>
+</div>
+<!-- Main Stage Video Player Container -->
+<div class="relative w-full aspect-video bg-inverse-surface rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between group select-none">
+<!-- Video Screen: Academic Whiteboard & Crisp Vector Physics Illustration -->
+<div class="absolute inset-0 bg-gradient-to-b from-inverse-surface via-[#142233] to-[#0d1622] flex flex-col items-center justify-center p-space-xl">
+<!-- Subtle Academic Grid Background Pattern -->
+<div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image: radial-gradient(#cde5ff 1px, transparent 1px); background-size: 24px 24px;"></div>
+<!-- Watermark / Slide Heading -->
+<div class="absolute top-6 left-8 flex items-center gap-space-sm opacity-80">
+<span class="font-label-sm text-label-sm text-secondary-container tracking-wider uppercase">Physics Mastery · Lecture 08</span>
+<span class="text-outline text-body-sm">·</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-container">Rolling with Slipping vs Instantaneous Center of Zero Velocity</span>
+</div>
+<!-- Academic Whiteboard Diagram -->
+<div class="relative w-full max-w-2xl h-64 md:h-80 flex items-center justify-center">
+<svg class="w-full h-full text-on-secondary" fill="none" viewbox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+<!-- Incline Plane -->
+<path d="M 60 270 L 520 270" stroke="#707881" stroke-dasharray="4 4" stroke-width="2"></path>
+<path d="M 60 270 L 480 90 L 480 270 Z" fill="#213145" fill-opacity="0.4"></path>
+<line stroke="#94ccff" stroke-linecap="round" stroke-width="3" x1="60" x2="480" y1="270" y2="90"></line>
+<!-- Angle Theta Arc -->
+<path d="M 120 270 A 60 60 0 0 0 110 248" stroke="#40c2fd" stroke-width="1.5"></path>
+<text fill="#40c2fd" font-family="Manrope" font-size="14" font-weight="600" x="128" y="260">θ = 30°</text>
+<!-- Rolling Cylinder on Incline -->
+<g transform="translate(300, 167) rotate(-22)">
+<!-- Outer Ring -->
+<circle cx="0" cy="0" fill="#0b1c30" fill-opacity="0.85" r="54" stroke="#cde5ff" stroke-width="2.5"></circle>
+<!-- Center of Mass Dot -->
+<circle cx="0" cy="0" fill="#40c2fd" r="3.5"></circle>
+<!-- Angular Velocity Arrow ω -->
+<path d="M -24 -24 A 34 34 0 0 1 24 -24" marker-end="url(#arrowhead)" stroke="#40c2fd" stroke-linecap="round" stroke-width="2"></path>
+<text fill="#40c2fd" font-family="Manrope" font-size="13" font-weight="600" x="30" y="-20">ω, α</text>
+<!-- Contact point marker -->
+<circle cx="0" cy="54" fill="#ffdad6" r="3"></circle>
+<text fill="#ffdad6" font-family="Manrope" font-size="11" x="8" y="66">P (Contact: v_rel ≠ 0)</text>
+<!-- Normal Force Vector N -->
+<line marker-end="url(#arrowhead-blue)" stroke="#7bd0ff" stroke-width="2" x1="0" x2="0" y1="54" y2="-80"></line>
+<text fill="#7bd0ff" font-family="Manrope" font-size="13" font-weight="600" x="8" y="-72">N</text>
+<!-- Kinetic Friction Vector f_k -->
+<line marker-end="url(#arrowhead-red)" stroke="#ffdad6" stroke-width="2.5" x1="0" x2="-65" y1="54" y2="54"></line>
+<text fill="#ffdad6" font-family="Manrope" font-size="13" font-weight="600" x="-70" y="44">f_k = μ_k N</text>
+<!-- Center Linear Velocity v_cm -->
+<line marker-end="url(#arrowhead-light)" stroke="#cde5ff" stroke-width="2" x1="0" x2="65" y1="0" y2="0"></line>
+<text fill="#cde5ff" font-family="Manrope" font-size="13" font-weight="600" x="68" y="-4">v_cm, a_cm</text>
+</g>
+<!-- Gravity Vector mg (Vertical from center) -->
+<line marker-end="url(#arrowhead-light)" stroke="#cbe4ff" stroke-width="2" x1="285" x2="285" y1="172" y2="250"></line>
+<text fill="#cbe4ff" font-family="Manrope" font-size="13" font-weight="600" x="294" y="246">mg</text>
+<!-- Vector Marker Definitions -->
+<defs>
+<marker id="arrowhead" markerheight="6" markerwidth="6" orient="auto" refx="4" refy="3">
+<polygon fill="#40c2fd" points="0 0, 6 3, 0 6"></polygon>
+</marker>
+<marker id="arrowhead-blue" markerheight="6" markerwidth="6" orient="auto" refx="4" refy="3">
+<polygon fill="#7bd0ff" points="0 0, 6 3, 0 6"></polygon>
+</marker>
+<marker id="arrowhead-red" markerheight="6" markerwidth="6" orient="auto" refx="4" refy="3">
+<polygon fill="#ffdad6" points="0 0, 6 3, 0 6"></polygon>
+</marker>
+<marker id="arrowhead-light" markerheight="6" markerwidth="6" orient="auto" refx="4" refy="3">
+<polygon fill="#cde5ff" points="0 0, 6 3, 0 6"></polygon>
+</marker>
+</defs>
+</svg>
+</div>
+<!-- Real-time Mathematical Condition Callout -->
+<div class="px-space-md py-1.5 rounded-lg bg-inverse-surface/80 backdrop-blur-md shadow-inner flex items-center gap-space-md mt-2">
+<span class="font-label-sm text-label-sm text-secondary-container">Slipping Criterion:</span>
+<span class="font-body-sm text-body-sm text-on-secondary font-mono tracking-wide">v_cm &gt; ωR  ⟹  f_k = μ_k N (Opposing Motion)</span>
+</div>
+</div>
+<!-- Top Overlay Details: Floating Auto-Save Badge -->
+<div class="relative z-10 p-space-md flex items-center justify-between pointer-events-none">
+<div class="pointer-events-auto inline-flex items-center gap-space-xs bg-inverse-surface/85 backdrop-blur-md px-3 py-1 rounded-full text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary-container animate-pulse">cloud_done</span>
+<span class="font-label-sm text-label-sm tracking-wide">Resume Position Auto-Saved (24m 15s)</span>
+</div>
+<div class="pointer-events-auto flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded-lg bg-inverse-surface/60 backdrop-blur-md text-on-secondary hover:bg-inverse-surface flex items-center justify-center transition-all" title="Add Bookmark">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-inverse-surface/60 backdrop-blur-md text-on-secondary hover:bg-inverse-surface flex items-center justify-center transition-all" title="Cinema Mode">
+<span class="material-symbols-outlined text-[18px]">crop_landscape</span>
+</button>
+</div>
+</div>
+<!-- Bottom Control Bar -->
+<div class="relative z-10 flex flex-col w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent pt-8 px-space-md pb-space-md">
+<!-- Interactive Scrub Bar -->
+<div class="group/scrub relative w-full h-1.5 hover:h-3 bg-surface-container-highest/30 rounded-full cursor-pointer transition-all mb-space-sm flex items-center">
+<!-- Loaded Buffer -->
+<div class="absolute left-0 top-0 bottom-0 bg-outline/40 rounded-full w-[72%]"></div>
+<!-- Watched Progress (Glacier Blue) -->
+<div class="absolute left-0 top-0 bottom-0 bg-secondary-container rounded-full w-[49%]"></div>
+<!-- Scrubber Handle -->
+<div class="absolute left-[49%] w-3.5 h-3.5 bg-on-secondary rounded-full shadow-md scale-0 group-hover/scrub:scale-100 -translate-x-1/2 transition-transform"></div>
+<!-- Hover Timestamp Flag -->
+<div class="absolute left-[49%] -top-7 -translate-x-1/2 bg-inverse-surface px-2 py-0.5 rounded text-[11px] font-mono text-on-secondary pointer-events-none opacity-0 group-hover/scrub:opacity-100 transition-opacity">
+            24:15
+          </div>
+</div>
+<!-- Controls Row -->
+<div class="flex items-center justify-between text-on-secondary text-body-sm">
+<!-- Left Controls -->
+<div class="flex items-center gap-space-md">
+<button aria-label="Play or Pause" class="text-on-secondary hover:text-secondary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">pause</span>
+</button>
+<button class="text-on-secondary-variant hover:text-on-secondary transition-colors" title="Rewind 10s">
+<span class="material-symbols-outlined text-[20px]">replay_10</span>
+</button>
+<button class="text-on-secondary-variant hover:text-on-secondary transition-colors" title="Forward 10s">
+<span class="material-symbols-outlined text-[20px]">forward_10</span>
+</button>
+<!-- Elapsed / Total Time -->
+<div class="font-mono text-[13px] tracking-tight text-surface-container-highest flex items-center gap-1">
+<span class="text-on-secondary font-medium">24:15</span>
+<span>/</span>
+<span>49:20</span>
+</div>
+<!-- Volume Slider Group -->
+<div class="flex items-center gap-2 group/volume pl-2">
+<button class="text-on-secondary hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+<div class="w-16 h-1 bg-surface-container-highest/30 rounded-full cursor-pointer relative">
+<div class="h-full bg-on-secondary rounded-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- Right Controls -->
+<div class="flex items-center gap-space-md">
+<button class="px-2 py-0.5 rounded-full bg-surface-container-highest/20 hover:bg-surface-container-highest/40 text-on-secondary font-label-sm text-label-sm font-semibold transition-colors">
+              1.25x
+            </button>
+<button class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold tracking-wider" title="Subtitles Active">
+              CC
+            </button>
+<span class="font-label-sm text-label-sm text-surface-container-highest font-mono hidden sm:inline">1080p 60fps</span>
+<button class="text-on-secondary hover:text-secondary-container transition-colors" title="Settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<button class="text-on-secondary hover:text-secondary-container transition-colors" title="Toggle Fullscreen">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Below Video: Header, Metadata, Progress & Lesson Actions -->
+<div class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-[0_4px_24px_-2px_rgba(15,23,42,0.04)]">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm font-semibold text-primary">Unit 03: Rotational Motion</span>
+<span class="text-outline text-body-sm">·</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">JEE Advanced 2027 Enrolled</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Lecture 08: Rolling with Slipping &amp; Dynamic Friction Transfer
+          </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-xs flex-wrap">
+<span class="font-medium text-on-surface">Prof. Arvind Verma</span>
+<span>·</span>
+<span>Department of Classical Mechanics</span>
+<span>·</span>
+<span>Duration: 49 mins</span>
+</p>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="px-space-md py-2 rounded-lg bg-surface hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            Prev: Pure Rolling
+          </button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-colors flex items-center gap-space-xs shadow-md">
+            Next: Work-Energy
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-surface-container-low transition-colors" title="Mark Lesson Complete">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Linear Progress Line -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Overall Module Completion</span>
+<span class="font-medium text-primary">49% Completed</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-300" style="width: 49%;"></div>
+</div>
+</div>
+</div>
+<!-- Workspace Tabs & Content Panels -->
+<div class="flex flex-col gap-space-lg">
+<!-- Serene Tab Bar -->
+<div class="flex items-center gap-space-sm overflow-x-auto bg-surface-container-low p-1.5 rounded-xl">
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">article</span>
+          Overview
+        </button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+          Resources &amp; Notes
+          <span class="px-1.5 py-0.2 rounded-full bg-surface-container text-[11px] font-bold">3</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+          Associated Assignment
+          <span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-primary text-[11px] font-bold">1</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+          Ask a Mentor
+        </button>
+</div>
+<!-- Active Tab: Overview Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left 8 Columns: Summary, Deep Concept Notes, & Timestamps -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Pedagogical Summary Card -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_24px_-2px_rgba(15,23,42,0.03)] flex flex-col gap-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+              Pedagogical Abstract &amp; Key Objectives
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              In this lecture, Prof. Verma breaks down the transition from pure rolling to slipping on rough horizontal and inclined surfaces. Special attention is given to determining the sign of angular acceleration and linear acceleration when friction opposes relative surface motion.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mt-space-xs pt-space-md bg-surface p-space-md rounded-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Crucial Pre-requisite</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Torque balance relative to ICOR (Instantaneous Center of Rotation)</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Examination Target</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">JEE Advanced Multi-Variable Classical Mechanics</span>
+</div>
+</div>
+</div>
+<!-- Chapter Markers / Timestamps -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-[0_4px_24px_-2px_rgba(15,23,42,0.03)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">schedule</span>
+                Key Timestamps &amp; Chapters
+              </h2>
+<span class="font-label-sm text-label-sm text-outline">4 Milestones</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Chapter 1 -->
+<div class="group flex items-center justify-between p-space-md rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-space-md">
+<span class="font-mono font-label-md text-label-md text-outline group-hover:text-primary transition-colors">00:00</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">Introduction &amp; Recap of Pure Rolling Condition (v = ωR)</span>
+<span class="font-body-sm text-body-sm text-outline">Foundational constraints and static friction thresholds</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">play_arrow</span>
+</div>
+<!-- Chapter 2 -->
+<div class="group flex items-center justify-between p-space-md rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-space-md">
+<span class="font-mono font-label-md text-label-md text-outline group-hover:text-primary transition-colors">12:30</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">Dynamics of Slipping: Kinetic Friction Direction</span>
+<span class="font-body-sm text-body-sm text-outline">Relative velocity vectors at the instantaneous contact point P</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">play_arrow</span>
+</div>
+<!-- Chapter 3 (Current Active) -->
+<div class="group flex items-center justify-between p-space-md rounded-lg bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 font-mono font-label-md text-label-md text-primary font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                    24:15
+                  </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-md text-body-md text-primary font-semibold">Current: Cylinder on Incline with Variable Slope</span>
+<span class="px-2 py-0.2 rounded text-[10px] bg-primary text-on-primary font-bold uppercase tracking-widest">Playing</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Non-conservative energy loss formulation and work dissipated</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">graphic_eq</span>
+</div>
+<!-- Chapter 4 -->
+<div class="group flex items-center justify-between p-space-md rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-space-md">
+<span class="font-mono font-label-md text-label-md text-outline group-hover:text-primary transition-colors">38:40</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">Solving JEE Advanced 2023 Multi-Concept Problem</span>
+<span class="font-body-sm text-body-sm text-outline">Integration of Newton-Euler equations with dynamic transition back to pure roll</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Associated Resources & Assignment Box -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Associated Assignment Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-[0_4px_24px_-2px_rgba(15,23,42,0.03)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Required Practice</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container text-[11px] font-bold">Due Tomorrow</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">DPP 08: Rotational Dynamics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">12 Questions · Estimated time: 45 mins · Single Choice &amp; Numerical Stems</p>
+</div>
+<!-- Mini Progress / Status -->
+<div class="flex items-center justify-between p-space-sm bg-surface rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Status</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">0 / 12 Submitted</span>
+</div>
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+              Open Assignment
+            </button>
+</div>
+<!-- Associated Resources Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-[0_4px_24px_-2px_rgba(15,23,42,0.03)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lecture Handouts</h3>
+<span class="font-label-sm text-label-sm text-outline">PDF Assets</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Resource 1 -->
+<div class="p-space-md rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Annotated Slides &amp; Derivations</span>
+<span class="font-label-sm text-label-sm text-outline">PDF · 4.2 MB</span>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg transition-colors shrink-0" title="Download Resource">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Resource 2 -->
+<div class="p-space-md rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Formula Quick Sheet (Ch. 03)</span>
+<span class="font-label-sm text-label-sm text-outline">PDF · 1.1 MB</span>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg transition-colors shrink-0" title="Download Resource">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Academic Mentor Quick Access Widget -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[16px] font-bold">
+                AV
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Stuck on kinetic friction vector direction?</span>
+<span class="font-body-sm text-body-sm text-outline">Teaching Assistant available</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Post an annotated screenshot or timestamp query. Expected turnaround under 15 minutes.
+            </p>
+<button class="mt-space-xs w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface text-primary font-label-md text-label-md transition-colors shadow-sm">
+              Raise Doubts in Forum
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-surface": "#213145",
+          "on-primary-container": "#cbe4ff",
+          "primary-container": "#0369a1",
+          "primary-fixed-dim": "#94ccff",
+          "on-background": "#0b1c30",
+          "on-tertiary-fixed": "#131b2e",
+          "on-secondary-fixed": "#001e2c",
+          "on-error-container": "#93000a",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#94ccff",
+          "surface-container-highest": "#d3e4fe",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "inverse-on-surface": "#eaf1ff",
+          "background": "#f8f9ff",
+          "on-tertiary-fixed-variant": "#3f465c",
+          "surface-bright": "#f8f9ff",
+          "tertiary-fixed": "#dae2fd",
+          "surface-container": "#e5eeff",
+          "on-primary-fixed": "#001d32",
+          "surface-container-high": "#dce9ff",
+          "primary": "#00507d",
+          "on-primary": "#ffffff",
+          "tertiary-container": "#5c647a",
+          "error-container": "#ffdad6",
+          "primary-fixed": "#cde5ff",
+          "on-secondary-fixed-variant": "#004c69",
+          "surface-container-low": "#eff4ff",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#dae1fc",
+          "on-secondary-container": "#004d6a",
+          "on-error": "#ffffff",
+          "surface": "#f8f9ff",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#40c2fd",
+          "tertiary-fixed-dim": "#bec6e0",
+          "on-surface-variant": "#40474f",
+          "on-primary-fixed-variant": "#004b74",
+          "tertiary": "#444c62",
+          "secondary-fixed-dim": "#7bd0ff",
+          "outline": "#707881",
+          "surface-tint": "#006399",
+          "surface-variant": "#d3e4fe",
+          "outline-variant": "#c0c7d1",
+          "secondary": "#00668a",
+          "on-surface": "#0b1c30",
+          "secondary-fixed": "#c4e7ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "2.5rem",
+          "space-md": "1rem",
+          "space-2xl": "4rem",
+          "margin": "1.25rem",
+          "margin-desktop": "4rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2.5rem",
+          "gutter": "1.5rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Newsreader"],
+          "display-lg-mobile": ["Newsreader"],
+          "body-sm": ["Manrope"],
+          "label-md": ["Manrope"],
+          "headline-md": ["Newsreader"],
+          "body-md": ["Manrope"],
+          "label-sm": ["Manrope"],
+          "headline-lg-mobile": ["Newsreader"],
+          "display-lg": ["Newsreader"],
+          "body-lg": ["Manrope"],
+          "headline-lg": ["Newsreader"]
+        },
+        "fontSize": {
+          "headline-sm": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "500"}],
+          "display-lg-mobile": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.015em", "fontWeight": "400"}],
+          "body-sm": ["0.875rem", {"lineHeight": "1.375rem", "fontWeight": "400"}],
+          "label-md": ["0.875rem", {"lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-md": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "body-md": ["1rem", {"lineHeight": "1.625rem", "fontWeight": "400"}],
+          "label-sm": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "display-lg": ["3.5rem", {"lineHeight": "4rem", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+          "body-lg": ["1.125rem", {"lineHeight": "1.875rem", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+          "headline-lg": ["2.5rem", {"lineHeight": "3rem", "letterSpacing": "-0.015em", "fontWeight": "400"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low/90 backdrop-blur-xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full overflow-hidden"><div class="px-space-lg pt-space-lg pb-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Aura 2026</span><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-medium tracking-wide uppercase">Sanctuary</span></div><nav class="flex-1 overflow-y-auto px-space-md py-space-xs space-y-space-md" data-active-classes="bg-surface-container text-primary font-bold rounded-lg relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1 before:bg-primary before:rounded-r"><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Learn</p><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="my-courses" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>My Courses</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="learning" href="#"><span class="material-symbols-outlined text-[18px]">play_lesson</span><span>Learning</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Practise</p><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="practice-home" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">target</span><span>Practice</span></div><span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="revision" href="#"><span class="material-symbols-outlined text-[18px]">cached</span><span>Revision</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Test</p><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Tests</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="results-analytics" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Results &amp; Analytics</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Discover</p><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="resources" href="#"><span class="material-symbols-outlined text-[18px]">folder_open</span><span>Resources</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="recommendations" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Recommendations</span></a></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Account</p><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="my-purchases" href="#"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span>My Purchases</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="profile" href="#"><span class="material-symbols-outlined text-[18px]">manage_accounts</span><span>Profile</span></a></div></nav><div class="px-space-md py-space-md bg-surface-container/50 m-space-sm rounded-lg"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Aura Student Learning</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant truncate mt-0.5">JEE Advanced 2027</p></div></div></aside><div class="pl-72 min-h-screen flex flex-col"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-secondary"></div><div><span class="font-label-md text-label-md text-on-surface">Rahul Sharma</span><span class="mx-1.5 text-outline-variant">·</span><span class="font-body-sm text-body-sm text-on-surface-variant">JEE Advanced 2027 Enrolled</span></div></div><div class="flex-1 max-w-xl mx-space-md"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px] pointer-events-none">search</span><input class="w-full pl-10 pr-space-md py-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-[0_1px_2px_rgba(15,23,42,0.02)] transition-all" placeholder="Jump to concept, question, formula, or topic..." type="text"/></div></div><div class="flex items-center gap-space-sm"><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="px-space-lg lg:px-space-xl py-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold mb-1">STUDY LOGS &amp; ANNOTATIONS</p>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Personal Study Notebook</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">Targeted derivations, conceptual traps, and teacher tips retained during question solving and video lectures.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Sync Cloud</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create New Note</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md pb-space-lg">
+<div class="flex-1 max-w-xl">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full pl-11 pr-space-md py-2.5 bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none shadow-sm transition-all" placeholder="Search by concept, formula, or question..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0">
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm whitespace-nowrap" type="button">All Notes (14)</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">Linked to Questions (8)</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">Chapter Summaries (4)</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">General Insights (2)</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-5 space-y-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Archived Logs &amp; Snippets</span>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span>Recent First</span>
+</div>
+</div>
+<article class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-center justify-between gap-space-sm mb-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">Active Sanctuary</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+              Today at 2:15 PM
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">ICOR Invariants &amp; Friction Sign Rules</h2>
+<p class="font-label-sm text-label-sm text-secondary font-medium mt-1 mb-2">Physics · Rotational Dynamics · Linked to Q.08 &amp; Q.14</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">When a cylinder rolls with slipping, friction fk = μN opposes relative motion at contact point, NOT acceleration of COM...</p>
+<div class="flex items-center gap-space-sm mt-3 pt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px]">bookmark</span> Derivation
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">link</span> 2 Problems
+            </span>
+</div>
+</article>
+<article class="p-space-lg rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all cursor-pointer group">
+<div class="flex items-center justify-between gap-space-sm mb-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold">Calculus II</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+              Oct 14, 2026
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Leibniz Integral Differentiation Boundary Conditions</h2>
+<p class="font-label-sm text-label-sm text-secondary font-medium mt-1 mb-2">Mathematics · Calculus · Linked to Q.38</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Always differentiate limits f(b(x)) * b'(x) - f(a(x)) * a'(x). Watch out for negative lower bound terms...</p>
+<div class="flex items-center gap-space-sm mt-3 pt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">functions</span> Integral Formula
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">link</span> 1 Problem
+            </span>
+</div>
+</article>
+<article class="p-space-lg rounded-xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm transition-all cursor-pointer group">
+<div class="flex items-center justify-between gap-space-sm mb-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold">Mechanisms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+              Oct 11, 2026
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Carbocation Rearrangements: Ring Expansion vs Hydride Shift</h2>
+<p class="font-label-sm text-label-sm text-secondary font-medium mt-1 mb-2">Chemistry · Organic Chemistry · Lecture 06</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">4-membered and 5-membered rings adjacent to carbocations undergo thermodynamically favored ring expansion...</p>
+<div class="flex items-center gap-space-sm mt-3 pt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">science</span> Organic Lecture
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">draw</span> Reaction Path
+            </span>
+</div>
+</article>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-body-sm text-body-sm font-medium">Auto-capturing tags from live lectures</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold cursor-pointer">Configure</span>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<div class="px-space-xl pt-space-xl pb-space-md bg-surface-container-low/50">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold tracking-wide">Physics Mastery · Rotational Mechanics</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">link</span> Attached to 2 Questions
+              </span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1.5 rounded hover:bg-surface-container-high transition-colors" title="Pin Note" type="button">
+<span class="material-symbols-outlined text-[18px]">push_pin</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high transition-colors" title="Full View" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+</div>
+</div>
+<div class="flex items-baseline justify-between gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface focus:outline-none focus:bg-surface-container-lowest px-1 py-0.5 rounded transition-all" contenteditable="true">ICOR Invariants &amp; Friction Sign Rules</h2>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              Auto-saved
+            </span>
+</div>
+</div>
+<div class="p-space-xl space-y-space-lg flex-1">
+<section class="space-y-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Center of Mass vs Contact Axis:</h3>
+</div>
+<div class="pl-8">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                When evaluating torque about the instantaneous center of rotation (ICOR), do not add fictive torque terms. The axis is instantaneously at rest.
+              </p>
+<div class="mt-space-sm p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+<span><strong>Exam Trap:</strong> If evaluating about an accelerated point that is not ICOR, fictitious forces pass through COM only if referenced from COM frame!</span>
+</div>
+</div>
+</section>
+<section class="space-y-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pure Rolling vs Slipping Criteria:</h3>
+</div>
+<div class="pl-8 space-y-2">
+<div class="p-space-md rounded-lg bg-surface-container text-on-surface">
+<ul class="space-y-2 font-body-md text-body-md">
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">•</span>
+<span>If <em>v_cm = ωR</em>, friction is static (<em>f_s ≤ μ_s N</em>) and can act forward, backward, or be zero depending on applied force height <em>h</em>.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">•</span>
+<span>If <em>v_cm ≠ ωR</em>, friction is kinetic (<em>f_k = μ_k N</em>) and strictly opposes relative slip velocity.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="space-y-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Magic Height h = 2/5 R for Solid Sphere:</h3>
+</div>
+<div class="pl-8">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Force applied at <em>h = 2/5 R</em> generates zero contact friction. Pure rolling occurs naturally without ground traction.
+              </p>
+<div class="mt-space-md grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-tertiary uppercase">Condition: h &gt; 2/5 R</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Friction acts backward to retard excess angular acceleration.</p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-tertiary uppercase">Condition: h &lt; 2/5 R</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Friction acts forward to supply necessary clockwise torque.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="pt-space-md flex items-center gap-space-md">
+<div class="w-20 h-20 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Technical chalk and vector physics sketch illustrating a rigid body rolling on a horizontal surface with vector arrows showing center of mass velocity, angular velocity, and instantaneous center of zero velocity on minimalist cool blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_j-ypiQLlqN8qoVGJeT7rl1kMrUvSO9N8aDmZoGTSYzQouNsu619PUooyxuLpajbWcfkcJ-qA5vHaprtaoHQ_uecJx1MJOremtKa7NZg-CfgGVV3mcOpwYt9XUHEfsekugjj8L8UXrlWitZjtPlPWMmD3TWx3fu14Fc2larqgK8FNW0jYWZo7GlRZCEVSJYiUfATvlQaiWMibI_HmyxvRXZYzJLzRK-FyUQj2Yr_M04MJA4qrckM5"/>
+</div>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Freehand Vector Reference</span>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">ICOR Kinematic Equilibrium Snapshot</p>
+<span class="font-label-sm text-label-sm text-primary cursor-pointer hover:underline">Inspect High-Res Render</span>
+</div>
+</div>
+</div>
+<div class="px-space-xl py-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Last revision edited by Rahul Sharma</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-highest hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Note</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-highest hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_link</span>
+<span>Link to Another Question</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const titleHeader = document.querySelector('[contenteditable="true"]');
+    if (titleHeader) {
+      titleHeader.addEventListener('focus', function() {
+        this.classList.add('ring-2', 'ring-secondary-container');
+      });
+      titleHeader.addEventListener('blur', function() {
+        this.classList.remove('ring-2', 'ring-secondary-container');
+      });
+    }
+  })();
+</script></main></div></body></html>

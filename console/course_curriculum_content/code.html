@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#5c647a","on-secondary":"#ffffff","on-primary-container":"#cbe4ff","surface":"#f8f9ff","primary-fixed-dim":"#94ccff","primary-fixed":"#cde5ff","on-error-container":"#93000a","error-container":"#ffdad6","tertiary":"#444c62","secondary-fixed":"#c4e7ff","primary-container":"#0369a1","on-secondary-fixed":"#001e2c","on-tertiary-fixed":"#131b2e","surface-tint":"#006399","secondary-fixed-dim":"#7bd0ff","on-primary":"#ffffff","surface-dim":"#cbdbf5","inverse-primary":"#94ccff","on-tertiary":"#ffffff","on-primary-fixed-variant":"#004b74","tertiary-fixed-dim":"#bec6e0","tertiary-fixed":"#dae2fd","error":"#ba1a1a","surface-container":"#e5eeff","inverse-surface":"#213145","surface-bright":"#f8f9ff","primary":"#00507d","on-tertiary-container":"#dae1fc","inverse-on-surface":"#eaf1ff","secondary-container":"#40c2fd","surface-variant":"#d3e4fe","on-surface":"#0b1c30","on-error":"#ffffff","surface-container-highest":"#d3e4fe","on-primary-fixed":"#001d32","surface-container-high":"#dce9ff","on-secondary-fixed-variant":"#004c69","background":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-container":"#004d6a","on-background":"#0b1c30","on-tertiary-fixed-variant":"#3f465c","secondary":"#00668a","outline-variant":"#c0c7d1","outline":"#707881","surface-container-low":"#eff4ff","on-surface-variant":"#40474f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-2xl":"4rem","space-xl":"2.5rem","space-sm":"0.5rem",margin:"1.25rem","space-xs":"0.25rem","margin-desktop":"4rem","space-md":"1rem","space-lg":"1.5rem",gutter:"1.5rem","gutter-desktop":"2.5rem"},fontFamily:{"headline-md":["Newsreader"],"label-md":["Manrope"],"body-md":["Manrope"],"headline-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"label-sm":["Manrope"],"display-lg":["Newsreader"],"body-sm":["Manrope"],"headline-lg":["Newsreader"],"body-lg":["Manrope"],"headline-lg-mobile":["Newsreader"]},fontSize:{"headline-md":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}],"label-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["1rem",{lineHeight:"1.625rem",fontWeight:"400"}],"headline-sm":["1.25rem",{lineHeight:"1.75rem",fontWeight:"500"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.015em",fontWeight:"400"}],"label-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.03em",fontWeight:"600"}],"display-lg":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-sm":["0.875rem",{lineHeight:"1.375rem",fontWeight:"400"}],"headline-lg":["2.5rem",{lineHeight:"3rem",letterSpacing:"-0.015em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.875rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 flex items-center gap-space-sm px-space-lg"><div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">eco</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-medium">Aura</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-medium tracking-wide">2026</span></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-surface-container-low text-primary font-semibold"><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Learn</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-courses" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span>My Courses</a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-surface-container-low text-primary font-semibold" data-path="learning" href="#"><span class="material-symbols-outlined text-[18px]">play_circle</span>Learning</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Practise</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="practice" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span>Practice</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="revision" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span>Revision</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Test</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span>Tests</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="results-and-analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span>Results &amp; Analytics</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Discover</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[18px]">folder_open</span>Resources</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="recommendations" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span>Recommendations</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Account</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-purchases" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span>My Purchases</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span>Notifications</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[18px]">person</span>Profile</a></div></nav></div></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-medium leading-tight">Aura Student Learning</span><span class="font-body-sm text-body-sm text-outline leading-tight">JEE Advanced 2027</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-on-surface">Rahul Sharma</span><span class="text-outline text-body-sm">·</span><span class="font-body-sm text-body-sm text-on-surface-variant">JEE Advanced 2027 Enrolled</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline border-0 focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Jump to concept, course, lecture, or formula... (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1"><div class="flex flex-col w-full px-space-lg lg:px-margin-desktop py-space-xl max-w-7xl mx-auto space-y-space-xl">
+<!-- Top Navigation & Context Hierarchy -->
+<section class="flex flex-col gap-space-sm">
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline tracking-wider uppercase">
+<a class="hover:text-primary transition-colors" href="#">My Courses</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Physics Mastery</a>
+<span>/</span>
+<span class="text-on-surface font-semibold">Detailed Curriculum</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-xs">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-normal tracking-tight">Course Curriculum</h1>
+<p class="font-body-md text-body-md text-tertiary mt-1">Advanced Mechanics, Invariants &amp; Continuum Dynamics for JEE Advanced 2027</p>
+</div>
+<!-- Overarching Course Progress Capsule -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm min-w-[280px]">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-12 h-12 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="68.5, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm font-bold text-on-surface">68%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Overall Syllabus</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">48 of 70 Lessons</span>
+<span class="font-body-sm text-body-sm text-primary-container font-medium">22 Modules Ahead</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Control Strip: Quick Filters & Granular Search -->
+<section class="flex flex-col lg:flex-row gap-space-md items-stretch lg:items-center justify-between">
+<!-- Filter Pills -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-sm transition-all">All Modules (6)</button>
+<button class="px-space-md py-1.5 rounded-lg text-tertiary hover:text-on-surface font-label-sm text-label-sm transition-all">In Progress</button>
+<button class="px-space-md py-1.5 rounded-lg text-tertiary hover:text-on-surface font-label-sm text-label-sm transition-all">Completed (2)</button>
+</div>
+<!-- Search Bar with Glacial Accent Focus -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container/20 focus:bg-white transition-all" placeholder="Search lectures, topics, derivations (e.g. Rolling without slipping, Torus, Kepler)..." type="text"/>
+</div>
+</section>
+<!-- Two-Column Architectural Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT / MAIN COLUMN: Detailed Chapter & Lesson Hierarchy (8 Columns) -->
+<main class="lg:col-span-8 flex flex-col space-y-space-lg">
+<!-- Module 01: Foundations & Kinematics (Collapsed) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all">
+<button class="w-full flex items-center justify-between text-left group" onclick="toggleModule('mod-01', this)">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Module 01</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Mastered</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Foundations &amp; Kinematics</h2>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-outline hidden sm:inline">All 12 completed ✓</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<div class="hidden mt-space-md pt-space-md space-y-2" id="mod-01">
+<div class="p-space-sm bg-surface rounded text-on-surface-variant font-body-sm text-body-sm flex justify-between">
+<span>Vectors, Calculus &amp; Curvilinear Coordinates</span>
+<span class="text-outline">62 mins • Done</span>
+</div>
+<div class="p-space-sm bg-surface rounded text-on-surface-variant font-body-sm text-body-sm flex justify-between">
+<span>Relative Motion in Moving Reference Frames</span>
+<span class="text-outline">74 mins • Done</span>
+</div>
+</div>
+</div>
+<!-- Module 02: Work, Energy & Impulse (Collapsed) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all">
+<button class="w-full flex items-center justify-between text-left group" onclick="toggleModule('mod-02', this)">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Module 02</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Mastered</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Work, Energy &amp; Impulse</h2>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-outline hidden sm:inline">All 14 completed ✓</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<div class="hidden mt-space-md pt-space-md space-y-2" id="mod-02">
+<div class="p-space-sm bg-surface rounded text-on-surface-variant font-body-sm text-body-sm flex justify-between">
+<span>Potential Energy Curves &amp; Equilibrium Stability</span>
+<span class="text-outline">58 mins • Done</span>
+</div>
+</div>
+</div>
+<!-- Module 03: Rotational Dynamics & Variable Mass (Active Module - Expanded) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute top-0 left-0 h-1.5 bg-gradient-to-r from-primary-container via-secondary-container to-primary w-full"></div>
+<!-- Module Header Meta -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Module 03 • Current Focus</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-ping"></span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Rotational Dynamics &amp; Variable Mass</h2>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-label-sm text-tertiary">Progress</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold">7 / 14 Completed</p>
+</div>
+</div>
+<!-- Lessons Sequence -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<!-- Lesson 01 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 01: Rigid Body Kinematics &amp; Instantaneous Axis of Rotation</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>42 mins</span>
+<span>•</span>
+<span>High Yield</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 02 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 02: Moment of Inertia: Continuous Bodies &amp; Perpendicular Axis Theorem</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>55 mins</span>
+<span>•</span>
+<span>Derivation Focus</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 03 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 03: Parallel Axis Theorem Applications &amp; Radius of Gyration</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>48 mins</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 04 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 04: Torque Equations &amp; Dynamics in Fixed Axis Rotation</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>51 mins</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 05 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 05: Angular Momentum of Point Mass &amp; Distributed Rigid Bodies</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>46 mins</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 06 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 06: Conservation of Angular Momentum &amp; Central Forces</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>58 mins</span>
+<span>•</span>
+<span>Keplerian Link</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 07 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Lesson 07: Pure Rolling Motion: Friction Characteristics &amp; Slip Conditions</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>52 mins</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">replay</span>
+</div>
+<!-- Lesson 08: ACTIVE / IN PROGRESS -->
+<div class="relative bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm -mx-2 sm:mx-0 my-space-xs">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">In Progress</span>
+<span class="text-outline text-xs">·</span>
+<span class="font-body-sm text-body-sm text-tertiary">Current: 24m of 49m</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Lesson 08: Rolling with Slipping &amp; Dynamic Friction Transfer</h3>
+</div>
+</div>
+<button class="self-start sm:self-center px-space-lg py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-sm flex items-center gap-space-xs whitespace-nowrap">
+<span>Resume Lecture</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Visual Progress Strip -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-space-xs overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-[49%]"></div>
+</div>
+<div class="flex justify-between items-center text-outline font-label-sm text-label-sm">
+<span>Timestamp: 24:12</span>
+<span>49% Complete</span>
+</div>
+</div>
+<!-- Lesson 09 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-normal truncate">Lesson 09: Work-Energy Theorem in Rotational Dynamics</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>44 mins</span>
+<span>•</span>
+<span>Available</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Start</button>
+</div>
+<!-- Lesson 10 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-normal truncate">Lesson 10: Combined Translation &amp; Rotation Collisions</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>56 mins</span>
+<span>•</span>
+<span>Available</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Start</button>
+</div>
+<!-- Lesson 11 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-normal truncate">Lesson 11: Variable Mass Systems: Rockets &amp; Conveyor Belts</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>50 mins</span>
+<span>•</span>
+<span>Available</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Start</button>
+</div>
+<!-- Lesson 12 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-normal truncate">Lesson 12: Gyroscopic Precession &amp; Advanced JEE Problem Archetypes</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>62 mins</span>
+<span>•</span>
+<span>Available</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Start</button>
+</div>
+<!-- Lesson 13 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-on-surface font-normal truncate">Lesson 13: DPP 08 Discussion: 15 High-Yield Advanced Problems</p>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>60 mins</span>
+<span>•</span>
+<span>Interactive Solution</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Start</button>
+</div>
+<!-- Lesson 14: LOCKED -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface/50 opacity-60">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+</div>
+<div class="truncate">
+<p class="font-body-md text-body-md text-tertiary truncate">Lesson 14: Chapter Mastery Assessment</p>
+<p class="font-label-sm text-label-sm text-outline">90 mins • Requires Lessons 01–13 completion</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-outline">Locked</span>
+</div>
+</div>
+</div>
+</main>
+<!-- RIGHT COLUMN: Sticky Quick Overview & Next Action (4 Columns) -->
+<aside class="lg:col-span-4 flex flex-col space-y-space-lg lg:sticky lg:top-20">
+<!-- Current Module Focus Action Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Active Snapshot</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-tertiary">Currently Learning</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-normal">Rotational Dynamics</h3>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Lecture 08</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium line-clamp-2">Rolling with Slipping &amp; Dynamic Friction Transfer</p>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+              25m remaining
+            </span>
+<span>24/49 mins</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-sm flex items-center justify-center gap-space-xs">
+<span>Resume Lecture 08</span>
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<!-- Quick Resources for this Chapter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Chapter Artifacts</h4>
+<span class="font-label-sm text-label-sm text-outline">3 Files</span>
+</div>
+<div class="flex flex-col space-y-space-xs">
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="truncate">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate group-hover:text-primary transition-colors">Rotational Invariants</p>
+<p class="font-label-sm text-label-sm text-outline">Formula Sheet • 1.4 MB PDF</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] group-hover:text-primary transition-colors">download</span>
+</a>
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div class="truncate">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate group-hover:text-primary transition-colors">DPP 08 Problem Sheet</p>
+<p class="font-label-sm text-label-sm text-outline">15 Problems • 840 KB PDF</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] group-hover:text-primary transition-colors">download</span>
+</a>
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<div class="truncate">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate group-hover:text-primary transition-colors">Handwritten Faculty Notes</p>
+<p class="font-label-sm text-label-sm text-outline">Class Annotations • 5.2 MB PDF</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] group-hover:text-primary transition-colors">download</span>
+</a>
+</div>
+</div>
+<!-- Module Mastery Metrics -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Checkpoint Metrics</h4>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm bg-surface rounded-lg flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">7 / 14</span>
+<span class="font-label-sm text-label-sm text-outline">Lectures Studied</span>
+</div>
+<div class="p-space-sm bg-surface rounded-lg flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">1 / 2</span>
+<span class="font-label-sm text-label-sm text-outline">Tasks Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm bg-secondary-fixed/30 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px]">event</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Live Faculty Q&amp;A</span>
+<span class="font-body-sm text-body-sm text-outline">Thursday at 6:00 PM IST</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  function toggleModule(id, btn) {
+    const target = document.getElementById(id);
+    const icon = btn.querySelector('.material-symbols-outlined:last-child');
+    if (target.classList.contains('hidden')) {
+      target.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    } else {
+      target.classList.add('hidden');
+      if (icon) icon.style.transform = 'rotate(0deg)';
+    }
+  }
+</script></main></div></body></html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#5c647a","on-secondary":"#ffffff","on-primary-container":"#cbe4ff","surface":"#f8f9ff","primary-fixed-dim":"#94ccff","primary-fixed":"#cde5ff","on-error-container":"#93000a","error-container":"#ffdad6","tertiary":"#444c62","secondary-fixed":"#c4e7ff","primary-container":"#0369a1","on-secondary-fixed":"#001e2c","on-tertiary-fixed":"#131b2e","surface-tint":"#006399","secondary-fixed-dim":"#7bd0ff","on-primary":"#ffffff","surface-dim":"#cbdbf5","inverse-primary":"#94ccff","on-tertiary":"#ffffff","on-primary-fixed-variant":"#004b74","tertiary-fixed-dim":"#bec6e0","tertiary-fixed":"#dae2fd","error":"#ba1a1a","surface-container":"#e5eeff","inverse-surface":"#213145","surface-bright":"#f8f9ff","primary":"#00507d","on-tertiary-container":"#dae1fc","inverse-on-surface":"#eaf1ff","secondary-container":"#40c2fd","surface-variant":"#d3e4fe","on-surface":"#0b1c30","on-error":"#ffffff","surface-container-highest":"#d3e4fe","on-primary-fixed":"#001d32","surface-container-high":"#dce9ff","on-secondary-fixed-variant":"#004c69","background":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-container":"#004d6a","on-background":"#0b1c30","on-tertiary-fixed-variant":"#3f465c","secondary":"#00668a","outline-variant":"#c0c7d1","outline":"#707881","surface-container-low":"#eff4ff","on-surface-variant":"#40474f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-2xl":"4rem","space-xl":"2.5rem","space-sm":"0.5rem",margin:"1.25rem","space-xs":"0.25rem","margin-desktop":"4rem","space-md":"1rem","space-lg":"1.5rem",gutter:"1.5rem","gutter-desktop":"2.5rem"},fontFamily:{"headline-md":["Newsreader"],"label-md":["Manrope"],"body-md":["Manrope"],"headline-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"label-sm":["Manrope"],"display-lg":["Newsreader"],"body-sm":["Manrope"],"headline-lg":["Newsreader"],"body-lg":["Manrope"],"headline-lg-mobile":["Newsreader"]},fontSize:{"headline-md":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}],"label-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["1rem",{lineHeight:"1.625rem",fontWeight:"400"}],"headline-sm":["1.25rem",{lineHeight:"1.75rem",fontWeight:"500"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.015em",fontWeight:"400"}],"label-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.03em",fontWeight:"600"}],"display-lg":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-sm":["0.875rem",{lineHeight:"1.375rem",fontWeight:"400"}],"headline-lg":["2.5rem",{lineHeight:"3rem",letterSpacing:"-0.015em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.875rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.01em",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 flex items-center gap-space-sm px-space-lg"><div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">eco</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-medium">Aura</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-medium tracking-wide">2026</span></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-surface-container-low text-primary font-semibold"><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Learn</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-courses" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span>My Courses</a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-surface-container-low text-primary font-semibold" data-path="learning" href="#"><span class="material-symbols-outlined text-[18px]">play_circle</span>Learning</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Practise</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="practice" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span>Practice</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="revision" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span>Revision</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Test</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span>Tests</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="results-and-analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span>Results &amp; Analytics</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Discover</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[18px]">folder_open</span>Resources</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="recommendations" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span>Recommendations</a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">Account</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-purchases" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span>My Purchases</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span>Notifications</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[18px]">person</span>Profile</a></div></nav></div></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-medium leading-tight">Aura Student Learning</span><span class="font-body-sm text-body-sm text-outline leading-tight">JEE Advanced 2027</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="flex items-center gap-space-xs text-on-surface whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-on-surface">Rahul Sharma</span><span class="text-outline text-body-sm">·</span><span class="font-body-sm text-body-sm text-on-surface-variant">JEE Advanced 2027 Enrolled</span></div><div class="relative flex-1 hidden md:flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline border-0 focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Jump to concept, course, lecture, or formula... (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-space-md md:px-space-xl py-space-xl flex flex-col gap-space-xl">
+<!-- Top Editorial Header & Breadcrumb Context -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">My Courses</a>
+<span class="text-outline">/</span>
+<span class="text-on-surface font-medium truncate max-w-xs md:max-w-md">Physics Mastery: Mechanics to Modern Physics</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-semibold">Overview</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="max-w-3xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold tracking-wide flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              CORE SYLLABUS 2027
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Course Code: PHY-804</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-normal leading-tight">
+            Physics Mastery: Mechanics to Modern Physics
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+            Rigorous deep-dive into classical mechanics, rotational dynamics, electromagnetism, and modern physics designed for JEE Advanced Top 500 aspirants.
+          </p>
+</div>
+<!-- Master Actions -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="px-space-lg py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+            Download Syllabus PDF
+          </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors shadow-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+            Continue Learning: Lecture 08
+          </button>
+</div>
+</div>
+<!-- Metadata Strip -->
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">account_circle</span>
+<span>Faculty: <strong class="text-on-surface font-semibold">Prof. Arvind Verma</strong></span>
+</div>
+<span class="text-outline">·</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">school</span>
+<span>Batch: <span class="text-on-surface font-medium">Lakshya 2027 Alpha</span></span>
+</div>
+<span class="text-outline">·</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-outline">event_available</span>
+<span>Enrolled: July 2025</span>
+</div>
+<span class="text-outline">·</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-outline">verified</span>
+<span>Validity: June 2027</span>
+</div>
+</div>
+</div>
+<!-- Active High-Elevation Progress Banner & Visual Analytics -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-lg relative overflow-hidden">
+<!-- Ambient subtle refraction glow -->
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-primary-fixed/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-space-lg">
+<div class="relative w-20 h-20 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container" cx="36" cy="36" fill="none" r="30" stroke="currentColor" stroke-width="5"></circle>
+<circle class="text-primary-container" cx="36" cy="36" fill="none" r="30" stroke="currentColor" stroke-dasharray="188.4" stroke-dashoffset="60.28" stroke-linecap="round" stroke-width="5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium leading-none">68%</span>
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider mt-0.5">Overall</span>
+</div>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-primary font-semibold">Current Pace On Track</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curriculum Completion Metrics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-medium">48 of 70 lessons finalized</strong>, 14 of 16 weekly graded problem sheets evaluated.
+          </p>
+</div>
+</div>
+<!-- Linear Micro Progress Bar & Secondary Mini Metrics -->
+<div class="flex flex-col lg:w-96 gap-space-xs">
+<div class="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Calculus &amp; Mechanics Mastery Index</span>
+<span class="text-primary-container font-semibold">Rank 94th Percentile</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700 ease-out" style="width: 68%;"></div>
+</div>
+<div class="flex justify-between items-center text-outline font-label-sm text-[11px] pt-1">
+<span>Target pace: 4 lessons/week</span>
+<span>Next target checkpoint: 75% by Nov 15</span>
+</div>
+</div>
+</div>
+<!-- Main Two-Column Structure -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Content Narrative & Live Session Anchor (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Next Live Session Module -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col gap-space-md relative shadow-sm overflow-hidden">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">sensors</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Upcoming Live Seminar</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Interactive Rotational Equilibrium Seminar</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold whitespace-nowrap">
+              In 2 Days
+            </span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="px-3 py-2 rounded-lg bg-surface-container text-center flex flex-col items-center justify-center min-w-[54px]">
+<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">THU</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium leading-tight">24</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Live Interactive Problem Session</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Thursday, 6:00 PM – 7:30 PM IST · Prof. Arvind Verma</span>
+</div>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors whitespace-nowrap shadow-sm">
+              Add to Calendar
+            </button>
+</div>
+</div>
+<!-- Course Description & Pedagogical Framework -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Academic Blueprint &amp; Pedagogy</h2>
+<span class="font-label-sm text-label-sm text-outline">Syllabus Ver 3.4</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Engineered exclusively for students aiming for single-digit and double-digit ranks in the JEE Advanced. This course breaks classical intuition down to first mathematical principles, emphasizing rigorous differential coordinate transformations, non-inertial reference systems, and variational Hamiltonian approaches.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">menu_book</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rigorous Derivations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Calculus-heavy proofs from basic kinematic equations to Lagrangian dynamics.</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">assignment_turned_in</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Graded Problem Sets</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">45 tiered daily problem sheets mirroring Irodov &amp; Krotov difficulty tiers.</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">record_voice_over</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Weekly Live Clinics</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Doubt clearing with continuous interactive Q&amp;A and live student whiteboard submissions.</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">auto_graph</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Precision Benchmarking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time cohort ranking and error-log vectorization after each chapter test.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Course Announcements -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Announcements &amp; Bulletins</h2>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline">View archive (18)</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Formula cheat-sheet for Angular Invariants</span>
+<span class="font-label-sm text-[12px] text-outline">Yesterday, 4:15 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Supplement summary for Lecture 08 covering tensor moments of inertia and non-principal axes rotation has been uploaded to study resources.
+                </p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Live Seminar Rescheduled</span>
+<span class="font-label-sm text-[12px] text-outline">3 days ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Scheduled live seminar on Gyroscopic Precession was moved forward to Thursday 6:00 PM IST to accommodate additional problem review requests.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Quick Access Snapshot, Faculty Card & Mentorship (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Course Snapshot Stat Mosaic -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Course Asset Registry</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">Active</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-medium">70</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Video Lectures</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">62 hours instructional runtime</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-medium">45</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">DPP Sheets</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Over 900 curated problems</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-medium">12</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Milestone Tests</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Computer Based (CBT) format</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-medium">98.4%</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Accuracy Target</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cohort benchmark standard</span>
+</div>
+</div>
+<div class="pt-space-xs flex flex-col gap-2">
+<a class="p-space-sm rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between text-on-surface group" href="#">
+<span class="flex items-center gap-space-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">folder_special</span>
+                Course Resource Repository
+              </span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">arrow_forward</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface hover:bg-surface-container-low transition-colors flex items-center justify-between text-on-surface group" href="#">
+<span class="flex items-center gap-space-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">psychology</span>
+                Formula Master Reference Deck
+              </span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Academic Mentorship & Faculty Details -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface">Instruction &amp; Mentorship</span>
+<!-- Lead Professor Profile -->
+<div class="flex items-start gap-space-md pb-space-sm">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm shrink-0" data-alt="Portrait of senior physics professor Arvind Verma, warm natural lighting in an academic library setting, wearing formal navy tweed, serene intellectual presence, clean high-end photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYlNEG79LMswYY1NBHqwQG70hpmjji3x7CVv0PXf5lJDwzExf2IAWyZDid6UjJZYcK0tdgpGSeIPsRL1D81NdNi1u7Q4HzYdDjs2FmeN0vULbmUyUM8ghDClZOlvY5ZZnoHLfg8Il4ts-GbO5ZT-mFTab1eb0Y0n0gwqeSClVVnsebxkozhukb6Pc1EPtm8h59xrbKkwe0-zLtrNmuE4RRG5quQ0qsII6OP7DRDPF2z2bh1rIAsJO"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Prof. Arvind Verma</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Head of Physics · Lakshya Faculty</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                Former IIT Kanpur Faculty with 22 years of experience coaching 47 Top-50 JEE Advanced rankers.
+              </p>
+</div>
+</div>
+<!-- Dedicated Mentor Card -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<img class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="Close up headshot of Dr K Ramanathan, academic mentor with glasses, minimalist white laboratory background, thoughtful friendly expression, editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-rB26pB-e8U86Yqn-xOn9GsScnv6tiDi7HLH0Kmv3XJU5GzuD1qOtvxUY3RnOGx_RL7K7iYXmO6Zaf903j9-M8XHTlkn5qDVLq6vxgh1EQ60CiJgNVNvUyMT0IQnbdVV8Y0SQqnwGRwwhYb8YfGvDFjnZV5jQ0bv70l6Qpd2-epiSOaCquZTtbpU8GgNJxxLaY4FCuxKPuUbKVzzeXkks-DPf5p46QEwMVVdf1V7VAD9dzNdiCzVM"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dr. K. Ramanathan</span>
+<span class="px-2 py-0.5 rounded text-[11px] bg-surface-container font-medium text-primary">Your Mentor</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assigned Academic Specialist</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Reviews your weekly error notebooks and schedules 1-on-1 strategy sessions.
+              </p>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold hover:bg-surface transition-colors shadow-sm">
+                  Request 1-on-1 Review
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekly Practice Routine Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Recommended Weekly Rhythm</span>
+<span class="material-symbols-outlined text-outline text-[18px]">sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Complete Monday &amp; Wednesday lectures before Thursday live session. Dedicate Saturday morning to the Chapter Milestone diagnostic.
+          </p>
+<div class="mt-2 p-space-sm rounded-lg bg-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface">Average study time: 8.5 hrs / week</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Curriculum Modules Section (Complete Chapter Progression) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Curriculum Modules &amp; Chapter Status</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sequential mastery track tailored for high-accuracy concept building</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-3 py-1 rounded-full bg-surface text-on-surface font-label-sm text-label-sm font-medium">
+            3 of 6 Chapters Unlocked
+          </span>
+</div>
+</div>
+<!-- Chapter Cards List -->
+<div class="flex flex-col gap-space-md">
+<!-- Module 01: Completed -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">01. Foundations &amp; Kinematics</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold">100% Completed</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">12 of 12 lessons finalized · Vector calculus, relative motion, constrained geometry</span>
+<div class="w-48 bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Score: 96%</span>
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium hover:bg-surface transition-colors shadow-sm">
+              Review
+            </button>
+</div>
+</div>
+<!-- Module 02: Completed -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">02. Newton's Laws of Motion &amp; Work-Energy</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold">100% Completed</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">14 of 14 lessons finalized · Conservative fields, impulse-momentum, variable mass systems</span>
+<div class="w-48 bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Score: 92%</span>
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium hover:bg-surface transition-colors shadow-sm">
+              Review
+            </button>
+</div>
+</div>
+<!-- Module 03: Active / In Progress -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md relative overflow-hidden ring-1 ring-primary/20">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-1">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">03. Rotational Dynamics &amp; Angular Momentum</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">In Progress</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Lecture 08 of 14</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Current focus: Moment of inertia tensors and non-inertial precession</span>
+<div class="flex items-center gap-3 mt-2">
+<div class="w-48 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 55%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">55%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+              Resume Module
+            </button>
+</div>
+</div>
+<!-- Module 04: Upcoming -->
+<div class="p-space-lg rounded-xl bg-surface-container-low opacity-90 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">lock_open</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">04. Gravitation &amp; Planetary Mechanics</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Unlocks next week</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">8 lessons · Kepler's laws, gravitational tidal field, escape velocity manifolds</span>
+<div class="w-48 bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-outline h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="font-label-sm text-label-sm text-outline">Unlocks Oct 28</span>
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-outline font-label-md text-label-md font-medium cursor-not-allowed">
+              Preview
+            </button>
+</div>
+</div>
+<!-- Module 05: Upcoming -->
+<div class="p-space-lg rounded-xl bg-surface-container-low opacity-80 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">05. Fluid Mechanics &amp; Viscosity</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Upcoming</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">10 lessons · Bernoulli's equation, Reynolds numbers, laminar &amp; turbulent boundary layers</span>
+<div class="w-48 bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-outline h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="font-label-sm text-label-sm text-outline">Locked</span>
+</div>
+</div>
+<!-- Module 06: Locked -->
+<div class="p-space-lg rounded-xl bg-surface-container-low opacity-75 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">06. Electrodynamics &amp; Magnetism</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Term 2</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">12 lessons · Maxwell's formulations, electromagnetic induction, LC resonance</span>
+<div class="w-48 bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-outline h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="font-label-sm text-label-sm text-outline">Locked</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
