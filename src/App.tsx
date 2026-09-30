@@ -1,30 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/common/Header';
 import { Hero } from './components/home/Hero';
 import { ConnectedJourney } from './components/home/ConnectedJourney';
-import { CourseShowcase } from './components/home/CourseShowcase';
-import { TestSeriesShowcase } from './components/home/TestSeriesShowcase';
-import { PracticeRevisionShowcase } from './components/home/PracticeRevisionShowcase';
-import { PlatformInterfacePreview } from './components/home/PlatformInterfacePreview';
-import { FreeResourceVault } from './components/home/FreeResourceVault';
+import { CoreExperiences } from './components/home/CoreExperiences';
+import { WhyStudentsChooseUs } from './components/home/WhyStudentsChooseUs';
 import { VerifiedResults } from './components/home/VerifiedResults';
+import { HowItWorks } from './components/home/HowItWorks';
 import { FAQAccordion } from './components/home/FAQAccordion';
 import { ConversionCTA } from './components/home/ConversionCTA';
+import { ExaminationListingScreen } from './components/examinations/ExaminationListingScreen';
+import { PublicCourseListingScreen } from './components/courses/PublicCourseListingScreen';
+import { PublicCourseDetailsScreen } from './components/courses/PublicCourseDetailsScreen';
+import { PublicSampleTestListingScreen } from './components/tests/PublicSampleTestListingScreen';
+import { PublicSampleTestDetailsScreen } from './components/tests/PublicSampleTestDetailsScreen';
+import { AboutUsScreen } from './components/about/AboutUsScreen';
+import { ContactUsScreen } from './components/contact/ContactUsScreen';
+import { FAQScreen } from './components/faq/FAQScreen';
 import { Footer } from './components/common/Footer';
 import { SearchModal } from './components/common/SearchModal';
-import { AuthModal } from './components/modals/AuthModal';
-import { ExaminationType, CohortYearType, PreparationNeed } from './types';
+import { LoginModal } from './components/modals/LoginModal';
+import { SignupScreen } from './components/auth/SignupScreen';
+import { ExaminationType, ScreenType } from './types';
 
 export const App: React.FC = () => {
-  // Discovery State
+  // Navigation & Screen State
+  const [currentScreen, setCurrentScreen] = useState<ScreenType>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase().replace('/', '');
+      const hash = window.location.hash.toLowerCase().replace('#', '');
+      if (path === 'about' || hash === 'about') return 'about';
+      if (path === 'contact' || hash === 'contact') return 'contact';
+      if (path === 'faq' || hash === 'faq') return 'faq';
+      if (path === 'examinations' || hash === 'examinations') return 'examinations';
+      if (path === 'courses' || hash === 'courses') return 'courses';
+      if (path === 'tests' || hash === 'tests') return 'tests';
+      if (path === 'signup' || hash === 'signup') return 'signup';
+    }
+    return 'home';
+  });
+
+  // Discovery & Track State
   const [selectedExam, setSelectedExam] = useState<ExaminationType>('jee-adv');
-  const [selectedYear, setSelectedYear] = useState<CohortYearType>(2026);
-  const [selectedObjective, setSelectedObjective] = useState<PreparationNeed>('learning');
+  const [selectedCourseId, setSelectedCourseId] = useState<string>('pub-phy-kinematics');
+  const [selectedTestId, setSelectedTestId] = useState<string>('test-jee-main-phy-01');
 
   // Modals & Auth State
   const [searchOpen, setSearchOpen] = useState(false);
-  const [authOpen, setAuthOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ name: string; email: string } | null>(null);
 
   // Status Toast State
@@ -38,47 +60,97 @@ export const App: React.FC = () => {
   };
 
   const handleOpenAuth = (mode: 'login' | 'register') => {
-    setAuthMode(mode);
-    setAuthOpen(true);
+    if (mode === 'login') {
+      setLoginModalOpen(true);
+    } else {
+      handleNavigateScreen('signup');
+    }
   };
 
-  const handleNavigateObjective = (targetPath: string) => {
-    const el = document.querySelector(targetPath);
+  const handleScrollTo = (targetSelector: string) => {
+    const el = document.querySelector(targetSelector);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const handleEnrolCourse = (courseId: string) => {
-    if (!currentUser) {
-      showToast(`Please sign in or create an account to enrol.`);
-      handleOpenAuth('register');
+  const handleNavigateScreen = (screen: ScreenType, anchor?: string) => {
+    setCurrentScreen(screen);
+    if (screen === 'home') {
+      if (typeof window !== 'undefined') {
+        window.history.pushState({ screen }, '', anchor || '/');
+      }
+      if (anchor) {
+        setTimeout(() => handleScrollTo(anchor), 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } else {
-      showToast(`Initiating secure checkout for course ${courseId}...`);
+      if (typeof window !== 'undefined') {
+        window.history.pushState({ screen }, '', `/${screen}`);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
-  const handleExploreTestSeries = () => {
-    showToast('Redirecting to full mock schedule & test series catalog...');
+  // Browser Back/Forward navigation support
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      const stateScreen = e.state?.screen;
+      if (stateScreen) {
+        setCurrentScreen(stateScreen);
+        return;
+      }
+      const path = window.location.pathname.toLowerCase().replace('/', '');
+      if (
+        path === 'about' ||
+        path === 'contact' ||
+        path === 'faq' ||
+        path === 'examinations' ||
+        path === 'courses' ||
+        path === 'tests' ||
+        path === 'signup'
+      ) {
+        setCurrentScreen(path as ScreenType);
+      } else {
+        setCurrentScreen('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleExploreExamination = (examId: ExaminationType) => {
+    setSelectedExam(examId);
+    showToast(`Selected ${examId.toUpperCase()}. Transitioning toward Examination Details (Screen 3)...`);
   };
 
-  const handleTrySampleMock = () => {
-    showToast('Loading free sample proctored CBT diagnostic environment...');
+  const handleExploreCourse = (courseId: string) => {
+    setSelectedCourseId(courseId);
+    setCurrentScreen('course-details');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleStartDiagnostic = () => {
-    showToast('Initializing 10-minute diagnostic benchmark assessment...');
+  const handleStartLearning = (courseId: string) => {
+    showToast(`Start Learning initiated for course: ${courseId}. (Clean integration point for future access flow)`);
   };
 
-  const handleDownloadResource = (id: string) => {
-    showToast(`Downloading verified formula compendium (${id})...`);
+  const handleExploreTest = (testId: string) => {
+    setSelectedTestId(testId);
+    setCurrentScreen('test-details');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleEnrollToExploreTest = (testId: string) => {
+    showToast(`"Enroll to Explore More" triggered for test: ${testId}. (Clean integration point for future authentication/access flow)`);
   };
 
   return (
-    <div className="min-h-screen bg-background text-on-surface flex flex-col selection:bg-surface-variant selection:text-primary">
+    <div className="min-h-screen bg-background text-on-surface flex flex-col selection:bg-surface-variant selection:text-primary font-sans">
       {/* Toast Notification Banner */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-lg shadow-elevated border border-outline-variant/30 flex items-center gap-3 text-xs animate-in slide-in-from-bottom duration-200">
+        <div className="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-xl shadow-elevated border border-outline-variant/30 flex items-center gap-3 text-xs animate-in slide-in-from-bottom duration-200">
           <span className="material-symbols-outlined text-[18px] text-secondary-container">
             info
           </span>
@@ -86,14 +158,17 @@ export const App: React.FC = () => {
           <button
             onClick={() => setToastMessage(null)}
             className="ml-2 text-inverse-on-surface/60 hover:text-inverse-on-surface"
+            aria-label="Dismiss toast"
           >
             <span className="material-symbols-outlined text-[16px]">close</span>
           </button>
         </div>
       )}
 
-      {/* Persistent Site Header */}
+      {/* Global Navigation Header (Consistently reused across screens) */}
       <Header
+        currentScreen={currentScreen}
+        onNavigateScreen={handleNavigateScreen}
         onOpenSearch={() => setSearchOpen(true)}
         onOpenAuth={handleOpenAuth}
         currentUser={currentUser}
@@ -103,82 +178,217 @@ export const App: React.FC = () => {
         }}
       />
 
-      {/* Main Public Home Content */}
-      <main className="w-full pt-20">
-        {/* Subtle Ambient Light Strip */}
-        <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+      {/* Conditional Screen Rendering */}
+      {currentScreen === 'home' ? (
+        /* SCREEN 1: Approved Guest Home Page */
+        <main className="w-full pt-20">
+          {/* Subtle Ambient Light Strip */}
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
 
-        {/* 1. Hero & Guided Profiler */}
-        <Hero
-          selectedExam={selectedExam}
-          selectedYear={selectedYear}
-          selectedObjective={selectedObjective}
-          onSelectExam={setSelectedExam}
-          onSelectYear={setSelectedYear}
-          onSelectObjective={setSelectedObjective}
-          onNavigateObjective={handleNavigateObjective}
-          onStartDiagnostic={handleStartDiagnostic}
-        />
+          {/* Section 2: Outcome-Driven Hero ('Get Started', 'Explore Examinations') */}
+          <Hero
+            onStartPreparation={() => handleNavigateScreen('signup')}
+            onSeeHowItWorks={() => {
+              setCurrentScreen('examinations');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            selectedExam={selectedExam}
+            onSelectExam={(exam) => {
+              setSelectedExam(exam);
+              showToast(`Target examination set to ${exam.toUpperCase()}`);
+            }}
+          />
 
-        {/* 2. Connected Preparation Journey (6-Stage Continuum) */}
-        <ConnectedJourney />
+          {/* Section 3: The Core Preparation Journey (Enrolled Student Value Proposition) */}
+          <ConnectedJourney />
 
-        {/* 3. Featured Courses & Batches Showcase */}
-        <CourseShowcase onEnrolCourse={handleEnrolCourse} />
+          {/* Section 4: Three Core Experiences (Benefits: Learn, Practice, Improve through Institute & Branch) */}
+          <CoreExperiences />
 
-        {/* 4. High-Stakes Proctored Mock Test Series */}
-        <TestSeriesShowcase
-          onExploreTestSeries={handleExploreTestSeries}
-          onTrySampleMock={handleTrySampleMock}
-        />
+          {/* Section 5: Why Students Use The Platform (Benefit Storytelling & Sanctuary Contrast) */}
+          <WhyStudentsChooseUs />
 
-        {/* 5. Deliberate Practice & Revision Suite */}
-        <PracticeRevisionShowcase
-          onOpenPractice={() => showToast('Opening derivation workspace mode...')}
-          onOpenQuestionBank={() => showToast('Accessing 12,500+ past year questions repository...')}
-        />
+          {/* Section 6: Student Success (Authentic Verified Mark Recovery & Composure Stories) */}
+          <VerifiedResults />
 
-        {/* 6. Sanctuary Interface Demo & Focus Protection */}
-        <PlatformInterfacePreview />
+          {/* Section 7: How It Works (Guest → Account → Institute/Branch → Course → Student) */}
+          <HowItWorks onStart={() => handleNavigateScreen('signup')} />
 
-        {/* 7. Open Study Vault (Free Compendiums & PDFs) */}
-        <FreeResourceVault onDownloadResource={handleDownloadResource} />
+          {/* Section 8: FAQ & Final Conversion CTA ('Your preparation starts here.' + 'Get Started') */}
+          <FAQAccordion />
+          <ConversionCTA
+            onGetStarted={() => handleNavigateScreen('signup')}
+            onLogin={() => setLoginModalOpen(true)}
+          />
+        </main>
+      ) : currentScreen === 'examinations' ? (
+        /* SCREEN 2: Public Examination Listing Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <ExaminationListingScreen
+            onNavigateHome={() => {
+              setCurrentScreen('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onExploreExamination={handleExploreExamination}
+          />
+        </main>
+      ) : currentScreen === 'courses' ? (
+        /* SCREEN: Public Free Course Listing Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <PublicCourseListingScreen
+            onNavigateHome={() => {
+              setCurrentScreen('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onExploreCourse={handleExploreCourse}
+            onNavigateExaminations={() => {
+              setCurrentScreen('examinations');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        </main>
+      ) : currentScreen === 'course-details' ? (
+        /* SCREEN: Public Free Course Details Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <PublicCourseDetailsScreen
+            courseId={selectedCourseId}
+            onNavigateHome={() => {
+              setCurrentScreen('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onBackToListing={() => {
+              setCurrentScreen('courses');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onSelectRelatedCourse={(newId) => {
+              setSelectedCourseId(newId);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onStartLearning={handleStartLearning}
+            onNavigateExaminations={() => {
+              setCurrentScreen('examinations');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        </main>
+      ) : currentScreen === 'tests' ? (
+        /* SCREEN: Public Sample Test Listing Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <PublicSampleTestListingScreen
+            onNavigateHome={() => {
+              setCurrentScreen('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onEnrollToExplore={handleEnrollToExploreTest}
+            onExploreTest={handleExploreTest}
+            onNavigateExaminations={() => {
+              setCurrentScreen('examinations');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        </main>
+      ) : currentScreen === 'test-details' ? (
+        /* SCREEN: Public Sample Test Details Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <PublicSampleTestDetailsScreen
+            testId={selectedTestId}
+            onNavigateHome={() => handleNavigateScreen('home')}
+            onBackToListing={() => handleNavigateScreen('tests')}
+            onSelectRelatedTest={(newId) => {
+              setSelectedTestId(newId);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onEnrollToExplore={handleEnrollToExploreTest}
+            onNavigateExaminations={() => handleNavigateScreen('examinations')}
+          />
+        </main>
+      ) : currentScreen === 'about' ? (
+        /* SCREEN: About Us Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <AboutUsScreen
+            onNavigateHome={() => handleNavigateScreen('home')}
+            onExploreExaminations={() => handleNavigateScreen('examinations')}
+            onStartPreparation={() => handleNavigateScreen('signup')}
+          />
+        </main>
+      ) : currentScreen === 'contact' ? (
+        /* SCREEN: Contact Us Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <ContactUsScreen
+            onNavigateHome={() => handleNavigateScreen('home')}
+            onNavigateFAQ={() => handleNavigateScreen('faq')}
+          />
+        </main>
+      ) : currentScreen === 'faq' ? (
+        /* SCREEN: Frequently Asked Questions Screen */
+        <main className="w-full pt-20">
+          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <FAQScreen
+            onNavigateHome={() => handleNavigateScreen('home')}
+            onNavigateContact={() => handleNavigateScreen('contact')}
+          />
+        </main>
+      ) : currentScreen === 'signup' ? (
+        /* SCREEN: Dedicated Student Signup Screen (Standalone Page) */
+        <main className="w-full pt-20">
+          <SignupScreen
+            onNavigateHome={() => handleNavigateScreen('home')}
+            onOpenLogin={() => setLoginModalOpen(true)}
+            onSignupSuccess={(user) => {
+              setCurrentUser(user);
+              showToast(`Welcome to Aura Sanctuary, ${user.name}!`);
+            }}
+            onNavigateExaminations={() => handleNavigateScreen('examinations')}
+          />
+        </main>
+      ) : null}
 
-        {/* 8. Verified Candidate Reflections */}
-        <VerifiedResults />
+      {/* Public Platform Footer (Reused across screens) */}
+      <Footer onNavigateScreen={handleNavigateScreen} />
 
-        {/* 9. Frequently Addressed Questions (Accordion) */}
-        <FAQAccordion />
-
-        {/* 10. Final Calm Conversion Banner */}
-        <ConversionCTA
-          onRegister={() => handleOpenAuth('register')}
-          onExplore={() => handleNavigateObjective('#courses-section')}
-        />
-      </main>
-
-      {/* Platform Footer */}
-      <Footer />
-
-      {/* Global Search Modal */}
+      {/* Search Modal */}
       <SearchModal
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
-        onNavigate={(href) => handleNavigateObjective(href)}
+        onNavigate={(href) => {
+          if (href === '#about' || href.includes('about')) {
+            handleNavigateScreen('about');
+          } else if (href === '#contact' || href.includes('contact')) {
+            handleNavigateScreen('contact');
+          } else if (href === '#faq' || href.includes('faq')) {
+            handleNavigateScreen('faq');
+          } else if (href === '#examinations' || href.includes('exam')) {
+            handleNavigateScreen('examinations');
+          } else if (href === '#courses' || href.includes('course')) {
+            handleNavigateScreen('courses');
+          } else if (href === '#tests' || href.includes('test')) {
+            handleNavigateScreen('tests');
+          } else if (href === '#signup' || href.includes('signup') || href.includes('register')) {
+            handleNavigateScreen('signup');
+          } else {
+            handleNavigateScreen('home', href);
+          }
+        }}
       />
 
-      {/* Authentication & Profile Modal */}
-      <AuthModal
-        isOpen={authOpen}
-        onClose={() => setAuthOpen(false)}
-        initialMode={authMode}
-        onSuccess={(email) => {
-          const name = email.split('@')[0];
-          setCurrentUser({
-            name: name.charAt(0).toUpperCase() + name.slice(1),
-            email,
-          });
-          showToast(`Welcome to Aura Sanctuary, ${email}`);
+      {/* Reusable Login Modal */}
+      <LoginModal
+        isOpen={loginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+        onSuccess={(user) => {
+          setCurrentUser(user);
+          showToast(`Welcome to Aura Sanctuary, ${user.name}!`);
+        }}
+        onNavigateSignup={() => {
+          setLoginModalOpen(false);
+          handleNavigateScreen('signup');
         }}
       />
     </div>
