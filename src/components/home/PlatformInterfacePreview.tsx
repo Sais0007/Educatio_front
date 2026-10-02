@@ -28,7 +28,7 @@ export const PlatformInterfacePreview: React.FC = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-outline-variant/80" />
               <div className="w-2.5 h-2.5 rounded-full bg-outline-variant/80" />
               <span className="ml-3 text-[11px] font-mono text-outline">
-                workspace.aurasanctuary.app/study
+                workspace.educationplatform.app/study
               </span>
             </div>
 

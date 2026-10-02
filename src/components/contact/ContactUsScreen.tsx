@@ -62,7 +62,7 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
       newErrors.email = 'Please enter a valid email address (e.g. scholar@domain.com).';
     }
 
-    // Mobile Validation (allows international and domestic numbers between 7 and 15 digits)
+    // Mobile Validation
     const phoneDigits = formData.mobile.replace(/[\s\-\(\)\+]/g, '');
     if (!formData.mobile.trim()) {
       newErrors.mobile = 'Please enter your mobile contact number.';
@@ -99,7 +99,6 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear specific field error as user types
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -145,7 +144,6 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
     }
   };
 
-  // Reset form to submit another request
   const handleReset = () => {
     setSubmittedTicketId(null);
     setSubmitError(null);
@@ -161,26 +159,26 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
   };
 
   return (
-    <div className="w-full min-h-screen bg-background text-on-surface">
+    <div className="w-full min-h-screen bg-[#F5F8FC] text-[#12365A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-14">
         {/* Contextual Breadcrumb */}
         <Breadcrumb items={breadcrumbItems} />
 
         {/* 1. Header Hero */}
         <section aria-labelledby="contact-heading" className="text-left mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#eff4ff] text-[#0369a1] text-xs font-bold uppercase tracking-wider border border-[#cde5ff]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-[#00A8F0] text-xs font-semibold uppercase tracking-wider border border-[#00A8F0]/20">
             <span className="material-symbols-outlined text-[15px]">support_agent</span>
             <span>Support &amp; Academic Desk</span>
           </div>
 
           <h1
             id="contact-heading"
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0b1c30] tracking-tight leading-tight font-normal"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#12365A] tracking-tight leading-tight font-bold"
           >
             Contact Us
           </h1>
 
-          <p className="text-base sm:text-lg text-[#40474f] max-w-2xl leading-relaxed font-sans font-normal">
+          <p className="text-base sm:text-lg text-[#64748B] max-w-2xl leading-relaxed font-sans font-normal">
             Have questions regarding accredited Institute affiliations, academic curriculum tracks, or technical support? Submit a support ticket directly to our administration team.
           </p>
         </section>
@@ -191,38 +189,38 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
           <div className="lg:col-span-8">
             {submittedTicketId ? (
               /* Success State Confirmation Card */
-              <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#e2e8f0] shadow-xs text-left space-y-6 animate-scale-up">
-                <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
+              <div className="bg-white rounded-xl p-8 sm:p-12 border border-[#E2E8F0] shadow-sm text-left space-y-6">
+                <div className="w-16 h-16 rounded-xl bg-emerald-50 text-[#35C978] border border-emerald-200 flex items-center justify-center">
                   <span className="material-symbols-outlined text-[36px]">verified</span>
                 </div>
 
                 <div className="space-y-2">
                   <span className="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
-                    Ticket Dispatched to Super Admin
+                    Ticket Dispatched to Administration
                   </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl text-[#0b1c30] font-normal">
+                  <h2 className="font-serif text-2xl sm:text-3xl text-[#12365A] font-bold">
                     Your request has been submitted.
                   </h2>
-                  <p className="text-sm sm:text-base text-[#40474f] leading-relaxed font-sans">
-                    Our academic desk will review your enquiry and respond to <strong className="font-semibold text-[#0b1c30]">{formData.email}</strong> within 1–2 business days.
+                  <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-sans">
+                    Our academic desk will review your enquiry and respond to <strong className="font-semibold text-[#12365A]">{formData.email}</strong> within 1–2 business days.
                   </p>
                 </div>
 
                 {/* Ticket Details Summary */}
-                <div className="p-5 rounded-2xl bg-[#f8fafc] border border-[#e2e8f0] space-y-3 text-xs">
-                  <div className="flex items-center justify-between py-1 border-b border-[#e2e8f0]/60">
-                    <span className="text-[#64748b]">Reference Ticket ID</span>
-                    <span className="font-mono font-bold text-[#0369a1] text-sm">
+                <div className="p-5 rounded-lg bg-[#F5F8FC] border border-[#E2E8F0] space-y-3 text-xs">
+                  <div className="flex items-center justify-between py-1 border-b border-[#E2E8F0]">
+                    <span className="text-[#64748B]">Reference Ticket ID</span>
+                    <span className="font-mono font-bold text-[#00A8F0] text-sm">
                       {submittedTicketId}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between py-1 border-b border-[#e2e8f0]/60">
-                    <span className="text-[#64748b]">Subject</span>
-                    <span className="font-semibold text-[#0b1c30]">{formData.subject}</span>
+                  <div className="flex items-center justify-between py-1 border-b border-[#E2E8F0]">
+                    <span className="text-[#64748B]">Subject</span>
+                    <span className="font-semibold text-[#12365A]">{formData.subject}</span>
                   </div>
                   <div className="flex items-center justify-between py-1">
-                    <span className="text-[#64748b]">Category</span>
-                    <span className="capitalize font-semibold text-[#0b1c30]">
+                    <span className="text-[#64748B]">Category</span>
+                    <span className="capitalize font-semibold text-[#12365A]">
                       {formData.category}
                     </span>
                   </div>
@@ -232,14 +230,14 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                   <button
                     type="button"
                     onClick={onNavigateHome}
-                    className="px-6 py-3 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] text-white text-xs font-semibold shadow-xs transition-all"
+                    className="px-6 py-2.5 rounded-lg bg-[#00A8F0] hover:bg-[#0096D6] text-white text-xs font-semibold shadow-sm transition-all"
                   >
                     Back to Home
                   </button>
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="px-5 py-3 rounded-xl bg-[#eff4ff] hover:bg-[#e5eeff] text-[#0369a1] text-xs font-semibold border border-[#cde5ff] transition-all"
+                    className="px-5 py-2.5 rounded-lg bg-[#F5F8FC] hover:bg-sky-50 text-[#00A8F0] text-xs font-semibold border border-[#00A8F0]/30 transition-all"
                   >
                     Submit Another Request
                   </button>
@@ -247,20 +245,20 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
               </div>
             ) : (
               /* Ticket Submission Form */
-              <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#e2e8f0] shadow-xs text-left">
+              <div className="bg-white rounded-xl p-6 sm:p-10 border border-[#E2E8F0] shadow-sm text-left">
                 <div className="mb-6 space-y-1">
-                  <h2 className="font-serif text-2xl text-[#0b1c30] font-normal">
+                  <h2 className="font-serif text-2xl text-[#12365A] font-bold">
                     Submit a Support Ticket
                   </h2>
-                  <p className="text-xs sm:text-sm text-[#64748b]">
+                  <p className="text-xs sm:text-sm text-[#64748B]">
                     Please provide your contact information and query details below.
                   </p>
                 </div>
 
-                {/* Submission Failure Banner (Preserves User Input) */}
+                {/* Submission Failure Banner */}
                 {submitError && (
-                  <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs flex items-start gap-3">
-                    <span className="material-symbols-outlined text-[18px] text-red-600 shrink-0 mt-0.5">
+                  <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200 text-[#DC3545] text-xs flex items-start gap-3">
+                    <span className="material-symbols-outlined text-[18px] text-[#DC3545] shrink-0 mt-0.5">
                       error
                     </span>
                     <div className="space-y-1">
@@ -277,9 +275,9 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                     <div className="space-y-1.5">
                       <label
                         htmlFor="ticket-name"
-                        className="block text-xs font-semibold text-[#0b1c30]"
+                        className="block text-xs font-semibold text-[#12365A]"
                       >
-                        Full Name <span className="text-red-500">*</span>
+                        Full Name <span className="text-[#DC3545]">*</span>
                       </label>
                       <input
                         id="ticket-name"
@@ -289,16 +287,16 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                         onChange={handleChange}
                         disabled={isSubmitting}
                         placeholder="e.g. Vikram Sharma"
-                        className={`w-full px-4 py-2.5 rounded-xl border text-sm text-[#0b1c30] placeholder-[#94a3b8] bg-white transition-all focus:outline-none ${
+                        className={`w-full px-4 py-2.5 rounded-lg border text-sm text-[#12365A] placeholder-[#94A3B8] bg-white transition-all focus:outline-none ${
                           errors.name
-                            ? 'border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-                            : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe]'
+                            ? 'border-red-400 focus:border-[#DC3545] focus:ring-1 focus:ring-[#DC3545]'
+                            : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0]'
                         }`}
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? 'error-name' : undefined}
                       />
                       {errors.name && (
-                        <p id="error-name" className="text-[11px] text-red-600 font-medium">
+                        <p id="error-name" className="text-[11px] text-[#DC3545] font-medium">
                           {errors.name}
                         </p>
                       )}
@@ -308,9 +306,9 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                     <div className="space-y-1.5">
                       <label
                         htmlFor="ticket-email"
-                        className="block text-xs font-semibold text-[#0b1c30]"
+                        className="block text-xs font-semibold text-[#12365A]"
                       >
-                        Email Address <span className="text-red-500">*</span>
+                        Email Address <span className="text-[#DC3545]">*</span>
                       </label>
                       <input
                         id="ticket-email"
@@ -320,16 +318,16 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                         onChange={handleChange}
                         disabled={isSubmitting}
                         placeholder="e.g. vikram@domain.com"
-                        className={`w-full px-4 py-2.5 rounded-xl border text-sm text-[#0b1c30] placeholder-[#94a3b8] bg-white transition-all focus:outline-none ${
+                        className={`w-full px-4 py-2.5 rounded-lg border text-sm text-[#12365A] placeholder-[#94A3B8] bg-white transition-all focus:outline-none ${
                           errors.email
-                            ? 'border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-                            : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe]'
+                            ? 'border-red-400 focus:border-[#DC3545] focus:ring-1 focus:ring-[#DC3545]'
+                            : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0]'
                         }`}
                         aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? 'error-email' : undefined}
                       />
                       {errors.email && (
-                        <p id="error-email" className="text-[11px] text-red-600 font-medium">
+                        <p id="error-email" className="text-[11px] text-[#DC3545] font-medium">
                           {errors.email}
                         </p>
                       )}
@@ -342,9 +340,9 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                     <div className="space-y-1.5">
                       <label
                         htmlFor="ticket-mobile"
-                        className="block text-xs font-semibold text-[#0b1c30]"
+                        className="block text-xs font-semibold text-[#12365A]"
                       >
-                        Mobile Number <span className="text-red-500">*</span>
+                        Mobile Number <span className="text-[#DC3545]">*</span>
                       </label>
                       <input
                         id="ticket-mobile"
@@ -354,16 +352,16 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                         onChange={handleChange}
                         disabled={isSubmitting}
                         placeholder="+91 98765 43210"
-                        className={`w-full px-4 py-2.5 rounded-xl border text-sm text-[#0b1c30] placeholder-[#94a3b8] bg-white transition-all focus:outline-none ${
+                        className={`w-full px-4 py-2.5 rounded-lg border text-sm text-[#12365A] placeholder-[#94A3B8] bg-white transition-all focus:outline-none ${
                           errors.mobile
-                            ? 'border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-                            : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe]'
+                            ? 'border-red-400 focus:border-[#DC3545] focus:ring-1 focus:ring-[#DC3545]'
+                            : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0]'
                         }`}
                         aria-invalid={!!errors.mobile}
                         aria-describedby={errors.mobile ? 'error-mobile' : undefined}
                       />
                       {errors.mobile && (
-                        <p id="error-mobile" className="text-[11px] text-red-600 font-medium">
+                        <p id="error-mobile" className="text-[11px] text-[#DC3545] font-medium">
                           {errors.mobile}
                         </p>
                       )}
@@ -373,7 +371,7 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                     <div className="space-y-1.5">
                       <label
                         htmlFor="ticket-category"
-                        className="block text-xs font-semibold text-[#0b1c30]"
+                        className="block text-xs font-semibold text-[#12365A]"
                       >
                         Enquiry Category
                       </label>
@@ -383,10 +381,10 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                         value={formData.category}
                         onChange={handleChange}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#e2e8f0] text-sm text-[#0b1c30] bg-white focus:outline-none focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe] transition-all"
+                        className="w-full px-4 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#12365A] bg-white focus:outline-none focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0] transition-all cursor-pointer"
                       >
                         <option value="admissions">Admissions &amp; Institute Affiliation</option>
-                        <option value="academic">Academic &amp; Derivation Questions</option>
+                        <option value="academic">Academic &amp; Subject Inquiries</option>
                         <option value="technical">Technical &amp; CBT Portal Support</option>
                         <option value="general">General Information</option>
                       </select>
@@ -397,9 +395,9 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                   <div className="space-y-1.5">
                     <label
                       htmlFor="ticket-subject"
-                      className="block text-xs font-semibold text-[#0b1c30]"
+                      className="block text-xs font-semibold text-[#12365A]"
                     >
-                      Subject / Topic <span className="text-red-500">*</span>
+                      Subject / Topic <span className="text-[#DC3545]">*</span>
                     </label>
                     <input
                       id="ticket-subject"
@@ -408,17 +406,17 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                       value={formData.subject}
                       onChange={handleChange}
                       disabled={isSubmitting}
-                      placeholder="e.g. Enquiry regarding Pune Branch classroom cohort schedule"
-                      className={`w-full px-4 py-2.5 rounded-xl border text-sm text-[#0b1c30] placeholder-[#94a3b8] bg-white transition-all focus:outline-none ${
+                      placeholder="e.g. Enquiry regarding course schedule or syllabus details"
+                      className={`w-full px-4 py-2.5 rounded-lg border text-sm text-[#12365A] placeholder-[#94A3B8] bg-white transition-all focus:outline-none ${
                         errors.subject
-                          ? 'border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-                          : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe]'
+                          ? 'border-red-400 focus:border-[#DC3545] focus:ring-1 focus:ring-[#DC3545]'
+                          : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0]'
                       }`}
                       aria-invalid={!!errors.subject}
                       aria-describedby={errors.subject ? 'error-subject' : undefined}
                     />
                     {errors.subject && (
-                      <p id="error-subject" className="text-[11px] text-red-600 font-medium">
+                      <p id="error-subject" className="text-[11px] text-[#DC3545] font-medium">
                         {errors.subject}
                       </p>
                     )}
@@ -428,9 +426,9 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                   <div className="space-y-1.5">
                     <label
                       htmlFor="ticket-message"
-                      className="block text-xs font-semibold text-[#0b1c30]"
+                      className="block text-xs font-semibold text-[#12365A]"
                     >
-                      Message / Request Details <span className="text-red-500">*</span>
+                      Message / Request Details <span className="text-[#DC3545]">*</span>
                     </label>
                     <textarea
                       id="ticket-message"
@@ -440,17 +438,17 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                       onChange={handleChange}
                       disabled={isSubmitting}
                       placeholder="Please provide details about your query, student target examination, or technical requirement..."
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-[#0b1c30] placeholder-[#94a3b8] bg-white transition-all resize-y focus:outline-none ${
+                      className={`w-full px-4 py-3 rounded-lg border text-sm text-[#12365A] placeholder-[#94A3B8] bg-white transition-all resize-y focus:outline-none ${
                         errors.message
-                          ? 'border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-                          : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-2 focus:ring-[#e0f2fe]'
+                          ? 'border-red-400 focus:border-[#DC3545] focus:ring-1 focus:ring-[#DC3545]'
+                          : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-1 focus:ring-[#00A8F0]'
                       }`}
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? 'error-message' : undefined}
                     />
-                    <div className="flex items-center justify-between text-[11px] text-[#64748b]">
+                    <div className="flex items-center justify-between text-[11px] text-[#64748B]">
                       <span>{errors.message ? (
-                        <span id="error-message" className="text-red-600 font-medium">{errors.message}</span>
+                        <span id="error-message" className="text-[#DC3545] font-medium">{errors.message}</span>
                       ) : (
                         <span>Minimum 10 characters</span>
                       )}</span>
@@ -458,13 +456,13 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                     </div>
                   </div>
 
-                  {/* Submission Action & Anti-Abuse Notice */}
+                  {/* Submission Action */}
                   <div className="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`px-7 py-3.5 rounded-xl bg-[#0369a1] text-white text-sm font-semibold shadow-xs hover:bg-[#0284c7] transition-all duration-150 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#0369a1] focus:ring-offset-2 ${
-                        isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-card'
+                      className={`px-7 py-3 rounded-lg bg-[#00A8F0] text-white text-sm font-semibold shadow-sm hover:bg-[#0096D6] transition-all duration-150 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#00A8F0] focus:ring-offset-2 ${
+                        isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow'
                       }`}
                       aria-busy={isSubmitting}
                     >
@@ -481,8 +479,8 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                       )}
                     </button>
 
-                    <p className="text-[11px] text-[#64748b] leading-tight max-w-xs">
-                      Protected by automated rate limiting. Submissions are dispatched directly to the Super Admin queue.
+                    <p className="text-[11px] text-[#64748B] leading-tight max-w-xs font-sans">
+                      Protected by automated rate limiting. Submissions are dispatched directly to the administration queue.
                     </p>
                   </div>
                 </form>
@@ -493,41 +491,41 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
           {/* RIGHT: Supporting Contact Context & FAQ Quick Link (4 cols) */}
           <div className="lg:col-span-4 space-y-6 text-left">
             {/* Direct Academic Contact Info */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#e2e8f0] shadow-xs space-y-5">
-              <h3 className="font-serif text-lg font-medium text-[#0b1c30]">
+            <div className="bg-white rounded-xl p-6 sm:p-7 border border-[#E2E8F0] shadow-sm space-y-5">
+              <h3 className="font-serif text-lg font-bold text-[#12365A]">
                 Academic Desk &amp; Hours
               </h3>
 
               <div className="space-y-4 text-xs">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#eff4ff] text-[#0369a1] border border-[#cde5ff] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#00A8F0] border border-[#00A8F0]/20 flex items-center justify-center shrink-0 mt-0.5">
                     <span className="material-symbols-outlined text-[18px]">schedule</span>
                   </div>
                   <div>
-                    <span className="font-semibold text-[#0b1c30] block">Operating Hours</span>
-                    <p className="text-[#64748b] mt-0.5">Monday to Saturday: 09:00 – 18:30 IST</p>
-                    <p className="text-[#64748b]">Closed on National Holidays</p>
+                    <span className="font-semibold text-[#12365A] block">Operating Hours</span>
+                    <p className="text-[#64748B] mt-0.5">Monday to Saturday: 09:00 – 18:30 IST</p>
+                    <p className="text-[#64748B]">Closed on National Holidays</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#eff4ff] text-[#0369a1] border border-[#cde5ff] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#00A8F0] border border-[#00A8F0]/20 flex items-center justify-center shrink-0 mt-0.5">
                     <span className="material-symbols-outlined text-[18px]">domain</span>
                   </div>
                   <div>
-                    <span className="font-semibold text-[#0b1c30] block">Central Academic Office</span>
-                    <p className="text-[#64748b] mt-0.5">National Academic Coordination Centre</p>
-                    <p className="text-[#64748b]">New Delhi &amp; Pune Administrative Hubs</p>
+                    <span className="font-semibold text-[#12365A] block">Central Academic Office</span>
+                    <p className="text-[#64748B] mt-0.5">National Academic Coordination Centre</p>
+                    <p className="text-[#64748B]">New Delhi &amp; Regional Hubs</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#eff4ff] text-[#0369a1] border border-[#cde5ff] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#00A8F0] border border-[#00A8F0]/20 flex items-center justify-center shrink-0 mt-0.5">
                     <span className="material-symbols-outlined text-[18px]">security</span>
                   </div>
                   <div>
-                    <span className="font-semibold text-[#0b1c30] block">Data Confidentiality</span>
-                    <p className="text-[#64748b] mt-0.5">
+                    <span className="font-semibold text-[#12365A] block">Data Confidentiality</span>
+                    <p className="text-[#64748B] mt-0.5">
                       Your contact information is strictly used for ticket resolution and never shared with commercial telemarketers.
                     </p>
                   </div>
@@ -536,15 +534,15 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
             </div>
 
             {/* Quick Link to FAQ */}
-            <div className="bg-[#eff4ff]/60 rounded-3xl p-6 sm:p-7 border border-[#cde5ff] space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#0369a1] uppercase tracking-wider">
+            <div className="bg-white rounded-xl p-6 sm:p-7 border border-[#E2E8F0] shadow-sm space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#00A8F0] uppercase tracking-wider">
                 <span className="material-symbols-outlined text-[18px]">help_outline</span>
                 <span>Immediate Answers</span>
               </div>
-              <h4 className="font-serif text-base font-semibold text-[#0b1c30]">
+              <h4 className="font-serif text-base font-bold text-[#12365A]">
                 Have a common question?
               </h4>
-              <p className="text-xs text-[#40474f] leading-relaxed">
+              <p className="text-xs text-[#64748B] leading-relaxed font-sans">
                 Check our Frequently Asked Questions for fast answers regarding course enrollments, examination patterns, and test formats.
               </p>
               {onNavigateFAQ && (
@@ -552,7 +550,7 @@ export const ContactUsScreen: React.FC<ContactUsScreenProps> = ({
                   <button
                     type="button"
                     onClick={onNavigateFAQ}
-                    className="text-xs font-bold text-[#0369a1] hover:underline inline-flex items-center gap-1"
+                    className="text-xs font-bold text-[#00A8F0] hover:underline inline-flex items-center gap-1"
                   >
                     <span>Browse All FAQs</span>
                     <span className="material-symbols-outlined text-[15px]">arrow_forward</span>

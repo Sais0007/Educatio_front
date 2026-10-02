@@ -26,7 +26,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
               )}
               {isLast ? (
                 <span
-                  className="font-semibold text-[#0b1c30]"
+                  className="font-semibold text-[#12365A]"
                   aria-current="page"
                 >
                   {item.label}
@@ -35,14 +35,14 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
                 <button
                   type="button"
                   onClick={item.onClick}
-                  className="hover:text-[#0369a1] transition-colors focus:outline-none focus:underline"
+                  className="hover:text-[#00A8F0] transition-colors focus:outline-none focus:underline cursor-pointer"
                 >
                   {item.label}
                 </button>
               ) : (
                 <a
                   href={item.href || '#'}
-                  className="hover:text-[#0369a1] transition-colors focus:outline-none focus:underline"
+                  className="hover:text-[#00A8F0] transition-colors focus:outline-none focus:underline"
                 >
                   {item.label}
                 </a>

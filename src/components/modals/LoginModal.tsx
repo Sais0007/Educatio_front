@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Logo } from '../common/Logo';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -140,7 +141,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b1c30]/50 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#12365A]/50 backdrop-blur-sm animate-in fade-in duration-200 font-sans"
       role="dialog"
       aria-modal="true"
       aria-labelledby="auth-modal-title"
@@ -153,16 +154,16 @@ export const LoginModal: React.FC<LoginModalProps> = ({
       />
 
       <div
-        className="w-full max-w-md bg-white rounded-3xl shadow-elevated border border-[#e2e8f0] p-6 sm:p-8 relative overflow-hidden"
+        className="w-full max-w-md bg-white rounded-2xl shadow-modal border border-[#E2E8F0] p-6 sm:p-8 relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Subtle Top Ambient Gradient */}
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0369a1] via-[#38bdf8] to-[#0369a1]" />
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#00A8F0] via-[#35C978] to-[#00A8F0]" />
 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 p-2 rounded-xl text-[#64748b] hover:text-[#0b1c30] hover:bg-[#eff4ff] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0369a1]"
+          className="absolute right-4 top-4 p-2 rounded-lg text-[#64748B] hover:text-[#12365A] hover:bg-[#F5F8FC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A8F0] cursor-pointer"
           aria-label="Close modal (Esc)"
         >
           <span className="material-symbols-outlined text-[20px]">close</span>
@@ -173,19 +174,15 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           /* VIEW 1: REUSABLE LOGIN MODAL                             */
           /* ======================================================== */
           <div>
-            {/* Header / Brand Emblem */}
-            <div className="flex items-center gap-3.5 mb-6 text-left">
-              <div className="w-11 h-11 rounded-2xl bg-[#eff4ff] border border-[#cde5ff] flex items-center justify-center text-[#0369a1] shrink-0 shadow-xs">
-                <span className="material-symbols-outlined text-[24px]">lock_open</span>
-              </div>
-              <div>
-                <h3 id="auth-modal-title" className="font-serif text-2xl font-normal text-[#0b1c30] tracking-tight leading-tight">
-                  Welcome Back
-                </h3>
-                <p className="text-xs text-[#40474f] mt-0.5">
-                  Sign in to your Institute &amp; Branch academic account
-                </p>
-              </div>
+            {/* Header / Brand Logo */}
+            <div className="mb-5 text-left">
+              <Logo size="sm" className="mb-3" />
+              <h3 id="auth-modal-title" className="font-serif text-2xl font-bold text-[#12365A] tracking-tight leading-tight">
+                Welcome Back
+              </h3>
+              <p className="text-xs text-[#64748B] mt-0.5">
+                Sign in to your Education Platform academic account
+              </p>
             </div>
 
             {/* Login Form */}
@@ -213,15 +210,15 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     }}
                     placeholder="student@example.com"
                     autoComplete="email"
-                    className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                    className={`w-full pl-10 pr-3.5 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                       errors.email
-                        ? 'border-error focus:border-error focus:ring-red-100'
-                        : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                        ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                        : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                     }`}
                   />
                 </div>
                 {errors.email && (
-                  <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                  <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                     <span className="material-symbols-outlined text-[14px]">error</span>
                     {errors.email}
                   </p>
@@ -233,7 +230,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 <div className="flex justify-between items-center mb-1.5">
                   <label
                     htmlFor="login-password"
-                    className="text-xs font-semibold text-[#40474f] uppercase tracking-wider"
+                    className="text-xs font-semibold text-[#12365A] uppercase tracking-wider"
                   >
                     Password
                   </label>
@@ -243,13 +240,13 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                       setView('forgot');
                       setForgotEmail(email);
                     }}
-                    className="text-xs font-semibold text-[#0369a1] hover:text-[#0284c7] hover:underline transition-colors"
+                    className="text-xs font-semibold text-[#00A8F0] hover:text-[#0092D1] hover:underline transition-colors cursor-pointer"
                   >
                     Forgot password?
                   </button>
                 </div>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                     <span className="material-symbols-outlined text-[18px]">key</span>
                   </div>
                   <input
@@ -262,16 +259,16 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     }}
                     placeholder="Enter your account password"
                     autoComplete="current-password"
-                    className={`w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                    className={`w-full pl-10 pr-10 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                       errors.password
-                        ? 'border-error focus:border-error focus:ring-red-100'
-                        : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                        ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                        : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                     }`}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748b] hover:text-[#0b1c30] transition-colors focus:outline-none"
+                    className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748B] hover:text-[#12365A] transition-colors focus:outline-none cursor-pointer"
                     aria-label={showPassword ? 'Hide password' : 'Show password'}
                   >
                     <span className="material-symbols-outlined text-[18px]">
@@ -280,7 +277,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                   </button>
                 </div>
                 {errors.password && (
-                  <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                  <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                     <span className="material-symbols-outlined text-[14px]">error</span>
                     {errors.password}
                   </p>
@@ -294,9 +291,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded border-[#cbd5e1] text-[#0369a1] focus:ring-[#0369a1]/30 cursor-pointer"
+                  className="w-4 h-4 rounded border-[#CBD5E1] text-[#00A8F0] focus:ring-[#00A8F0]/30 cursor-pointer"
                 />
-                <label htmlFor="remember-me" className="text-xs text-[#40474f] cursor-pointer select-none">
+                <label htmlFor="remember-me" className="text-xs text-[#64748B] cursor-pointer select-none">
                   Keep me signed in on this browser
                 </label>
               </div>
@@ -305,7 +302,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 px-4 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] disabled:opacity-60 text-white font-semibold text-sm shadow-xs hover:shadow-card transition-all duration-150 flex items-center justify-center gap-2 mt-3 cursor-pointer"
+                className="w-full py-3 px-4 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] disabled:opacity-50 text-white font-semibold text-sm shadow-xs hover:shadow transition-all duration-150 flex items-center justify-center gap-2 mt-3 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>
@@ -322,27 +319,27 @@ export const LoginModal: React.FC<LoginModalProps> = ({
             </form>
 
             {/* Institute Association Helper Notice */}
-            <div className="mt-6 pt-4 border-t border-[#e2e8f0] flex items-center justify-between text-xs text-[#64748b]">
+            <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-[#64748B]">
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[15px] text-[#0369a1]">verified</span>
-                Verified Institute &amp; Branch SSO
+                <span className="material-symbols-outlined text-[15px] text-[#00A8F0]">verified</span>
+                Verified Academic Account
               </span>
               <button
                 type="button"
                 onClick={handleSignupTransition}
-                className="text-[#0369a1] hover:text-[#0284c7] font-semibold hover:underline"
+                className="text-[#00A8F0] hover:text-[#0092D1] font-semibold hover:underline cursor-pointer"
               >
                 Create student account &rarr;
               </button>
             </div>
 
             {/* Dedicated Signup Prompt */}
-            <div className="mt-3 text-center text-xs text-[#40474f]">
+            <div className="mt-3 text-center text-xs text-[#64748B]">
               Don&apos;t have an account yet?{' '}
               <button
                 type="button"
                 onClick={handleSignupTransition}
-                className="font-bold text-[#0369a1] hover:underline focus:outline-none"
+                className="font-bold text-[#00A8F0] hover:underline focus:outline-none cursor-pointer"
               >
                 Sign up here
               </button>
@@ -356,21 +353,19 @@ export const LoginModal: React.FC<LoginModalProps> = ({
             {!forgotSent ? (
               <>
                 {/* Header */}
-                <div className="flex items-center gap-3.5 mb-5 text-left">
-                  <div className="w-11 h-11 rounded-2xl bg-[#eff4ff] border border-[#cde5ff] flex items-center justify-center text-[#0369a1] shrink-0 shadow-xs">
-                    <span className="material-symbols-outlined text-[24px]">lock_reset</span>
+                <div className="mb-5 text-left">
+                  <div className="w-10 h-10 rounded-lg bg-[#E0F4FD] border border-[#BAE6FD] flex items-center justify-center text-[#00A8F0] mb-3 shadow-xs">
+                    <span className="material-symbols-outlined text-[22px]">lock_reset</span>
                   </div>
-                  <div>
-                    <h3 id="auth-modal-title" className="font-serif text-2xl font-normal text-[#0b1c30] tracking-tight leading-tight">
-                      Reset Password
-                    </h3>
-                    <p className="text-xs text-[#40474f] mt-0.5">
-                      Enter your email to receive recovery instructions
-                    </p>
-                  </div>
+                  <h3 id="auth-modal-title" className="font-serif text-2xl font-bold text-[#12365A] tracking-tight leading-tight">
+                    Reset Password
+                  </h3>
+                  <p className="text-xs text-[#64748B] mt-0.5">
+                    Enter your email to receive recovery instructions
+                  </p>
                 </div>
 
-                <p className="text-xs text-[#40474f] text-left leading-relaxed mb-4">
+                <p className="text-xs text-[#64748B] text-left leading-relaxed mb-4">
                   We will send a secure password reset link to your verified account address. The link will remain valid for 30 minutes.
                 </p>
 
@@ -379,12 +374,12 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                   <div>
                     <label
                       htmlFor="forgot-email"
-                      className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                      className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                     >
                       Registered Email Address
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                         <span className="material-symbols-outlined text-[18px]">mail</span>
                       </div>
                       <input
@@ -397,15 +392,15 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                           if (forgotError) setForgotError(null);
                         }}
                         placeholder="student@example.com"
-                        className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                        className={`w-full pl-10 pr-3.5 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                           forgotError
-                            ? 'border-error focus:border-error focus:ring-red-100'
-                            : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                            ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                            : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                         }`}
                       />
                     </div>
                     {forgotError && (
-                      <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                      <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                         <span className="material-symbols-outlined text-[14px]">error</span>
                         {forgotError}
                       </p>
@@ -416,7 +411,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3 px-4 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] disabled:opacity-60 text-white font-semibold text-sm shadow-xs transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-3 px-4 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] disabled:opacity-50 text-white font-semibold text-sm shadow-xs transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -434,7 +429,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setView('login')}
-                      className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-50 text-[#40474f] hover:text-[#0b1c30] font-medium text-xs transition-colors flex items-center justify-center gap-1.5"
+                      className="w-full py-2.5 px-4 rounded-lg bg-white hover:bg-[#F5F8FC] text-[#64748B] hover:text-[#12365A] font-medium text-xs border border-[#E2E8F0] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-[16px]">arrow_back</span>
                       <span>Back to Log In</span>
@@ -445,18 +440,18 @@ export const LoginModal: React.FC<LoginModalProps> = ({
             ) : (
               /* Security-Conscious Success Response */
               <div className="py-2 text-center space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-academic-mastered-bg border border-academic-mastered/20 text-academic-mastered mx-auto flex items-center justify-center shadow-xs">
+                <div className="w-14 h-14 rounded-xl bg-[#35C978]/15 border border-[#35C978]/30 text-[#35C978] mx-auto flex items-center justify-center shadow-xs">
                   <span className="material-symbols-outlined text-[32px]">mark_email_read</span>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h4 className="font-serif text-xl font-normal text-[#0b1c30]">
+                  <h4 className="font-serif text-xl font-bold text-[#12365A]">
                     Reset Link Dispatched
                   </h4>
-                  <p className="text-xs text-[#40474f] leading-relaxed max-w-sm mx-auto">
-                    If an account exists for <span className="font-semibold text-[#0b1c30]">{forgotEmail}</span>, you will receive a password reset link shortly.
+                  <p className="text-xs text-[#64748B] leading-relaxed max-w-sm mx-auto">
+                    If an account exists for <span className="font-semibold text-[#12365A]">{forgotEmail}</span>, you will receive a password reset link shortly.
                   </p>
-                  <p className="text-[11px] text-[#64748b]">
+                  <p className="text-[11px] text-[#94A3B8]">
                     Please check both your primary inbox and spam folder.
                   </p>
                 </div>
@@ -468,7 +463,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                       setForgotSent(false);
                       setView('login');
                     }}
-                    className="w-full py-3 px-4 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] text-white font-semibold text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3 px-4 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] text-white font-semibold text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-[18px]">arrow_back</span>
                     <span>Return to Log In</span>

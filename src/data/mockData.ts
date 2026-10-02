@@ -293,7 +293,7 @@ export const COURSES: CatalogCourse[] = [
 export const TEST_SERIES_CATALOG: TestSeriesItem[] = [
   {
     id: 'test-series-jee-adv-2026',
-    title: 'Aura National Proctored Mock Series (JEE Advanced 2026)',
+    title: 'Education Platform National Proctored Mock Series (JEE Advanced 2026)',
     examCode: 'ADV-2026-NMS',
     examId: 'jee-adv',
     targetYear: 2026,
@@ -452,9 +452,9 @@ export const PLATFORM_SCALE_METRICS: PlatformMetric[] = [
 export const FAQS: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'How does Aura Glacial Sanctuary differ from traditional coaching and online video portals?',
+    question: 'How does Education Platform differ from traditional coaching and online video portals?',
     answer:
-      'Traditional platforms deploy dopamine triggers, gamified points, and passive endless-scroll video libraries that induce a false sense of productivity. Aura operates like an academic laboratory: lectures are deep derivations, problem sets are deliberately calibrated for step-by-step rigor, and tests provide diagnostic error autopsies rather than hollow leaderboard scores.',
+      'Traditional platforms deploy dopamine triggers, gamified points, and passive endless-scroll video libraries that induce a false sense of productivity. Education Platform operates like an academic laboratory: lectures are deep derivations, problem sets are deliberately calibrated for step-by-step rigor, and tests provide diagnostic error autopsies rather than hollow leaderboard scores.',
     category: 'pedagogy',
   },
   {
@@ -521,7 +521,7 @@ export const SEARCH_INDEX: SearchResultItem[] = [
   },
   {
     id: 's-4',
-    title: 'Aura National Proctored Mock Series (JEE Advanced 2026)',
+    title: 'Education Platform National Proctored Mock Series (JEE Advanced 2026)',
     category: 'Test Series',
     examId: 'jee-adv',
     href: '#mock-test-section',
@@ -1723,10 +1723,10 @@ export const getCourseResources = (courseId: string): CourseResource[] => {
  * Completely CMS-driven: sections, highlights, and CTAs can be dynamically updated.
  */
 export const RAW_ABOUT_PAGE_DATA: AboutPageData = {
-  title: 'About Aura Sanctuary',
-  subtitle: 'A Quiet Workspace for Serious Academic Preparation',
+  title: 'About Education Platform',
+  subtitle: 'A Purposeful Workspace for Serious Academic Preparation',
   introduction:
-    'Aura Sanctuary was established on a single educational conviction: competitive entrance preparation in India has been distorted by gamified dopamine loops, casino sounds, and superficial shortcut formulas. We restore intellectual composure through first-principles derivations, structured institute affiliations, and diagnostic error autopsies.',
+    'Education Platform was established on a single educational conviction: competitive entrance preparation in India has been distorted by gamified dopamine loops, casino sounds, and superficial shortcut formulas. We restore intellectual composure through first-principles derivations, structured institute affiliations, and diagnostic error autopsies.',
   sections: [
     {
       id: 'sec-derivation',
@@ -1735,7 +1735,7 @@ export const RAW_ABOUT_PAGE_DATA: AboutPageData = {
       order: 1,
       content: [
         'Most edtech portals encourage passive consumption of thousands of hours of video lectures and emphasize memorized formula tricks. When an examination paper presents an unfamiliar coordinate system or a non-standard compound, students who rely on pattern matching freeze.',
-        'At Aura, every formula is mathematically derived from foundational physical and mathematical invariants. We preserve the cognitive struggle required to understand why laws hold true, transforming students from formula memorizers into analytical problem solvers.',
+        'At Education Platform, every formula is mathematically derived from foundational physical and mathematical invariants. We preserve the cognitive struggle required to understand why laws hold true, transforming students from formula memorizers into analytical problem solvers.',
       ],
     },
     {
@@ -1744,7 +1744,7 @@ export const RAW_ABOUT_PAGE_DATA: AboutPageData = {
       badge: 'Institutional Structure',
       order: 2,
       content: [
-        'Aura is not an open marketplace of disembodied online courses. Courses are created, maintained, and delivered in coordination with accredited partner Institutes and their localized physical Branches.',
+        'Education Platform is not an open marketplace of disembodied online courses. Courses are created, maintained, and delivered in coordination with accredited partner Institutes and their localized physical Branches.',
         'This architectural relationship preserves the irreplaceable guidance of experienced classroom faculty and physical CBT testing discipline, while providing candidates with the platform’s advanced diagnostics, derivation notes, and mistake remediation.',
       ],
     },
@@ -1760,12 +1760,12 @@ export const RAW_ABOUT_PAGE_DATA: AboutPageData = {
     },
     {
       id: 'sec-sanctuary',
-      heading: 'Digital Quiet & Cognitive Sanctuary',
-      badge: 'Glacial Philosophy',
+      heading: 'Focused Mindset & Academic Environment',
+      badge: 'Design Philosophy',
       order: 4,
       content: [
         'High-rigor problem solving requires sustained, uninterrupted concentration. We intentionally reject flashing leaderboard streaks, casino sounds, social feeds, and hyperactive notifications.',
-        'The Glacial Sanctuary design system provides an uncluttered visual atmosphere: calm blues, generous white space, restrained typography, and a deliberate absence of artificial urgency.',
+        'Our design system provides an uncluttered visual atmosphere: clear brand blues, generous whitespace, restrained typography, and a deliberate absence of artificial urgency.',
       ],
     },
   ],
@@ -1819,18 +1819,18 @@ export const getPublishedAboutContent = (): AboutPageData | null => {
 export const RAW_SUPER_ADMIN_FAQS: FAQItem[] = [
   {
     id: 'faq-pub-1',
-    question: 'How do Courses work on Aura Sanctuary?',
+    question: 'How do Courses work on Education Platform?',
     answer:
-      'Courses on Aura Sanctuary are not generic platform-wide video catalogues. Each Course is created and delivered by an Institute and its specific Branch. To enrol in and participate in a Course, a student selects their affiliated Institute and Branch during onboarding.',
+      'Courses on Education Platform are not generic platform-wide video catalogues. Each Course is created and delivered by an Institute and its specific Branch. To enrol in and participate in a Course, a student selects their affiliated Institute and Branch during onboarding.',
     category: 'enrollment',
     status: 'PUBLISHED',
     order: 1,
   },
   {
     id: 'faq-pub-2',
-    question: 'How does Aura Sanctuary differ from traditional coaching apps?',
+    question: 'How does Education Platform differ from traditional coaching apps?',
     answer:
-      'Traditional platforms deploy passive video libraries, gamified leaderboards, and dopamine triggers that produce a false sense of preparedness. Aura operates as a calm academic sanctuary: lectures emphasize unhurried mathematical and physical proofs, problem solving preserves cognitive struggle through progressive hints, and mock tests deliver diagnostic error autopsies rather than hollow rank scores.',
+      'Traditional platforms deploy passive video libraries, gamified leaderboards, and dopamine triggers that produce a false sense of preparedness. Education Platform operates as a focused academic workspace: lectures emphasize unhurried mathematical and physical proofs, problem solving preserves cognitive struggle through progressive hints, and mock tests deliver diagnostic error autopsies rather than hollow rank scores.',
     category: 'pedagogy',
     status: 'PUBLISHED',
     order: 2,
@@ -1857,7 +1857,7 @@ export const RAW_SUPER_ADMIN_FAQS: FAQItem[] = [
     id: 'faq-pub-5',
     question: 'What is the "Closed-Loop Preparation System"?',
     answer:
-      'Most students use one app for videos, a separate book for questions, and separate test PDFs—meaning test mistakes are never systematically fixed. In Aura, a question missed in Sunday’s CBT mock automatically tags your error archetype (conceptual, algebraic, or pacing stall) and schedules relevant derivation practice into your revision deck for spaced re-attempts.',
+      'Most students use one app for videos, a separate book for questions, and separate test PDFs—meaning test mistakes are never systematically fixed. In Education Platform, a question missed in Sunday’s CBT mock automatically tags your error archetype (conceptual, algebraic, or pacing stall) and schedules relevant derivation practice into your revision deck for spaced re-attempts.',
     category: 'pedagogy',
     status: 'PUBLISHED',
     order: 5,

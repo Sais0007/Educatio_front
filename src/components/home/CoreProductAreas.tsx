@@ -16,7 +16,7 @@ export const CoreProductAreas: React.FC<CoreProductAreasProps> = ({ onNavigate }
           Four Pillars Designed for Calm, Purposeful Mastery
         </h2>
         <p className="text-sm text-on-surface-variant mt-4 leading-relaxed font-sans">
-          Most online portals treat preparation as video playlists or question dumps. Aura unifies lectures, deliberate practice, official mock simulations, and open study resources into one seamless cognitive environment.
+          Most online portals treat preparation as video playlists or question dumps. Education Platform unifies lectures, deliberate practice, official mock simulations, and open study resources into one seamless cognitive environment.
         </p>
       </div>
 

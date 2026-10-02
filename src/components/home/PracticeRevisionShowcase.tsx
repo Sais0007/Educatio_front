@@ -19,7 +19,7 @@ export const PracticeRevisionShowcase: React.FC<PracticeRevisionShowcaseProps> =
           The Practice Workspace &amp; Personal Error Notebook
         </h2>
         <p className="text-sm text-on-surface-variant mt-4 leading-relaxed">
-          Practicing at random is inefficient. Aura categorizes every step of your analytical work, providing untimed step-by-step derivations and routing missed problems into a spaced-repetition retention deck.
+          Practicing at random is inefficient. Education Platform categorizes every step of your analytical work, providing untimed step-by-step derivations and routing missed problems into a spaced-repetition retention deck.
         </p>
       </div>
 

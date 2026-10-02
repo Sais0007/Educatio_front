@@ -8,7 +8,17 @@ export type ScreenType =
   | 'about'
   | 'contact'
   | 'faq'
-  | 'signup';
+  | 'signup'
+  | 'student-dashboard'
+  | 'student-learning'
+  | 'student-practice'
+  | 'student-tests'
+  | 'student-results'
+  | 'student-revision'
+  | 'student-resources'
+  | 'student-profile';
+
+export * from './student';
 
 export interface InstituteBranchOption {
   id: string;

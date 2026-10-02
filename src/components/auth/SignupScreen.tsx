@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExaminationType, InstituteBranchOption } from '../../types';
+import { Logo } from '../common/Logo';
 
 interface SignupScreenProps {
   onNavigateHome: () => void;
@@ -43,7 +44,7 @@ const INSTITUTE_BRANCH_OPTIONS: InstituteBranchOption[] = [
   },
   {
     id: 'direct-scholar',
-    instituteName: 'Aura Sanctuary',
+    instituteName: 'Education Platform',
     branchName: 'Independent Scholar Track',
     displayName: 'Direct Platform Scholar (Independent Track)',
     city: 'Global',
@@ -148,25 +149,25 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
   const selectedBranchData = INSTITUTE_BRANCH_OPTIONS.find((b) => b.id === instituteBranch);
 
   return (
-    <div className="w-full min-h-screen bg-background text-on-surface flex flex-col font-sans">
+    <div className="w-full min-h-screen bg-[#F5F8FC] text-[#12365A] flex flex-col font-sans">
       {/* Subtle Ambient Light Strip */}
-      <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+      <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
 
-      {/* Atmospheric Glacial Sanctuary Ambient Glow */}
+      {/* Atmospheric Ambient Glow */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 pb-20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[350px] bg-gradient-to-b from-[#cde5ff]/35 via-[#e5eeff]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumbs" className="mb-6 flex items-center gap-2 text-xs text-[#64748b]">
+        <nav aria-label="Breadcrumbs" className="mb-6 flex items-center gap-2 text-xs text-[#64748B]">
           <button
             onClick={onNavigateHome}
-            className="hover:text-[#0369a1] transition-colors flex items-center gap-1 focus:outline-none focus:underline"
+            className="hover:text-[#00A8F0] transition-colors flex items-center gap-1 focus:outline-none focus:underline cursor-pointer"
           >
             <span className="material-symbols-outlined text-[15px]">home</span>
             <span>Home</span>
           </button>
           <span>/</span>
-          <span className="text-[#0b1c30] font-medium">Create Student Account</span>
+          <span className="text-[#12365A] font-medium">Create Student Account</span>
         </nav>
 
         {!isSuccess ? (
@@ -176,44 +177,48 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
           <div className="relative z-10 max-w-2xl mx-auto">
             {/* Header / Intro */}
             <div className="text-center mb-8 space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#eff4ff] text-[#0369a1] text-xs font-semibold tracking-wide border border-[#cde5ff]">
-                <span className="material-symbols-outlined text-[14px]">school</span>
-                <span>Institute &amp; Branch Registration · Academic Sanctuary</span>
+              <div className="flex justify-center mb-2">
+                <Logo size="lg" />
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0b1c30] tracking-tight leading-[1.1] font-normal">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F4FD] text-[#00A8F0] text-xs font-semibold tracking-wide border border-[#BAE6FD]">
+                <span className="material-symbols-outlined text-[14px]">school</span>
+                <span>Institute &amp; Branch Registration &middot; Education Platform</span>
+              </div>
+
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#12365A] tracking-tight leading-[1.1] font-bold">
                 Begin your academic preparation
               </h1>
 
-              <p className="text-sm sm:text-base text-[#40474f] max-w-lg mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base text-[#64748B] max-w-lg mx-auto leading-relaxed">
                 Connect your account to your Institute and Branch to unlock structured courses, mock test series, and personalized diagnostic feedback.
               </p>
             </div>
 
             {/* Architecture Explanatory Ribbon */}
-            <div className="mb-8 p-3.5 rounded-2xl bg-[#eff4ff]/80 border border-[#cde5ff] flex items-center justify-between text-xs text-[#0369a1] shadow-xs">
+            <div className="mb-8 p-3.5 rounded-xl bg-[#E0F4FD]/80 border border-[#BAE6FD] flex items-center justify-between text-xs text-[#00A8F0] shadow-xs">
               <div className="flex items-center gap-2 font-medium">
                 <span className="material-symbols-outlined text-[18px]">account_tree</span>
                 <span>Platform Hierarchy:</span>
               </div>
               <div className="flex items-center gap-1.5 font-semibold text-[11px] sm:text-xs">
-                <span className="bg-white px-2 py-0.5 rounded border border-[#cde5ff]">Platform</span>
+                <span className="bg-white px-2 py-0.5 rounded border border-[#BAE6FD] text-[#12365A]">Platform</span>
                 <span>&rarr;</span>
-                <span className="bg-white px-2 py-0.5 rounded border border-[#cde5ff]">Institute</span>
+                <span className="bg-white px-2 py-0.5 rounded border border-[#BAE6FD] text-[#12365A]">Institute</span>
                 <span>&rarr;</span>
-                <span className="bg-white px-2 py-0.5 rounded border border-[#cde5ff]">Branch</span>
+                <span className="bg-white px-2 py-0.5 rounded border border-[#BAE6FD] text-[#12365A]">Branch</span>
                 <span>&rarr;</span>
-                <span className="bg-[#0369a1] text-white px-2 py-0.5 rounded">Student</span>
+                <span className="bg-[#00A8F0] text-white px-2 py-0.5 rounded">Student</span>
               </div>
             </div>
 
             {/* Main Card Container */}
-            <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-elevated border border-[#e2e8f0]">
+            <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-card border border-[#E2E8F0]">
               <form onSubmit={handleSubmit} className="space-y-6 text-left" noValidate>
                 {/* SECTION 1: Personal Details */}
                 <div>
-                  <h3 className="text-xs font-bold text-[#0b1c30] uppercase tracking-wider mb-4 pb-2 border-b border-[#e2e8f0] flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#eff4ff] text-[#0369a1] flex items-center justify-center text-[11px] font-bold">1</span>
+                  <h3 className="text-xs font-bold text-[#12365A] uppercase tracking-wider mb-4 pb-2 border-b border-[#E2E8F0] flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#E0F4FD] text-[#00A8F0] flex items-center justify-center text-[11px] font-bold">1</span>
                     <span>Student Information</span>
                   </h3>
 
@@ -240,15 +245,15 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                           }}
                           placeholder="e.g. Rahul Sharma"
                           autoComplete="name"
-                          className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                          className={`w-full pl-10 pr-3.5 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                             errors.fullName
-                              ? 'border-error focus:border-error focus:ring-red-100'
-                              : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                              ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                              : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                           }`}
                         />
                       </div>
                       {errors.fullName && (
-                        <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                        <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                           <span className="material-symbols-outlined text-[14px]">error</span>
                           {errors.fullName}
                         </p>
@@ -261,12 +266,12 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                       <div>
                         <label
                           htmlFor="signup-email"
-                          className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                          className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                         >
-                          Email Address <span className="text-error">*</span>
+                          Email Address <span className="text-[#DC3545]">*</span>
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                             <span className="material-symbols-outlined text-[18px]">mail</span>
                           </div>
                           <input
@@ -279,15 +284,15 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                             }}
                             placeholder="student@example.com"
                             autoComplete="email"
-                            className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                            className={`w-full pl-10 pr-3.5 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                               errors.email
-                                ? 'border-error focus:border-error focus:ring-red-100'
-                                : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                                ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                                : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                             }`}
                           />
                         </div>
                         {errors.email && (
-                          <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                          <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                             <span className="material-symbols-outlined text-[14px]">error</span>
                             {errors.email}
                           </p>
@@ -298,12 +303,12 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                       <div>
                         <label
                           htmlFor="signup-mobile"
-                          className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                          className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                         >
-                          Mobile Number <span className="text-error">*</span>
+                          Mobile Number <span className="text-[#DC3545]">*</span>
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                             <span className="material-symbols-outlined text-[18px]">call</span>
                           </div>
                           <input
@@ -316,15 +321,15 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                             }}
                             placeholder="10-digit mobile number"
                             autoComplete="tel"
-                            className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                            className={`w-full pl-10 pr-3.5 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                               errors.mobile
-                                ? 'border-error focus:border-error focus:ring-red-100'
-                                : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                                ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                                : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                             }`}
                           />
                         </div>
                         {errors.mobile && (
-                          <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                          <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                             <span className="material-symbols-outlined text-[14px]">error</span>
                             {errors.mobile}
                           </p>
@@ -336,8 +341,8 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
 
                 {/* SECTION 2: Academic & Institute Affiliation */}
                 <div>
-                  <h3 className="text-xs font-bold text-[#0b1c30] uppercase tracking-wider mb-4 pb-2 border-b border-[#e2e8f0] flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#eff4ff] text-[#0369a1] flex items-center justify-center text-[11px] font-bold">2</span>
+                  <h3 className="text-xs font-bold text-[#12365A] uppercase tracking-wider mb-4 pb-2 border-b border-[#E2E8F0] flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#E0F4FD] text-[#00A8F0] flex items-center justify-center text-[11px] font-bold">2</span>
                     <span>Academic Context &amp; Branch Affiliation</span>
                   </h3>
 
@@ -346,26 +351,26 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                     <div>
                       <label
                         htmlFor="signup-exam"
-                        className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                        className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                       >
-                        Target Examination <span className="text-error">*</span>
+                        Target Examination <span className="text-[#DC3545]">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[18px]">target</span>
                         </div>
                         <select
                           id="signup-exam"
                           value={targetExam}
                           onChange={(e) => setTargetExam(e.target.value as ExaminationType)}
-                          className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0b1c30] appearance-none focus:outline-none focus:border-[#0369a1] focus:ring-2 focus:ring-[#eff4ff]"
+                          className="w-full pl-10 pr-10 py-2.5 rounded-lg bg-white border border-[#E2E8F0] text-sm text-[#12365A] appearance-none focus:outline-none focus:border-[#00A8F0] focus:ring-2 focus:ring-[#E0F4FD]"
                         >
                           <option value="jee-adv">JEE Advanced (IIT Entrance Track)</option>
                           <option value="jee-main">JEE Main (NTA Engineering Track)</option>
                           <option value="neet-ug">NEET-UG (National Medical Track)</option>
                           <option value="foundation">Foundation Track (Class 9-10 Early Scholars)</option>
                         </select>
-                        <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[20px]">expand_more</span>
                         </div>
                       </div>
@@ -375,19 +380,19 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                     <div>
                       <label
                         htmlFor="signup-branch"
-                        className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                        className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                       >
-                        Affiliated Institute &amp; Branch <span className="text-error">*</span>
+                        Affiliated Institute &amp; Branch <span className="text-[#DC3545]">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[18px]">domain</span>
                         </div>
                         <select
                           id="signup-branch"
                           value={instituteBranch}
                           onChange={(e) => setInstituteBranch(e.target.value)}
-                          className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0b1c30] appearance-none focus:outline-none focus:border-[#0369a1] focus:ring-2 focus:ring-[#eff4ff]"
+                          className="w-full pl-10 pr-10 py-2.5 rounded-lg bg-white border border-[#E2E8F0] text-sm text-[#12365A] appearance-none focus:outline-none focus:border-[#00A8F0] focus:ring-2 focus:ring-[#E0F4FD]"
                         >
                           {INSTITUTE_BRANCH_OPTIONS.map((opt) => (
                             <option key={opt.id} value={opt.id}>
@@ -395,18 +400,18 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                             </option>
                           ))}
                         </select>
-                        <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[20px]">expand_more</span>
                         </div>
                       </div>
 
                       {/* Branch Details Callout */}
                       {selectedBranchData && (
-                        <div className="mt-2 p-3 rounded-xl bg-[#eff4ff]/60 border border-[#cde5ff] flex items-start gap-2.5 text-xs text-[#0369a1]">
+                        <div className="mt-2 p-3 rounded-lg bg-[#E0F4FD]/70 border border-[#BAE6FD] flex items-start gap-2.5 text-xs text-[#00A8F0]">
                           <span className="material-symbols-outlined text-[16px] shrink-0 mt-0.5">info</span>
                           <div>
-                            <span className="font-semibold">{selectedBranchData.instituteName}</span> ({selectedBranchData.branchName}) &middot; Location: {selectedBranchData.city}
-                            <p className="text-[11px] text-[#40474f] mt-0.5">
+                            <span className="font-semibold text-[#12365A]">{selectedBranchData.instituteName}</span> ({selectedBranchData.branchName}) &middot; Location: {selectedBranchData.city}
+                            <p className="text-[11px] text-[#64748B] mt-0.5">
                               Enrolled courses, faculty batch rosters, and center mock sessions will link to this branch identity.
                             </p>
                           </div>
@@ -418,8 +423,8 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
 
                 {/* SECTION 3: Account Credentials */}
                 <div>
-                  <h3 className="text-xs font-bold text-[#0b1c30] uppercase tracking-wider mb-4 pb-2 border-b border-[#e2e8f0] flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#eff4ff] text-[#0369a1] flex items-center justify-center text-[11px] font-bold">3</span>
+                  <h3 className="text-xs font-bold text-[#12365A] uppercase tracking-wider mb-4 pb-2 border-b border-[#E2E8F0] flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-sky-50 text-[#00A8F0] flex items-center justify-center text-[11px] font-bold">3</span>
                     <span>Security &amp; Password</span>
                   </h3>
 
@@ -428,12 +433,12 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                     <div>
                       <label
                         htmlFor="signup-password"
-                        className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                        className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                       >
-                        Create Password <span className="text-error">*</span>
+                        Create Password <span className="text-[#DC3545]">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[18px]">key</span>
                         </div>
                         <input
@@ -446,16 +451,16 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                           }}
                           placeholder="Min. 8 characters"
                           autoComplete="new-password"
-                          className={`w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                          className={`w-full pl-10 pr-10 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                             errors.password
-                              ? 'border-error focus:border-error focus:ring-red-100'
-                              : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                              ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                              : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                           }`}
                         />
                         <button
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748b] hover:text-[#0b1c30] transition-colors focus:outline-none"
+                          className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748B] hover:text-[#12365A] transition-colors focus:outline-none cursor-pointer"
                           aria-label={showPassword ? 'Hide password' : 'Show password'}
                         >
                           <span className="material-symbols-outlined text-[18px]">
@@ -464,7 +469,7 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                         </button>
                       </div>
                       {errors.password && (
-                        <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                        <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                           <span className="material-symbols-outlined text-[14px]">error</span>
                           {errors.password}
                         </p>
@@ -475,12 +480,12 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                     <div>
                       <label
                         htmlFor="signup-confirm-password"
-                        className="block text-xs font-semibold text-[#40474f] uppercase tracking-wider mb-1.5"
+                        className="block text-xs font-semibold text-[#12365A] uppercase tracking-wider mb-1.5"
                       >
-                        Confirm Password <span className="text-error">*</span>
+                        Confirm Password <span className="text-[#DC3545]">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748b]">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#64748B]">
                           <span className="material-symbols-outlined text-[18px]">verified_user</span>
                         </div>
                         <input
@@ -493,16 +498,16 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                           }}
                           placeholder="Re-enter password"
                           autoComplete="new-password"
-                          className={`w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border text-sm text-[#0b1c30] placeholder-[#94a3b8] transition-colors focus:outline-none focus:ring-2 ${
+                          className={`w-full pl-10 pr-10 py-2.5 rounded-lg bg-white border text-sm text-[#12365A] placeholder-[#94A3B8] transition-colors focus:outline-none focus:ring-2 ${
                             errors.confirmPassword
-                              ? 'border-error focus:border-error focus:ring-red-100'
-                              : 'border-[#e2e8f0] focus:border-[#0369a1] focus:ring-[#eff4ff]'
+                              ? 'border-[#DC3545] focus:border-[#DC3545] focus:ring-red-100'
+                              : 'border-[#E2E8F0] focus:border-[#00A8F0] focus:ring-[#E0F4FD]'
                           }`}
                         />
                         <button
                           type="button"
                           onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                          className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748b] hover:text-[#0b1c30] transition-colors focus:outline-none"
+                          className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#64748B] hover:text-[#12365A] transition-colors focus:outline-none cursor-pointer"
                           aria-label={showConfirmPassword ? 'Hide confirm password' : 'Show confirm password'}
                         >
                           <span className="material-symbols-outlined text-[18px]">
@@ -511,7 +516,7 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                         </button>
                       </div>
                       {errors.confirmPassword && (
-                        <p className="text-xs text-error mt-1 flex items-center gap-1 font-medium">
+                        <p className="text-xs text-[#DC3545] mt-1 flex items-center gap-1 font-medium">
                           <span className="material-symbols-outlined text-[14px]">error</span>
                           {errors.confirmPassword}
                         </p>
@@ -531,14 +536,14 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                         setAgreeTerms(e.target.checked);
                         if (errors.agreeTerms) setErrors({ ...errors, agreeTerms: undefined });
                       }}
-                      className="w-4 h-4 mt-0.5 rounded border-[#cbd5e1] text-[#0369a1] focus:ring-[#0369a1]/30 cursor-pointer shrink-0"
+                      className="w-4 h-4 mt-0.5 rounded border-[#CBD5E1] text-[#00A8F0] focus:ring-[#00A8F0]/30 cursor-pointer shrink-0"
                     />
-                    <label htmlFor="signup-terms" className="text-xs text-[#40474f] leading-normal cursor-pointer select-none">
-                      I agree to the <span className="text-[#0369a1] underline">Terms of Service</span>, <span className="text-[#0369a1] underline">Privacy Policy</span>, and academic <span className="text-[#0369a1] underline">Honor Code</span>. I understand my mock test scores and study analytics will remain strictly confidential.
+                    <label htmlFor="signup-terms" className="text-xs text-[#64748B] leading-normal cursor-pointer select-none">
+                      I agree to the <span className="text-[#00A8F0] underline">Terms of Service</span>, <span className="text-[#00A8F0] underline">Privacy Policy</span>, and academic <span className="text-[#00A8F0] underline">Honor Code</span>. I understand my mock test scores and study analytics will remain strictly confidential.
                     </label>
                   </div>
                   {errors.agreeTerms && (
-                    <p className="text-xs text-error mt-1.5 flex items-center gap-1 font-medium">
+                    <p className="text-xs text-[#DC3545] mt-1.5 flex items-center gap-1 font-medium">
                       <span className="material-symbols-outlined text-[14px]">error</span>
                       {errors.agreeTerms}
                     </p>
@@ -550,7 +555,7 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 px-6 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] disabled:opacity-60 text-white font-semibold text-base shadow-card hover:shadow-elevated transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] disabled:opacity-50 text-white font-semibold text-base shadow-xs hover:shadow transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
@@ -567,12 +572,12 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                 </div>
 
                 {/* Switch to Login Link */}
-                <div className="pt-4 border-t border-[#e2e8f0] text-center text-sm text-[#40474f]">
+                <div className="pt-4 border-t border-[#E2E8F0] text-center text-sm text-[#64748B]">
                   Already have an account?{' '}
                   <button
                     type="button"
                     onClick={onOpenLogin}
-                    className="font-bold text-[#0369a1] hover:text-[#0284c7] hover:underline focus:outline-none"
+                    className="font-bold text-[#00A8F0] hover:text-[#0092D1] hover:underline focus:outline-none cursor-pointer"
                   >
                     Log In
                   </button>
@@ -585,40 +590,40 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
           /* REGISTRATION SUCCESS VIEW                                */
           /* ======================================================== */
           <div className="relative z-10 max-w-xl mx-auto animate-in zoom-in-95 duration-200">
-            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-elevated border border-[#e2e8f0] text-center space-y-6">
+            <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-card border border-[#E2E8F0] text-center space-y-6">
               {/* Success Badge */}
-              <div className="w-16 h-16 rounded-2xl bg-academic-mastered-bg border border-academic-mastered/20 text-academic-mastered flex items-center justify-center mx-auto shadow-xs">
+              <div className="w-16 h-16 rounded-xl bg-[#35C978]/15 border border-[#35C978]/30 text-[#35C978] flex items-center justify-center mx-auto shadow-xs">
                 <span className="material-symbols-outlined text-[36px]">check_circle</span>
               </div>
 
               <div className="space-y-2">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#eff4ff] text-[#0369a1] text-xs font-semibold">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#E0F4FD] text-[#00A8F0] text-xs font-semibold">
                   Account Verified
                 </span>
-                <h2 className="font-serif text-3xl font-normal text-[#0b1c30]">
-                  Welcome to Aura Sanctuary, {fullName.split(' ')[0]}!
+                <h2 className="font-serif text-3xl font-bold text-[#12365A]">
+                  Welcome to Education Platform, {fullName.split(' ')[0]}!
                 </h2>
-                <p className="text-sm text-[#40474f] leading-relaxed max-w-md mx-auto">
+                <p className="text-sm text-[#64748B] leading-relaxed max-w-md mx-auto">
                   Your student account has been registered with{' '}
-                  <span className="font-semibold text-[#0b1c30]">
+                  <span className="font-semibold text-[#12365A]">
                     {selectedBranchData?.displayName}
                   </span>.
                 </p>
               </div>
 
               {/* Summary Card */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-[#e2e8f0] text-left text-xs space-y-2.5">
+              <div className="p-4 rounded-xl bg-[#F5F8FC] border border-[#E2E8F0] text-left text-xs space-y-2.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[#64748b]">Registered Email:</span>
-                  <span className="font-semibold text-[#0b1c30]">{email}</span>
+                  <span className="text-[#64748B]">Registered Email:</span>
+                  <span className="font-semibold text-[#12365A]">{email}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-[#64748b]">Target Examination:</span>
-                  <span className="font-semibold text-[#0369a1] uppercase">{targetExam}</span>
+                  <span className="text-[#64748B]">Target Examination:</span>
+                  <span className="font-semibold text-[#00A8F0] uppercase">{targetExam}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-[#64748b]">Affiliated Branch:</span>
-                  <span className="font-semibold text-[#0b1c30]">{selectedBranchData?.branchName}</span>
+                  <span className="text-[#64748B]">Affiliated Branch:</span>
+                  <span className="font-semibold text-[#12365A]">{selectedBranchData?.branchName}</span>
                 </div>
               </div>
 
@@ -627,7 +632,7 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                 <button
                   type="button"
                   onClick={onNavigateHome}
-                  className="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-[#0369a1] hover:bg-[#0284c7] text-white font-semibold text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:flex-1 py-3 px-6 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] text-white font-semibold text-sm shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Go to Platform Home</span>
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
@@ -636,7 +641,7 @@ export const SignupScreen: React.FC<SignupScreenProps> = ({
                   <button
                     type="button"
                     onClick={onNavigateExaminations}
-                    className="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-white hover:bg-slate-50 text-[#0b1c30] font-semibold text-sm border border-[#e2e8f0] transition-colors"
+                    className="w-full sm:flex-1 py-3 px-6 rounded-lg bg-white hover:bg-[#F5F8FC] text-[#12365A] font-semibold text-sm border border-[#E2E8F0] transition-colors cursor-pointer"
                   >
                     Explore Examinations
                   </button>

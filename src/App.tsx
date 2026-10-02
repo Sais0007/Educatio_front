@@ -20,7 +20,11 @@ import { Footer } from './components/common/Footer';
 import { SearchModal } from './components/common/SearchModal';
 import { LoginModal } from './components/modals/LoginModal';
 import { SignupScreen } from './components/auth/SignupScreen';
-import { ExaminationType, ScreenType } from './types';
+import { StudentPanelLayout } from './components/student/StudentPanelLayout';
+import { StudentDashboard } from './components/student/StudentDashboard';
+import { StudentModulePlaceholder } from './components/student/StudentModulePlaceholder';
+import { MOCK_ACTIVE_STUDENT_DASHBOARD, MOCK_NEW_STUDENT_DASHBOARD } from './data/mockStudentData';
+import { ExaminationType, ScreenType, StudentNavSection, StudentProfile } from './types';
 
 export const App: React.FC = () => {
   // Navigation & Screen State
@@ -28,6 +32,8 @@ export const App: React.FC = () => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.toLowerCase().replace('/', '');
       const hash = window.location.hash.toLowerCase().replace('#', '');
+      if (path === 'dashboard' || path === 'student-dashboard' || hash === 'dashboard' || hash === 'student-dashboard') return 'student-dashboard';
+      if (path.startsWith('student-')) return path as ScreenType;
       if (path === 'about' || hash === 'about') return 'about';
       if (path === 'contact' || hash === 'contact') return 'contact';
       if (path === 'faq' || hash === 'faq') return 'faq';
@@ -48,6 +54,7 @@ export const App: React.FC = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ name: string; email: string } | null>(null);
+  const [studentScenario, setStudentScenario] = useState<'active' | 'new'>('active');
 
   // Status Toast State
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -109,9 +116,16 @@ export const App: React.FC = () => {
         path === 'examinations' ||
         path === 'courses' ||
         path === 'tests' ||
-        path === 'signup'
+        path === 'signup' ||
+        path === 'dashboard' ||
+        path === 'student-dashboard' ||
+        path.startsWith('student-')
       ) {
-        setCurrentScreen(path as ScreenType);
+        if (path === 'dashboard') {
+          setCurrentScreen('student-dashboard');
+        } else {
+          setCurrentScreen(path as ScreenType);
+        }
       } else {
         setCurrentScreen('home');
       }
@@ -146,18 +160,86 @@ export const App: React.FC = () => {
     showToast(`"Enroll to Explore More" triggered for test: ${testId}. (Clean integration point for future authentication/access flow)`);
   };
 
+  const isStudentScreen = currentScreen.startsWith('student-');
+  const studentSection: StudentNavSection = isStudentScreen
+    ? (currentScreen.replace('student-', '') as StudentNavSection)
+    : 'dashboard';
+
+  const currentStudentData = studentScenario === 'new' ? MOCK_NEW_STUDENT_DASHBOARD : MOCK_ACTIVE_STUDENT_DASHBOARD;
+  const currentStudentProfile: StudentProfile = {
+    ...currentStudentData.student,
+    name: currentUser?.name || currentStudentData.student.name,
+    email: currentUser?.email || currentStudentData.student.email,
+  };
+
+  if (isStudentScreen) {
+    return (
+      <div className="min-h-screen bg-[#F5F8FC] text-[#12365A] flex flex-col font-sans">
+        {/* Toast Notification Banner */}
+        {toastMessage && (
+          <div className="fixed bottom-6 right-6 z-50 bg-[#12365A] text-white px-5 py-3 rounded-lg shadow-lg border border-slate-700/30 flex items-center gap-3 text-xs animate-in slide-in-from-bottom duration-200">
+            <span className="material-symbols-outlined text-[18px] text-[#00A8F0]">
+              info
+            </span>
+            <span>{toastMessage}</span>
+            <button
+              onClick={() => setToastMessage(null)}
+              className="ml-2 text-white/70 hover:text-white"
+              aria-label="Dismiss toast"
+            >
+              <span className="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+        )}
+
+        <StudentPanelLayout
+          currentSection={studentSection}
+          onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
+          onNavigatePublic={(pubScreen) => handleNavigateScreen((pubScreen || 'home') as ScreenType)}
+          onLogout={() => {
+            setCurrentUser(null);
+            handleNavigateScreen('home');
+            showToast('Signed out successfully.');
+          }}
+          student={currentStudentProfile}
+          notifications={currentStudentData.notifications}
+          scenario={studentScenario}
+          onToggleScenario={(scen) => {
+            setStudentScenario(scen);
+            showToast(`Switched scenario to: ${scen === 'active' ? 'Active Enrolled Student' : 'New Student View'}`);
+          }}
+        >
+          {studentSection === 'dashboard' ? (
+            <StudentDashboard
+              scenario={studentScenario}
+              onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
+              onToast={showToast}
+              onExplorePublicCourses={() => handleNavigateScreen('courses')}
+            />
+          ) : (
+            <StudentModulePlaceholder
+              section={studentSection}
+              onNavigateDashboard={() => handleNavigateScreen('student-dashboard')}
+              student={currentStudentProfile}
+            />
+          )}
+        </StudentPanelLayout>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-background text-on-surface flex flex-col selection:bg-surface-variant selection:text-primary font-sans">
+    <div className="min-h-screen bg-[#F5F8FC] text-[#12365A] flex flex-col font-sans">
       {/* Toast Notification Banner */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-xl shadow-elevated border border-outline-variant/30 flex items-center gap-3 text-xs animate-in slide-in-from-bottom duration-200">
-          <span className="material-symbols-outlined text-[18px] text-secondary-container">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#12365A] text-white px-5 py-3 rounded-lg shadow-lg border border-slate-700/30 flex items-center gap-3 text-xs animate-in slide-in-from-bottom duration-200">
+          <span className="material-symbols-outlined text-[18px] text-[#00A8F0]">
             info
           </span>
           <span>{toastMessage}</span>
           <button
             onClick={() => setToastMessage(null)}
-            className="ml-2 text-inverse-on-surface/60 hover:text-inverse-on-surface"
+            className="ml-2 text-white/70 hover:text-white"
             aria-label="Dismiss toast"
           >
             <span className="material-symbols-outlined text-[16px]">close</span>
@@ -183,7 +265,7 @@ export const App: React.FC = () => {
         /* SCREEN 1: Approved Guest Home Page */
         <main className="w-full pt-20">
           {/* Subtle Ambient Light Strip */}
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
 
           {/* Section 2: Outcome-Driven Hero ('Get Started', 'Explore Examinations') */}
           <Hero
@@ -224,7 +306,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'examinations' ? (
         /* SCREEN 2: Public Examination Listing Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <ExaminationListingScreen
             onNavigateHome={() => {
               setCurrentScreen('home');
@@ -236,7 +318,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'courses' ? (
         /* SCREEN: Public Free Course Listing Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <PublicCourseListingScreen
             onNavigateHome={() => {
               setCurrentScreen('home');
@@ -252,7 +334,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'course-details' ? (
         /* SCREEN: Public Free Course Details Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <PublicCourseDetailsScreen
             courseId={selectedCourseId}
             onNavigateHome={() => {
@@ -277,7 +359,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'tests' ? (
         /* SCREEN: Public Sample Test Listing Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <PublicSampleTestListingScreen
             onNavigateHome={() => {
               setCurrentScreen('home');
@@ -294,7 +376,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'test-details' ? (
         /* SCREEN: Public Sample Test Details Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <PublicSampleTestDetailsScreen
             testId={selectedTestId}
             onNavigateHome={() => handleNavigateScreen('home')}
@@ -310,7 +392,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'about' ? (
         /* SCREEN: About Us Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <AboutUsScreen
             onNavigateHome={() => handleNavigateScreen('home')}
             onExploreExaminations={() => handleNavigateScreen('examinations')}
@@ -320,7 +402,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'contact' ? (
         /* SCREEN: Contact Us Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <ContactUsScreen
             onNavigateHome={() => handleNavigateScreen('home')}
             onNavigateFAQ={() => handleNavigateScreen('faq')}
@@ -329,7 +411,7 @@ export const App: React.FC = () => {
       ) : currentScreen === 'faq' ? (
         /* SCREEN: Frequently Asked Questions Screen */
         <main className="w-full pt-20">
-          <div className="w-full h-1 bg-gradient-to-r from-surface via-primary to-surface opacity-30" />
+          <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00A8F0]/30 to-transparent" />
           <FAQScreen
             onNavigateHome={() => handleNavigateScreen('home')}
             onNavigateContact={() => handleNavigateScreen('contact')}
@@ -343,7 +425,8 @@ export const App: React.FC = () => {
             onOpenLogin={() => setLoginModalOpen(true)}
             onSignupSuccess={(user) => {
               setCurrentUser(user);
-              showToast(`Welcome to Aura Sanctuary, ${user.name}!`);
+              handleNavigateScreen('student-dashboard');
+              showToast(`Welcome to Education Platform, ${user.name}!`);
             }}
             onNavigateExaminations={() => handleNavigateScreen('examinations')}
           />
@@ -372,6 +455,8 @@ export const App: React.FC = () => {
             handleNavigateScreen('tests');
           } else if (href === '#signup' || href.includes('signup') || href.includes('register')) {
             handleNavigateScreen('signup');
+          } else if (href === '#dashboard' || href.includes('dashboard')) {
+            handleNavigateScreen('student-dashboard');
           } else {
             handleNavigateScreen('home', href);
           }
@@ -384,7 +469,8 @@ export const App: React.FC = () => {
         onClose={() => setLoginModalOpen(false)}
         onSuccess={(user) => {
           setCurrentUser(user);
-          showToast(`Welcome to Aura Sanctuary, ${user.name}!`);
+          handleNavigateScreen('student-dashboard');
+          showToast(`Welcome back, ${user.name}!`);
         }}
         onNavigateSignup={() => {
           setLoginModalOpen(false);

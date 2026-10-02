@@ -22,7 +22,7 @@ export const TestSeriesShowcase: React.FC<TestSeriesShowcaseProps> = ({
               </div>
 
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight leading-tight font-normal">
-                Aura National Proctored Mock Series (2026–2027)
+                Education Platform National Proctored Mock Series (2026–2027)
               </h2>
 
               <p className="text-sm text-on-surface-variant leading-relaxed">

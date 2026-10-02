@@ -31,7 +31,7 @@ export const LearningExperiencePreview: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-outline-variant/60" />
               <span className="w-3 h-3 rounded-full bg-outline-variant/60" />
               <span className="font-mono text-outline ml-2 hidden sm:inline">
-                learn.aurasanctuary.app/courses/phy-2027/lecture-08
+                learn.educationplatform.app/courses/phy-2027/lecture-08
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -161,7 +161,7 @@ export const LearningExperiencePreview: React.FC = () => {
               {/* Simulated High-Fidelity Video Player Canvas */}
               <div className="w-full aspect-video bg-inverse-surface rounded-xl overflow-hidden relative shadow-card flex flex-col justify-between p-4 sm:p-6 text-white group">
                 {/* Chalkboard Derivation Background Graphic */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#131b2e] via-[#0b1c30] to-[#1e293b] opacity-95" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#12365A] via-[#0f2d4a] to-[#1e293b] opacity-95" />
 
                 {/* Top Video Header */}
                 <div className="relative z-10 flex items-center justify-between text-xs">

@@ -75,26 +75,26 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
   };
 
   return (
-    <div className="w-full min-h-screen bg-background text-on-surface">
+    <div className="w-full min-h-screen bg-[#F5F8FC] text-[#12365A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-14">
         {/* 1. Contextual Breadcrumb */}
         <Breadcrumb items={breadcrumbItems} />
 
         {/* 2. Page Introduction */}
         <div className="text-left mb-10 lg:mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#eff4ff] text-[#0369a1] text-xs font-bold uppercase tracking-widest border border-[#cde5ff]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F4FD] text-[#00A8F0] text-xs font-bold uppercase tracking-widest border border-[#BAE6FD]">
             <span>Examination Discovery</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0b1c30] tracking-tight leading-tight font-normal">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#12365A] tracking-tight leading-tight font-bold">
             Examinations
           </h1>
-          <p className="text-base sm:text-lg text-[#40474f] max-w-2xl leading-relaxed font-sans font-normal">
+          <p className="text-base sm:text-lg text-[#64748B] max-w-2xl leading-relaxed font-sans font-normal">
             Discover national entrance examinations supported across participating Institutes and Branches. Select your examination to explore affiliated branch cohorts, syllabus roadmaps, and proctored CBT simulations.
           </p>
         </div>
 
         {/* 3 & 4. Search and Filters Bar */}
-        <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#e2e8f0] shadow-xs mb-10 space-y-5">
+        <div className="bg-white rounded-xl p-5 sm:p-6 border border-[#E2E8F0] shadow-card mb-10 space-y-5">
           {/* Top Row: Search Input + Target Year Selector */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             {/* Search Input Field */}
@@ -103,7 +103,7 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
                 Search examinations
               </label>
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748b] text-[20px] pointer-events-none">
+                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748B] text-[20px] pointer-events-none">
                   search
                 </span>
                 <input
@@ -112,13 +112,13 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search examinations by name, authority, or subject..."
-                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#f8fafc] border border-[#e2e8f0] text-sm text-[#0b1c30] placeholder:text-[#64748b] focus:outline-none focus:border-[#0369a1] focus:ring-2 focus:ring-[#eff4ff] transition-all"
+                  className="w-full pl-10 pr-10 py-2.5 rounded-lg bg-[#F5F8FC] border border-[#E2E8F0] text-sm text-[#12365A] placeholder:text-[#64748B] focus:outline-none focus:border-[#00A8F0] focus:ring-2 focus:ring-[#E0F4FD] transition-all"
                 />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#64748b] hover:text-[#0b1c30] p-0.5 rounded"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#64748B] hover:text-[#12365A] p-0.5 rounded cursor-pointer"
                     aria-label="Clear search input"
                   >
                     <span className="material-symbols-outlined text-[18px]">close</span>
@@ -133,14 +133,14 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
                 Target Year Cohort
               </label>
               <div className="relative">
-                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#0369a1] text-[18px] pointer-events-none">
+                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#00A8F0] text-[18px] pointer-events-none">
                   calendar_today
                 </span>
                 <select
                   id="target-year-select"
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value === 'all' ? 'all' : isNaN(Number(e.target.value)) ? e.target.value : Number(e.target.value))}
-                  className="w-full pl-10 pr-9 py-3 rounded-xl bg-[#f8fafc] border border-[#e2e8f0] text-sm text-[#0b1c30] focus:outline-none focus:border-[#0369a1] focus:ring-2 focus:ring-[#eff4ff] appearance-none cursor-pointer font-medium"
+                  className="w-full pl-10 pr-9 py-2.5 rounded-lg bg-[#F5F8FC] border border-[#E2E8F0] text-sm text-[#12365A] focus:outline-none focus:border-[#00A8F0] focus:ring-2 focus:ring-[#E0F4FD] appearance-none cursor-pointer font-medium"
                 >
                   <option value="all">All Target Years</option>
                   {COHORT_YEARS.map((cy) => (
@@ -149,7 +149,7 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
                     </option>
                   ))}
                 </select>
-                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#64748b] text-[18px] pointer-events-none">
+                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B] text-[18px] pointer-events-none">
                   expand_more
                 </span>
               </div>
@@ -157,10 +157,10 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
           </div>
 
           {/* Bottom Row: Category Filter Pills + Results Summary */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#f1f5f9]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#E2E8F0]">
             {/* Category Pills */}
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-semibold text-[#64748b] uppercase tracking-wider mr-1">
+              <span className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mr-1">
                 Category:
               </span>
               {categories.map((cat) => {
@@ -170,10 +170,10 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
                     key={cat.id}
                     type="button"
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 ${
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 cursor-pointer ${
                       isActive
-                        ? 'bg-[#0369a1] text-white shadow-xs'
-                        : 'bg-[#f8fafc] hover:bg-[#eff4ff] text-[#40474f] hover:text-[#0b1c30] border border-[#e2e8f0]'
+                        ? 'bg-[#00A8F0] text-white shadow-card'
+                        : 'bg-[#F5F8FC] hover:bg-[#E0F4FD] text-[#12365A] border border-[#E2E8F0]'
                     }`}
                   >
                     {cat.label}
@@ -183,15 +183,15 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
             </div>
 
             {/* Filter Reset & Results Counter */}
-            <div className="flex items-center gap-3 text-xs text-[#64748b]">
+            <div className="flex items-center gap-3 text-xs text-[#64748B]">
               <span>
-                Showing <strong className="text-[#0b1c30] font-semibold">{filteredExaminations.length}</strong> {filteredExaminations.length === 1 ? 'examination' : 'examinations'}
+                Showing <strong className="text-[#12365A] font-bold">{filteredExaminations.length}</strong> {filteredExaminations.length === 1 ? 'examination' : 'examinations'}
               </span>
               {hasActiveFilters && (
                 <button
                   type="button"
                   onClick={handleResetFilters}
-                  className="text-xs font-semibold text-[#0369a1] hover:underline flex items-center gap-1"
+                  className="text-xs font-semibold text-[#00A8F0] hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <span>Reset</span>
                   <span className="material-symbols-outlined text-[14px]">refresh</span>
@@ -223,15 +223,15 @@ export const ExaminationListingScreen: React.FC<ExaminationListingScreenProps> =
         )}
 
         {/* 7. Institutional Relationship Context Callout */}
-        <div className="mt-16 bg-[#eff4ff]/60 rounded-2xl p-6 sm:p-8 border border-[#cde5ff] text-left flex items-start gap-4">
-          <div className="w-10 h-10 rounded-xl bg-white text-[#0369a1] border border-[#cde5ff] flex items-center justify-center shrink-0 mt-0.5">
+        <div className="mt-16 bg-[#E0F4FD]/40 rounded-xl p-6 sm:p-8 border border-[#BAE6FD] text-left flex items-start gap-4">
+          <div className="w-10 h-10 rounded-lg bg-white text-[#00A8F0] border border-[#BAE6FD] flex items-center justify-center shrink-0 mt-0.5 shadow-card">
             <span className="material-symbols-outlined text-[22px]">apartment</span>
           </div>
           <div className="space-y-1">
-            <h4 className="text-sm font-bold text-[#0b1c30]">
+            <h4 className="text-sm font-bold text-[#12365A]">
               Delivered Through Partner Institutes &amp; Branches
             </h4>
-            <p className="text-xs sm:text-sm text-[#40474f] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
               Examinations are not global self-study courses. After selecting an examination, you will be guided to connect with your affiliated Institute and physical or digital Branch to enrol in its specialized cohort and academic schedule.
             </p>
           </div>

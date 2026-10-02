@@ -13,5 +13,9 @@ export default defineConfig({
     port: 3000,
     open: false,
     host: true,
+    watch: {
+      usePolling: true,
+      ignored: ['**/*.md'],
+    },
   },
 });
