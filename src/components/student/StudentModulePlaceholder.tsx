@@ -17,6 +17,12 @@ const MODULE_INFO: Record<
     icon: 'dashboard',
     description: 'Central overview of active learning, upcoming events, and actionable tasks.',
   },
+  courses: {
+    title: 'My Courses',
+    subtitle: 'Institute & Branch curriculum lectures and structured modules',
+    icon: 'school',
+    description: 'Full syllabus video lectures, chapter notes, and milestone quizzes affiliated with your batch.',
+  },
   learning: {
     title: 'My Learning & Enrolled Courses',
     subtitle: 'Institute & Branch curriculum lectures and structured modules',

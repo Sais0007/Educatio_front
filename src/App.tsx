@@ -22,6 +22,15 @@ import { LoginModal } from './components/modals/LoginModal';
 import { SignupScreen } from './components/auth/SignupScreen';
 import { StudentPanelLayout } from './components/student/StudentPanelLayout';
 import { StudentDashboard } from './components/student/StudentDashboard';
+import { StudentCoursesScreen } from './components/student/StudentCoursesScreen';
+import { StudentCourseOverviewScreen } from './components/student/StudentCourseOverviewScreen';
+import { StudentLessonListScreen } from './components/student/StudentLessonListScreen';
+import { StudentVideoLearningScreen } from './components/student/StudentVideoLearningScreen';
+import { StudentLiveClassScheduleScreen } from './components/student/StudentLiveClassScheduleScreen';
+import { StudentAssignmentListScreen } from './components/student/StudentAssignmentListScreen';
+import { StudentAssignmentDetailsScreen } from './components/student/StudentAssignmentDetailsScreen';
+import { StudentDPPListScreen } from './components/student/StudentDPPListScreen';
+import { StudentPracticeHomeScreen } from './components/student/StudentPracticeHomeScreen';
 import { StudentModulePlaceholder } from './components/student/StudentModulePlaceholder';
 import { MOCK_ACTIVE_STUDENT_DASHBOARD, MOCK_NEW_STUDENT_DASHBOARD } from './data/mockStudentData';
 import { ExaminationType, ScreenType, StudentNavSection, StudentProfile } from './types';
@@ -33,6 +42,14 @@ export const App: React.FC = () => {
       const path = window.location.pathname.toLowerCase().replace('/', '');
       const hash = window.location.hash.toLowerCase().replace('#', '');
       if (path === 'dashboard' || path === 'student-dashboard' || hash === 'dashboard' || hash === 'student-dashboard') return 'student-dashboard';
+      if (path === 'my-courses' || hash === 'my-courses') return 'student-courses';
+      if (path === 'lessons' || hash === 'lessons' || path === 'lesson-list' || hash === 'lesson-list') return 'student-lesson-list';
+      if (path === 'video-learning' || hash === 'video-learning' || path === 'watch' || hash === 'watch') return 'student-video-learning';
+      if (path === 'live-classes' || hash === 'live-classes' || path === 'schedule' || hash === 'schedule') return 'student-live-classes';
+      if (path === 'assignments' || hash === 'assignments' || path === 'assignment-list' || hash === 'assignment-list') return 'student-assignments';
+      if (path === 'assignment-details' || hash === 'assignment-details') return 'student-assignment-details';
+      if (path === 'dpps' || hash === 'dpps' || path === 'dpp-list' || hash === 'dpp-list') return 'student-dpps';
+      if (path === 'practice' || hash === 'practice' || path === 'practice-arena' || hash === 'practice-arena') return 'student-practice';
       if (path.startsWith('student-')) return path as ScreenType;
       if (path === 'about' || hash === 'about') return 'about';
       if (path === 'contact' || hash === 'contact') return 'contact';
@@ -49,6 +66,9 @@ export const App: React.FC = () => {
   const [selectedExam, setSelectedExam] = useState<ExaminationType>('jee-adv');
   const [selectedCourseId, setSelectedCourseId] = useState<string>('pub-phy-kinematics');
   const [selectedTestId, setSelectedTestId] = useState<string>('test-jee-main-phy-01');
+  const [activeStudentCourseId, setActiveStudentCourseId] = useState<string>('course-phy-kinematics');
+  const [activeStudentLessonId, setActiveStudentLessonId] = useState<string>('les-kin-17');
+  const [activeStudentAssignmentId, setActiveStudentAssignmentId] = useState<string>('asg-phy-kin-01');
 
   // Modals & Auth State
   const [searchOpen, setSearchOpen] = useState(false);
@@ -161,9 +181,20 @@ export const App: React.FC = () => {
   };
 
   const isStudentScreen = currentScreen.startsWith('student-');
-  const studentSection: StudentNavSection = isStudentScreen
-    ? (currentScreen.replace('student-', '') as StudentNavSection)
-    : 'dashboard';
+  const rawStudentSection = isStudentScreen ? currentScreen.replace('student-', '') : 'dashboard';
+  const studentSection: StudentNavSection = (
+    rawStudentSection === 'course-overview' ||
+    rawStudentSection === 'lesson-list' ||
+    rawStudentSection === 'video-learning' ||
+    rawStudentSection === 'live-classes' ||
+    rawStudentSection === 'assignments' ||
+    rawStudentSection === 'assignment-details' ||
+    rawStudentSection === 'dpps' ||
+    rawStudentSection === 'courses' ||
+    rawStudentSection === 'learning'
+      ? 'courses'
+      : rawStudentSection
+  ) as StudentNavSection;
 
   const currentStudentData = studentScenario === 'new' ? MOCK_NEW_STUDENT_DASHBOARD : MOCK_ACTIVE_STUDENT_DASHBOARD;
   const currentStudentProfile: StudentProfile = {
@@ -194,7 +225,13 @@ export const App: React.FC = () => {
 
         <StudentPanelLayout
           currentSection={studentSection}
-          onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
+          onNavigateSection={(sec) => {
+            if (sec === 'learning' || sec === 'courses') {
+              handleNavigateScreen('student-courses');
+            } else {
+              handleNavigateScreen(`student-${sec}` as ScreenType);
+            }
+          }}
           onNavigatePublic={(pubScreen) => handleNavigateScreen((pubScreen || 'home') as ScreenType)}
           onLogout={() => {
             setCurrentUser(null);
@@ -209,12 +246,156 @@ export const App: React.FC = () => {
             showToast(`Switched scenario to: ${scen === 'active' ? 'Active Enrolled Student' : 'New Student View'}`);
           }}
         >
-          {studentSection === 'dashboard' ? (
-            <StudentDashboard
+          {currentScreen === 'student-practice' || studentSection === 'practice' ? (
+            <StudentPracticeHomeScreen
               scenario={studentScenario}
+              onBackToDashboard={() => handleNavigateScreen('student-dashboard')}
+              onNavigateDPPs={() => handleNavigateScreen('student-dpps')}
+              onNavigateCourses={() => handleNavigateScreen('student-courses')}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-dpps' ? (
+            <StudentDPPListScreen
+              initialCourseId={activeStudentCourseId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-assignment-details' ? (
+            <StudentAssignmentDetailsScreen
+              assignmentId={activeStudentAssignmentId}
+              scenario={studentScenario}
+              onBackToAssignments={() => handleNavigateScreen('student-assignments')}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-assignments' ? (
+            <StudentAssignmentListScreen
+              initialCourseId={activeStudentCourseId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onSelectAssignment={(asgId) => {
+                setActiveStudentAssignmentId(asgId);
+                handleNavigateScreen('student-assignment-details');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-live-classes' ? (
+            <StudentLiveClassScheduleScreen
+              initialCourseId={activeStudentCourseId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onNavigateRecording={(courseId, lessonId) => {
+                setActiveStudentCourseId(courseId);
+                if (lessonId) setActiveStudentLessonId(lessonId);
+                handleNavigateScreen('student-video-learning');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-video-learning' ? (
+            <StudentVideoLearningScreen
+              courseId={activeStudentCourseId}
+              lessonId={activeStudentLessonId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={() => handleNavigateScreen('student-course-overview')}
+              onBackToLessonList={() => handleNavigateScreen('student-lesson-list')}
+              onNavigateLesson={(nextLessonId) => {
+                setActiveStudentLessonId(nextLessonId);
+              }}
               onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
               onToast={showToast}
+            />
+          ) : currentScreen === 'student-lesson-list' ? (
+            <StudentLessonListScreen
+              courseId={activeStudentCourseId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onBackToCourseOverview={() => handleNavigateScreen('student-course-overview')}
+              onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
+              onSelectLesson={(lesson) => {
+                setActiveStudentLessonId(lesson.id);
+                handleNavigateScreen('student-video-learning');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-course-overview' ? (
+            <StudentCourseOverviewScreen
+              courseId={activeStudentCourseId}
+              scenario={studentScenario}
+              onBackToCourses={() => handleNavigateScreen('student-courses')}
+              onNavigateLessonList={() => handleNavigateScreen('student-lesson-list')}
+              onNavigateLiveClasses={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-live-classes');
+              }}
+              onNavigateAssignments={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-assignments');
+              }}
+              onNavigateDPPs={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-dpps');
+              }}
+              onNavigateSection={(sec) => handleNavigateScreen(`student-${sec}` as ScreenType)}
+              onStartLesson={(lesson) => {
+                setActiveStudentLessonId(lesson.id);
+                handleNavigateScreen('student-video-learning');
+              }}
+              onToast={showToast}
+            />
+          ) : currentScreen === 'student-courses' || currentScreen === 'student-learning' ? (
+            <StudentCoursesScreen
+              scenario={studentScenario}
+              onSelectCourse={(courseId) => {
+                setActiveStudentCourseId(courseId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onResumeCourse={(courseId) => {
+                setActiveStudentCourseId(courseId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onNavigateLiveClasses={() => handleNavigateScreen('student-live-classes')}
+              onNavigateAssignments={() => handleNavigateScreen('student-assignments')}
+              onNavigateDPPs={() => handleNavigateScreen('student-dpps')}
+              onExploreCourses={() => handleNavigateScreen('courses')}
+              onToast={showToast}
+            />
+          ) : studentSection === 'dashboard' ? (
+            <StudentDashboard
+              scenario={studentScenario}
+              onNavigateSection={(sec) => {
+                if (sec === 'learning' || sec === 'courses') {
+                  handleNavigateScreen('student-courses');
+                } else {
+                  handleNavigateScreen(`student-${sec}` as ScreenType);
+                }
+              }}
+              onToast={showToast}
               onExplorePublicCourses={() => handleNavigateScreen('courses')}
+              onOpenCourseOverview={(cId) => {
+                setActiveStudentCourseId(cId);
+                handleNavigateScreen('student-course-overview');
+              }}
+              onNavigateLiveClasses={() => handleNavigateScreen('student-live-classes')}
+              onNavigateAssignments={() => handleNavigateScreen('student-assignments')}
+              onNavigateDPPs={() => handleNavigateScreen('student-dpps')}
             />
           ) : (
             <StudentModulePlaceholder

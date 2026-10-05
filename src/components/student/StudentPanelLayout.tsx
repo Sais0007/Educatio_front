@@ -33,7 +33,7 @@ export const StudentPanelLayout: React.FC<StudentPanelLayoutProps> = ({
 
   const navItems: { id: StudentNavSection; label: string; icon: string; badge?: string }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
-    { id: 'learning', label: 'My Learning', icon: 'menu_book', badge: '3' },
+    { id: 'courses', label: 'My Courses', icon: 'menu_book', badge: '3' },
     { id: 'practice', label: 'Practice Arena', icon: 'edit_note' },
     { id: 'tests', label: 'Test Series', icon: 'quiz', badge: '1 Due' },
     { id: 'results', label: 'Results & Analytics', icon: 'insights' },
@@ -76,7 +76,10 @@ export const StudentPanelLayout: React.FC<StudentPanelLayoutProps> = ({
         {/* Primary Navigation List */}
         <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto" aria-label="Student Navigation">
           {navItems.map((item) => {
-            const isActive = currentSection === item.id;
+            const isActive =
+              currentSection === item.id ||
+              ((item.id === 'courses' || item.id === 'learning') &&
+                (currentSection === 'courses' || currentSection === 'learning'));
             return (
               <button
                 key={item.id}
@@ -403,7 +406,10 @@ export const StudentPanelLayout: React.FC<StudentPanelLayoutProps> = ({
             {/* Nav Links */}
             <nav className="flex-1 space-y-1 overflow-y-auto text-left">
               {navItems.map((item) => {
-                const isActive = currentSection === item.id;
+                const isActive =
+                  currentSection === item.id ||
+                  ((item.id === 'courses' || item.id === 'learning') &&
+                    (currentSection === 'courses' || currentSection === 'learning'));
                 return (
                   <button
                     key={item.id}

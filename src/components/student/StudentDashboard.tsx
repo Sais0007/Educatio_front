@@ -10,6 +10,10 @@ interface StudentDashboardProps {
   onNavigateSection: (section: StudentNavSection) => void;
   onToast: (message: string) => void;
   onExplorePublicCourses?: () => void;
+  onOpenCourseOverview?: (courseId: string) => void;
+  onNavigateLiveClasses?: () => void;
+  onNavigateAssignments?: () => void;
+  onNavigateDPPs?: () => void;
 }
 
 export const StudentDashboard: React.FC<StudentDashboardProps> = ({
@@ -17,6 +21,10 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
   onNavigateSection,
   onToast,
   onExplorePublicCourses,
+  onOpenCourseOverview,
+  onNavigateLiveClasses,
+  onNavigateAssignments,
+  onNavigateDPPs,
 }) => {
   const [data, setData] = useState<StudentDashboardData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -190,7 +198,13 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <button
               key={action.label}
               type="button"
-              onClick={() => onNavigateSection(action.section)}
+              onClick={() => {
+                if (action.section === 'practice' && onNavigateDPPs) {
+                  onNavigateDPPs();
+                } else {
+                  onNavigateSection(action.section);
+                }
+              }}
               className="flex items-center justify-between p-3 rounded-lg bg-white hover:bg-[#E0F4FD]/30 border border-[#E2E8F0] hover:border-[#00A8F0]/40 text-left transition-all duration-150 shadow-card group cursor-pointer"
             >
               <div className="flex items-center gap-2.5 min-w-0">
@@ -318,8 +332,12 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 <button
                   type="button"
                   onClick={() => {
-                    onToast(`Launching ${continueLearning.currentLesson.title}`);
-                    onNavigateSection('learning');
+                    if (onOpenCourseOverview) {
+                      onOpenCourseOverview(continueLearning.id);
+                    } else {
+                      onToast(`Launching ${continueLearning.currentLesson.title}`);
+                      onNavigateSection('courses');
+                    }
                   }}
                   className="py-3.5 px-6 rounded-lg bg-[#00A8F0] hover:bg-[#0092D1] text-white text-sm font-semibold shadow-card hover:shadow-dropdown transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer"
                 >
@@ -329,7 +347,13 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
 
                 <button
                   type="button"
-                  onClick={() => onNavigateSection('learning')}
+                  onClick={() => {
+                    if (onOpenCourseOverview) {
+                      onOpenCourseOverview(continueLearning.id);
+                    } else {
+                      onNavigateSection('courses');
+                    }
+                  }}
                   className="py-2.5 px-4 rounded-lg bg-white hover:bg-[#F5F8FC] text-[#12365A] text-xs font-semibold border border-[#E2E8F0] transition-colors text-center cursor-pointer"
                 >
                   Course Syllabus &amp; Modules
@@ -382,18 +406,30 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                   Upcoming Activities
                 </h3>
               </div>
-              <button
-                type="button"
-                disabled={upcomingRefreshing}
-                onClick={handleRefreshUpcoming}
-                className="text-xs text-[#64748B] hover:text-[#00A8F0] flex items-center gap-1 focus:outline-none cursor-pointer"
-                title="Refresh schedule"
-              >
-                <span className={`material-symbols-outlined text-[16px] ${upcomingRefreshing ? 'animate-spin' : ''}`}>
-                  refresh
-                </span>
-                <span className="hidden sm:inline">Refresh</span>
-              </button>
+              <div className="flex items-center gap-3">
+                {onNavigateLiveClasses && (
+                  <button
+                    type="button"
+                    onClick={onNavigateLiveClasses}
+                    className="text-xs font-semibold text-[#00A8F0] hover:text-[#0092D1] flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>Live Classes</span>
+                    <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
+                  </button>
+                )}
+                <button
+                  type="button"
+                  disabled={upcomingRefreshing}
+                  onClick={handleRefreshUpcoming}
+                  className="text-xs text-[#64748B] hover:text-[#00A8F0] flex items-center gap-1 focus:outline-none cursor-pointer"
+                  title="Refresh schedule"
+                >
+                  <span className={`material-symbols-outlined text-[16px] ${upcomingRefreshing ? 'animate-spin' : ''}`}>
+                    refresh
+                  </span>
+                  <span className="hidden sm:inline">Refresh</span>
+                </button>
+              </div>
             </div>
 
             {upcomingActivities.length > 0 ? (
@@ -458,8 +494,13 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                           type="button"
                           onClick={() => {
                             if (isTest) onNavigateSection('tests');
-                            else if (isClass) onToast(`Connecting to live room: ${act.title}`);
-                            else onToast(`Opening ${act.title}`);
+                            else if (isClass) {
+                              if (onNavigateLiveClasses) onNavigateLiveClasses();
+                              else onToast(`Connecting to live room: ${act.title}`);
+                            } else {
+                              if (onNavigateAssignments) onNavigateAssignments();
+                              else onToast(`Opening ${act.title}`);
+                            }
                           }}
                           className={`w-full sm:w-auto px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 cursor-pointer ${
                             isTest
@@ -551,8 +592,12 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                       <button
                         type="button"
                         onClick={() => {
-                          onToast(`Opening ${c.title}`);
-                          onNavigateSection('learning');
+                          if (onOpenCourseOverview) {
+                            onOpenCourseOverview(c.id);
+                          } else {
+                            onToast(`Opening ${c.title}`);
+                            onNavigateSection('courses');
+                          }
                         }}
                         className="text-xs font-semibold text-[#00A8F0] hover:underline flex items-center gap-0.5 cursor-pointer"
                       >
